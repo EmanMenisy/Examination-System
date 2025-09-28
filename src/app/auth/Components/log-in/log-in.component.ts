@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../Services/auth.service';
-import { FormControl, FormGroup} from '@angular/forms';
+import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 
@@ -17,12 +17,13 @@ value2: any;
  constructor(private _AuthService:AuthService , private _ToastrService:ToastrService , private _Router:Router) {}
 
   LoginForm = new FormGroup({
-    email: new FormControl(null),
-    password : new FormControl(null),
+    email: new FormControl(null , [Validators.required, Validators.email]),
+    password : new FormControl(null , [Validators.required]),
   })
 
 
   login(LoginForm : FormGroup){
+    console.log(LoginForm.value)
     this._AuthService.LogIn(LoginForm.value).subscribe({
       next:(res)=>{
         console.log(res)
