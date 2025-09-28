@@ -1,0 +1,56 @@
+@import "primeicons/primeicons.css";
+
+
+:root {
+  --color-beige: #FFEDDF;
+  --color-light-green: #C5D86D;
+  --color-white: #F5F5F5;
+  --dark-gray : #333333;
+}
+
+.auth{
+  h6{
+    color: var(--color-light-green);
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  label{
+    color: var(--color-white);
+    font-size: 16px;
+    margin-top: 30px;
+  }
+
+//   input{
+//     background-color: transparent !important;
+//     border: 2px solid var(--color-white) !important;
+//     border-radius: 5px !important;
+//     padding: 10px 0;
+//     color: var(--color-white) !important;
+//     text-indent: 50px;
+//   }
+
+// input::placeholder {
+//   text-indent: 50px; 
+//   color: white;
+// }
+// input::selection{
+//    text-indent: 50px; 
+//   color: white;
+// }
+
+// .p-inputicon{
+//  color: var(--color-white) !important;
+//  transform: translateY(-10%);
+// }
+
+// }
+
+
+@media (max-width: 767.98px) {
+  .auth-img-wrapper {
+    display: none !important;
+  }
+
+  
+}}
