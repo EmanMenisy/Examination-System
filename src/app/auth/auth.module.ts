@@ -24,11 +24,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [
    RegisterComponent,
-   LogInComponent,
    ResetPasswordComponent,
    ForgetPasswordComponent,
    ChangePasswordComponent,
-   AuthLayoutComponent
+   AuthLayoutComponent,
+   LogInComponent
   ],
   imports: [
     CommonModule,

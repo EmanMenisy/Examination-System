@@ -7,7 +7,7 @@ import { ToastrModule, ToastrService } from 'ngx-toastr';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
-import { ButtonModule } from 'primeng/button';
+import { FloatLabelModule } from 'primeng/floatlabel';
 @NgModule({
   declarations: [],
   imports: [
@@ -18,10 +18,10 @@ import { ButtonModule } from 'primeng/button';
     ToastrModule.forRoot(),
     IconFieldModule,
     InputIconModule,
-
- 
+    InputTextModule,
+    FloatLabelModule,
   ],
-  exports:[
+  exports: [
     CommonModule,
     RouterModule,
     FormsModule,
@@ -29,6 +29,8 @@ import { ButtonModule } from 'primeng/button';
     ToastrModule,
     IconFieldModule,
     InputIconModule,
-  ]
+    InputTextModule,
+    FloatLabelModule,
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

@@ -4,7 +4,6 @@ import { DashBoardComponent } from './components/dash-board/dash-board.component
 
 const routes: Routes = [
   { path: '', component: DashBoardComponent }
-
 ];
 
 @NgModule({

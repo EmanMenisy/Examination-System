@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { DashBoardRoutingModule } from './dash-board-routing.module';
 import { DashBoardComponent } from './components/dash-board/dash-board.component';
 

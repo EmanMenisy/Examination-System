@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../Services/auth.service';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup} from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-log-in',
@@ -11,6 +12,7 @@ import { Router } from '@angular/router';
   standalone : false
 })
 export class LogInComponent{
+value2: any;
 
  constructor(private _AuthService:AuthService , private _ToastrService:ToastrService , private _Router:Router) {}
 
