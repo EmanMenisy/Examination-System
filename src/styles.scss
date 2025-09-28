@@ -1,56 +1,57 @@
 @import "primeicons/primeicons.css";
 
-
 :root {
-  --color-beige: #FFEDDF;
-  --color-light-green: #C5D86D;
-  --color-white: #F5F5F5;
-  --dark-gray : #333333;
+  --color-beige: #ffeddf;
+  --color-light-green: #c5d86d;
+  --color-white: #f5f5f5;
+  --dark-gray: #333333;
 }
 
-.auth{
-  h6{
+.auth {
+  h6 {
     color: var(--color-light-green);
     font-size: 24px;
     font-weight: 500;
   }
 
-  label{
+  label {
     color: var(--color-white);
     font-size: 16px;
     margin-top: 30px;
   }
 
-//   input{
-//     background-color: transparent !important;
-//     border: 2px solid var(--color-white) !important;
-//     border-radius: 5px !important;
-//     padding: 10px 0;
-//     color: var(--color-white) !important;
-//     text-indent: 50px;
-//   }
+  input {
+    background-color: transparent !important;
+    border: 2px solid var(--color-white) !important;
+    border-radius: 5px !important;
+    color: var(--color-white) !important;
+  }
+  input::placeholder {
+    color: var(--color-white);
+  }
 
-// input::placeholder {
-//   text-indent: 50px; 
-//   color: white;
-// }
-// input::selection{
-//    text-indent: 50px; 
-//   color: white;
-// }
+  .p-inputicon {
+    color: var(--color-white) !important;
+  }
+}
+.my-custom-btn {
+  background-color: white !important;     
+  .p-button-icon {
+   color: black;
+  }
 
-// .p-inputicon{
-//  color: var(--color-white) !important;
-//  transform: translateY(-10%);
-// }
+  .p-button-label{
+    color: black;
+  }
+}
+.my-custom-btn:hover{
+  background-color: var(--color-light-green) !important;
+     transition: all 1s;
 
-// }
-
+}
 
 @media (max-width: 767.98px) {
   .auth-img-wrapper {
     display: none !important;
   }
-
-  
-}}
+}

@@ -1,20 +1,53 @@
 <section class="auth">
   <h6 class="mt-5">Continue your learning journey with QuizWiz!</h6>
   <div>
-    <div class="login-buttons my-4  d-flex">
-    <a routerLink="LogIn"><img src="/images/Vector (3).png" alt=""><p>Sign in</p></a>
-    <a routerLink="Register"><img src="/images/Vector (4).png" alt=""><p>Sign Up</p></a>
+    <div class="login-buttons my-4 d-flex">
+      <a routerLink="LogIn"
+        ><img src="/images/Vector (3).png" alt="" />
+        <p>Sign in</p></a
+      >
+      <a routerLink="Register"
+        ><img src="/images/Vector (4).png" alt="" />
+        <p>Sign Up</p></a
+      >
     </div>
+
     <form [formGroup]="LoginForm" (ngSubmit)="login(LoginForm)">
-  <label for="" class="from-label">Registered email address</label>
-   <p-iconfield>
-      <p-inputicon styleClass="pi pi-search" />
-      <input type="text" pInputText placeholder="Search" />
-  </p-iconfield> 
-  <div class="d-flex justify-content-between flex-wrap mt-3 form-buttons w-75">
-    <button>Sign In</button>
-    <p>Forgot password? <a> LogIn now</a></p>
-  </div>
+      <label for="" class="from-label">Registered email address</label>
+      <p-iconfield>
+        <p-inputicon styleClass="pi pi-envelope" />
+        <input
+          type="text"
+          pInputText
+          placeholder="Type your email"
+          class="w-75"
+          formControlName="email"
+        />
+      </p-iconfield>
+    
+      <label for="" class="from-label">Enter your Password</label>
+      <div class="mygroup">
+        <p-password
+          [toggleMask]="true"
+          class="myinput"
+          placeholder="Enter your password"
+          formControlName="password"
+        />
+        <i class="pi pi-key pass-icon"></i>
+      </div>
+      <div
+        class="d-flex justify-content-between flex-wrap mt-3 form-buttons w-75"
+      >
+        <p-button
+          label="Sign In"
+          icon="pi pi-verified"
+          iconPos="right"
+          styleClass="my-custom-btn"
+          type="submit"
+          [disabled]="LoginForm.invalid"
+        ></p-button>
+        <p>Forgot password? <a routerLink="/ForgetPassword"> click here</a></p>
+      </div>
     </form>
   </div>
 </section>

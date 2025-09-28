@@ -8,6 +8,9 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { ButtonModule } from 'primeng/button';
+import { PasswordModule } from 'primeng/password';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -20,6 +23,8 @@ import { FloatLabelModule } from 'primeng/floatlabel';
     InputIconModule,
     InputTextModule,
     FloatLabelModule,
+    ButtonModule,
+    PasswordModule
   ],
   exports: [
     CommonModule,
@@ -31,6 +36,8 @@ import { FloatLabelModule } from 'primeng/floatlabel';
     InputIconModule,
     InputTextModule,
     FloatLabelModule,
+    ButtonModule,
+    PasswordModule
   ],
 })
 export class SharedModule {}

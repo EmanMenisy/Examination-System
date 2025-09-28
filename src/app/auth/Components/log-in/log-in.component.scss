@@ -40,3 +40,24 @@
         cursor: pointer;
     }
 }
+ .mygroup{
+    position: relative;
+    .pass-icon{
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translate(-50% ,-50%);
+    }
+    i{
+        color: var(--color-white);
+    }
+ }
+::ng-deep  .p-password{
+    width: 75% !important;
+    .p-inputtext{
+        width: 100% !important;
+        text-indent: 25px;
+    }
+}
+
+
