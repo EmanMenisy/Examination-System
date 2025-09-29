@@ -34,7 +34,7 @@ value2: any;
         this._Router.navigate(['/dashboard'])
       }
     })
-    
+
   }
 
 }

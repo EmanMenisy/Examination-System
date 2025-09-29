@@ -1,1 +1,67 @@
-<p>register works!</p>
+<section class="auth">
+  <h6 class="mt-5">Create your account and start using QuizWiz!</h6>
+  <div>
+    <div class="login-buttons my-4 d-flex">
+      <a routerLink="/LogIn"><img src="/images/Vector (3).png" alt="" />
+        <p>Sign in</p>
+      </a>
+      <a routerLink="/Register"><img src="/images/Vector (4).png" alt="" />
+        <p>Sign Up</p>
+      </a>
+    </div>
+    <form [formGroup]="registerForm" class="regForm" (ngSubmit)="register(registerForm)">
+      <div class="row">
+        <!-- first name -->
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Your first name</label>
+          <p-iconfield class="w-100">
+            <p-inputicon styleClass="pi pi-id-card" />
+            <input type="text" pInputText placeholder="Type your first name" class="w-100"
+              formControlName="first_name" />
+          </p-iconfield>
+        </div>
+        <!-- last name -->
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Your last name</label>
+          <p-iconfield class="w-100">
+            <p-inputicon styleClass="pi pi-id-card" />
+            <input type="text" pInputText placeholder="Type your last name" class="w-100" formControlName="last_name" />
+          </p-iconfield>
+        </div>
+      </div>
+      <!-- email -->
+      <label class="from-label">Registered email address</label>
+      <p-iconfield class="w-100">
+        <p-inputicon styleClass="pi pi-envelope" />
+        <input type="email" pInputText placeholder="Type your email" class="w-100" formControlName="email" />
+      </p-iconfield>
+
+
+      <!-- roles -->
+      <label class="form-label">Choose your Role</label>
+      <p-iconfield class="w-100 d-flex align-items-center">
+        <p-inputicon styleClass="pi pi-user"></p-inputicon>
+        <p-select [options]="roles" optionLabel="name" optionValue="value" placeholder="Choose your role"
+          class="flex-grow-1 bg-transparent ps-4" formControlName="role">
+        </p-select>
+
+      </p-iconfield>
+
+      <!-- password -->
+      <label class="form-label">Enter your Password</label>
+      <p-iconfield class="w-100">
+        <p-inputicon styleClass="pi pi-key pass-icon"></p-inputicon>
+        <p-password [toggleMask]="false" formControlName="password" placeholder="Enter your password">
+        </p-password>
+      </p-iconfield>
+
+      <!-- footer form -->
+      <div class="d-flex justify-content-between flex-wrap mt-3 form-buttons">
+        <p-button label="Sign Up" icon="pi pi-verified" iconPos="right" styleClass="my-custom-btn" type="submit"
+          [disabled]="registerForm.invalid"></p-button>
+        <p class="mt-2">Forgot password? <a routerLink="/ForgetPassword"> click here</a></p>
+      </div>
+    </form>
+
+  </div>
+</section>
