@@ -27,7 +27,6 @@ Reminder() {
   this.auth.forgetPassword(this.forgotten.value).subscribe({
     next: (res) => {
       console.log(res);
-      localStorage.setItem('accessToken', res.data.accessToken);
     },
 
     error: (err) => {
@@ -42,7 +41,7 @@ Reminder() {
       this.toast.success('Check Your Inbox For An OTP', 'Email Found!');
       this.route.navigate(['/ResetPassword']);
     },
-    
+
   });
 
 
