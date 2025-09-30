@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashBoardComponent } from './components/dash-board/dash-board.component';
+import { DashBoardComponent } from './components/dashboard-layout/dash-board.component';
 import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
