@@ -10,13 +10,19 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ButtonModule } from 'primeng/button';
 import { PasswordModule } from 'primeng/password';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { SelectModule } from 'primeng/select';
 import { InputNumberModule } from 'primeng/inputnumber';
 
+
 @NgModule({
-  declarations: [],
+  declarations: [
+    NavbarComponent,
+    SidebarComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -48,6 +54,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     FloatLabelModule,
     ButtonModule,
     PasswordModule,
+    NavbarComponent,
+    SidebarComponent,
     InputGroupModule,
     InputGroupAddonModule,
     SelectModule,

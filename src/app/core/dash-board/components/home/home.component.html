@@ -1,1 +1,141 @@
-<p>home works!</p>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="wrapper p-3">
+          <div class="d-flex justify-content-between quiz-title">
+            <p>Upcoming 5 quizzes</p>
+            <p>Quiz directory</p>
+          </div>
+          <div class="quiz-wrapper mt-2">
+            <div class="d-flex h-100">
+              <div class="image-wrapper p-3">
+                <img
+                  src="/images/1020fb426ec7bad8c01e2e82c8767d214a6c6e2c.png"
+                  alt=""
+                />
+              </div>
+              <div class="quiz-details p-3  w-100">
+                <p>Introduction to computer programming</p>
+                <h5><span>12 / 03 / 2023</span> | <span>09:00 AM</span></h5>
+                <div class="d-flex justify-content-between quiz-footer mt-3">
+                  <h6>No. of student’s enrolled: 32</h6>
+                  <a class="d-flex align-items-center"
+                    ><span>Open</span
+                    ><span class="footer-icon mx-1 d-flex align-items-center"
+                      ><i class="pi left pi-arrow-circle-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="quiz-wrapper mt-2">
+            <div class="d-flex h-100">
+              <div class="image-wrapper p-3">
+                <img
+                  src="/images/img.png"
+                  alt=""
+                />
+              </div>
+              <div class="quiz-details p-3  w-100">
+                <p>Introduction to computer programming</p>
+                <h5><span>12 / 03 / 2023</span> | <span>09:00 AM</span></h5>
+                <div class="d-flex justify-content-between quiz-footer mt-3">
+                  <h6>No. of student’s enrolled: 32</h6>
+                  <a class="d-flex align-items-center"
+                    ><span>Open</span
+                    ><span class="footer-icon mx-1 d-flex align-items-center"
+                      ><i class="pi left pi-arrow-circle-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="quiz-wrapper mt-2">
+            <div class="d-flex h-100">
+              <div class="image-wrapper p-3">
+                <img
+                  src="/images/1020fb426ec7bad8c01e2e82c8767d214a6c6e2c.png"
+                  alt=""
+                />
+              </div>
+              <div class="quiz-details p-3  w-100">
+                <p>Introduction to computer programming</p>
+                <h5><span>12 / 03 / 2023</span> | <span>09:00 AM</span></h5>
+                <div class="d-flex justify-content-between quiz-footer mt-3">
+                  <h6>No. of student’s enrolled: 32</h6>
+                  <a class="d-flex align-items-center"
+                    ><span>Open</span
+                    ><span class="footer-icon mx-1 d-flex align-items-center"
+                      ><i class="pi left pi-arrow-circle-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+            <div class="quiz-wrapper mt-2">
+            <div class="d-flex h-100">
+              <div class="image-wrapper p-3">
+                <img
+                  src="/images/img.png"
+                  alt=""
+                />
+              </div>
+              <div class="quiz-details p-3  w-100">
+                <p>Introduction to computer programming</p>
+                <h5><span>12 / 03 / 2023</span> | <span>09:00 AM</span></h5>
+                <div class="d-flex justify-content-between quiz-footer mt-3">
+                  <h6>No. of student’s enrolled: 32</h6>
+                  <a class="d-flex align-items-center"
+                    ><span>Open</span
+                    ><span class="footer-icon mx-1 d-flex align-items-center"
+                      ><i class="pi left pi-arrow-circle-right"></i></span
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-5">
+         <div class="wrapper p-3">
+          <div class="d-flex justify-content-between student-title">
+            <p>Top 5 Students </p>
+            <p>All Students</p>
+          </div>
+          <div class="">
+          @for (student of studentList; track $index ; let i = $index) {
+            <div class="d-flex student-wrapper my-2">
+              @if (i % 2 == 0) {
+                <div class="student-image">
+                <img
+                  src="/images/user img.png"
+                  alt=""
+                />
+              </div>
+              }
+              @else {
+                   <div class="student-image">
+                <img
+                  src="/images/user img (1).png"
+                  alt=""
+                />
+              </div>
+              }
+               <div class="d-flex justify-content-between align-items-center student-details w-100 px-3 py-2">
+                <div>
+                <p>{{student.first_name}} {{student.last_name}}</p>
+                <h6><span>Class rank: {{ i + 1}}</span> | <span>Average score: 87%</span></h6>
+              </div>
+              <div>
+                <a><i class="pi left pi-arrow-circle-right"></i></a>
+              </div>
+               </div>
+            </div>
+          }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

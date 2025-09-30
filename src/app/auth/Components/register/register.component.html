@@ -1,7 +1,7 @@
 <section class="auth">
-  <h6 class="mt-5">Create your account and start using QuizWiz!</h6>
+  <h6 class="mt-1">Create your account and start using QuizWiz!</h6>
   <div>
-    <div class="login-buttons my-4 d-flex">
+    <div class="login-buttons my-2 d-flex">
       <a routerLink="/LogIn"><img src="/images/Vector (3).png" alt="" />
         <p>Sign in</p>
       </a>
@@ -12,7 +12,7 @@
     <form [formGroup]="registerForm" class="regForm" (ngSubmit)="register(registerForm)">
       <div class="row">
         <!-- first name -->
-        <div class="col-md-6 mb-3">
+        <div class="col-md-6 mb-1">
           <label class="form-label">Your first name</label>
           <p-iconfield class="w-100">
             <p-inputicon styleClass="pi pi-id-card" />
@@ -21,7 +21,7 @@
           </p-iconfield>
         </div>
         <!-- last name -->
-        <div class="col-md-6 mb-3">
+        <div class="col-md-6 mb-1">
           <label class="form-label">Your last name</label>
           <p-iconfield class="w-100">
             <p-inputicon styleClass="pi pi-id-card" />
