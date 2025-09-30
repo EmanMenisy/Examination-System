@@ -10,7 +10,7 @@ export class TranslationService {
   private readonly _PLATFORM_ID = inject(PLATFORM_ID);
   constructor() {
     if (isPlatformBrowser(this._PLATFORM_ID)) {
-      const SavedLanguage = localStorage.getItem('lang') || 'en';
+      const SavedLanguage = localStorage.getItem('lang') || 'ar';
       this._TranslateService.setFallbackLang('en');
       this._TranslateService.use(SavedLanguage!);
       this.changeDirection();
@@ -19,7 +19,6 @@ export class TranslationService {
 
    changeDirection() {
     const SavedLanguage = localStorage.getItem('lang');
-
     if (SavedLanguage === 'ar') {
       document.documentElement.dir = 'rtl';
     } else {
