@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 //PrimeNG Modules
@@ -65,4 +65,4 @@ import { TranslateModule } from '@ngx-translate/core';
 
   ],
 })
-export class SharedModule {}
+export class SharedModule { }

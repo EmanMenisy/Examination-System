@@ -10,7 +10,7 @@ import { HomeService } from '../../../services/home.service';
 })
 export class HomeComponent implements OnInit {
 studentList:IStudent[] = []
-  constructor(private _HomeService:HomeService) {    
+  constructor(private _HomeService:HomeService) {
   }
 
   ngOnInit(): void {
