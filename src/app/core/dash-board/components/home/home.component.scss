@@ -67,28 +67,38 @@
     }
   }
 
-  .student-wrapper{
-    height: 80px;
-    .student-image{
-        height: 100%;
-        img{
-            height: 100%;
-        }
+  .student-title {
+    p:first-of-type {
+      font-weight: 700;
+      font-size: 14px;
     }
-    .student-details{
+    p:last-of-type {
+      font-weight: 500;
+      font-size: 12px;
+    }
+  }
+  .student-wrapper {
+    height: 80px;
+    .student-image {
+      height: 100%;
+      img {
+        height: 100%;
+      }
+    }
+    .student-details {
       border: 1px solid #ececec;
       border-radius: 0 8px 8px 0;
-      border-left: none; 
-      p{
+      border-left: none;
+      p {
         font-size: 14px;
         font-weight: 600;
         border-bottom: 0px !important;
       }
-      h6{
-        span{
-            color: #0D1321CC;
-            font-size: 12px;
-            font-weight: 400;
+      h6 {
+        span {
+          color: #0d1321cc;
+          font-size: 12px;
+          font-weight: 400;
         }
       }
     }

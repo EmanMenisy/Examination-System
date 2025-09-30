@@ -26,15 +26,11 @@
       </p-iconfield>
 
       <label for="" class="from-label">Enter your Password</label>
-      <div class="mygroup">
-        <p-password
-          [toggleMask]="true"
-          class="myinput"
-          placeholder="Enter your password"
-          formControlName="password"
-        />
-        <i class="pi pi-key pass-icon"></i>
-      </div>
+     <p-iconfield class="w-100">
+        <p-inputicon styleClass="pi pi-key pass-icon"></p-inputicon>
+        <p-password [toggleMask]="true" formControlName="password" placeholder="Enter your password">
+        </p-password>
+      </p-iconfield>
       <div
         class="d-flex justify-content-between flex-wrap mt-3 form-buttons w-75 align-items-center"
       >

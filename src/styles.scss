@@ -8,6 +8,7 @@
 }
 
 .auth {
+  max-height: 100vh;
   h6 {
     color: var(--color-light-green);
     font-size: 24px;
@@ -50,8 +51,3 @@
 
 }
 
-@media (max-width: 767.98px) {
-  .auth-img-wrapper {
-    display: none !important;
-  }
-}
