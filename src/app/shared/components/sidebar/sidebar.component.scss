@@ -1,0 +1,60 @@
+.sidebar {
+  transition: width 0.3s ease-in-out;
+  overflow: hidden;
+  border-right: 2px solid #00000033;
+
+  .header_sidebar {
+    padding-top: 20px;
+    border-bottom: 2px solid #00000033;
+  }
+
+  & a i{
+
+      background: #FFEDDF;
+      padding: 8px;
+      border-radius: 10px;
+      color: black;
+      width: 45px;
+      text-align: center;
+
+  }
+
+  & ul li {
+    padding-block: 24px;
+    &:not(:last-child){
+      border-bottom: 2px solid #00000033;
+    }
+
+    span {
+      transition: opacity 0.6s ease-in-out;
+      font-weight: 700;
+      font-style: Bold;
+      font-size: 18px;
+      margin-left: 10px;
+    }
+  }
+}
+
+.sidebarOpen {
+  width: 250px;
+
+  & ul li span {
+    opacity: 1;
+    color: black
+  }
+}
+
+.sidebarClose {
+  width: 140px;
+
+  & ul li span {
+    opacity: 0;
+  }
+}
+
+a.active i {
+  background: black !important;
+  padding: 8px;
+  border-radius: 10px;
+  color: #FFEDDF !important;
+}
