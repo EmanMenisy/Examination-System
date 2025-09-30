@@ -17,6 +17,9 @@ import { provideToastr } from 'ngx-toastr';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {provideTranslateService} from "@ngx-translate/core";
+import {provideTranslateHttpLoader} from "@ngx-translate/http-loader";
+import { errorInterceptor } from './core/interceptors/error.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -25,7 +28,7 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideHttpClient(
       withFetch(),
-      withInterceptors([globalInterceptor, loadingInterceptor])
+      withInterceptors([globalInterceptor, loadingInterceptor , errorInterceptor])
     ),
     provideToastr(),
     providePrimeNG({
@@ -34,5 +37,13 @@ export const appConfig: ApplicationConfig = {
       },
     }),
     provideAnimationsAsync(),
+    provideTranslateService({
+        loader: provideTranslateHttpLoader({
+        prefix: '/assets/i18n/',
+        suffix: '.json'
+      }),
+      fallbackLang: 'en',
+      lang: 'en'
+    })
   ],
 };

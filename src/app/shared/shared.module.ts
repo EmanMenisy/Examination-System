@@ -16,6 +16,7 @@ import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { SelectModule } from 'primeng/select';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @NgModule({
@@ -39,8 +40,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     InputGroupAddonModule,
     SelectModule,
     InputNumberModule,
-    RouterLink,
-    RouterLinkActive,
+    TranslateModule
+
   ],
   exports: [
     CommonModule,
@@ -60,8 +61,8 @@ import { InputNumberModule } from 'primeng/inputnumber';
     InputGroupAddonModule,
     SelectModule,
     InputNumberModule,
-    RouterLink,
-    RouterLinkActive,
+    TranslateModule
+
   ],
 })
 export class SharedModule { }

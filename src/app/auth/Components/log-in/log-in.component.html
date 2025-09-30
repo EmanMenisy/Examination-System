@@ -22,13 +22,16 @@
           placeholder="Type your email"
           class="w-75"
           formControlName="email"
+          autocomplete="email" 
+
         />
       </p-iconfield>
 
       <label for="" class="from-label">Enter your Password</label>
      <p-iconfield class="w-100">
         <p-inputicon styleClass="pi pi-key pass-icon"></p-inputicon>
-        <p-password [toggleMask]="true" formControlName="password" placeholder="Enter your password">
+        <p-password [toggleMask]="true" formControlName="password" placeholder="Enter your password" 
+>
         </p-password>
       </p-iconfield>
       <div
