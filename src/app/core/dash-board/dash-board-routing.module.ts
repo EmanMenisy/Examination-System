@@ -7,7 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 const routes: Routes = [
   {
     path: '', component: DashBoardComponent, children: [
-      { path: '', component: HomeComponent }
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: 'home', component: HomeComponent }
     ]
   }
 ];
