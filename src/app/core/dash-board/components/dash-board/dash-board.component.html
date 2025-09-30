@@ -1,1 +1,30 @@
-<p>dash-board works!</p>
+<div class="d-flex min-vh-100">
+  <!-- Sidebar -->
+  <div class="sidebar d-flex flex-column" [ngClass]="{
+      'sidebarOpen': expanded,
+      'sidebarClose': !expanded
+      }">
+    <div class="d-flex justify-content-center align-items-center px-3 gap-4 header_sidebar">
+      <p-button icon="pi pi-bars fs-2" aria-label="toggleSidebar" styleClass="sidebar_custom_btn"
+        (click)="toggleSidebar()">
+      </p-button>
+      <img alt="logo sidebar" src="images/Logo-Sidebar.svg">
+    </div>
+    <ul class="list-unstyled">
+      <li class="mb-2" *ngFor="let item of menu">
+        <a class="text-decoration-none d-flex ps-5 align-items-center" [routerLink]="item.menuLink"
+          routerLinkActive="active">
+          <i [class]="item.icon" class="menu-icon"></i>
+          <span *ngIf="expanded">{{item.title}}</span>
+        </a>
+      </li>
+    </ul>
+
+  </div>
+
+  <!-- Main content -->
+  <div class="flex-grow-1 p-4">
+    <h1 class="fw-bold">Main Content</h1>
+    <router-outlet></router-outlet>
+  </div>
+</div>

@@ -26,6 +26,7 @@
     border-radius: 5px !important;
     color: var(--color-white) !important;
   }
+
   input::placeholder {
     color: var(--color-white);
   }
@@ -34,20 +35,28 @@
     color: var(--color-white) !important;
   }
 }
+
 .my-custom-btn {
-  background-color: white !important;     
+  background-color: white !important;
+
   .p-button-icon {
-   color: black;
+    color: black;
   }
 
-  .p-button-label{
+  .p-button-label {
     color: black;
   }
 }
-.my-custom-btn:hover{
-  background-color: var(--color-light-green) !important;
-     transition: all 1s;
 
+.my-custom-btn:hover {
+  background-color: var(--color-light-green) !important;
+  transition: all 1s;
+}
+
+.sidebar_custom_btn{
+  background-color: transparent !important;
+  border-color: transparent !important;
+  color: #000 !important;
 }
 
 @media (max-width: 767.98px) {

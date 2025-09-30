@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ToastrModule, ToastrService } from 'ngx-toastr';
 //PrimeNG Modules
@@ -32,7 +32,9 @@ import { InputNumberModule } from 'primeng/inputnumber';
     InputGroupModule,
     InputGroupAddonModule,
     SelectModule,
-    InputNumberModule
+    InputNumberModule,
+    RouterLink,
+    RouterLinkActive,
   ],
   exports: [
     CommonModule,
@@ -49,7 +51,9 @@ import { InputNumberModule } from 'primeng/inputnumber';
     InputGroupModule,
     InputGroupAddonModule,
     SelectModule,
-    InputNumberModule
+    InputNumberModule,
+    RouterLink,
+    RouterLinkActive,
   ],
 })
-export class SharedModule {}
+export class SharedModule { }
