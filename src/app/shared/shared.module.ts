@@ -10,9 +10,15 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { ButtonModule } from 'primeng/button';
 import { PasswordModule } from 'primeng/password';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    NavbarComponent,
+    SidebarComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -37,7 +43,9 @@ import { PasswordModule } from 'primeng/password';
     InputTextModule,
     FloatLabelModule,
     ButtonModule,
-    PasswordModule
+    PasswordModule,
+    NavbarComponent,
+    SidebarComponent
   ],
 })
 export class SharedModule {}
