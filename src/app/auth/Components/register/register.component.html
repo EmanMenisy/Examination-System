@@ -1,31 +1,32 @@
 <section class="auth">
-  <h6 class="mt-1">{{"auth.Continue your learning journey with QuizWiz" | translate}}!</h6>
+  <h6 class="mt-1">{{"auth.Continue your learning journey with QuizWiz" | translate}} !</h6>
   <div>
-    <div class="login-buttons my-2 d-flex">
+    <div class="login-buttons py-2 d-flex">
       <a routerLink="/LogIn"><img src="/images/Vector (3).png" alt="" />
-        <p>Sign in</p>
+        <p>{{'auth.Sign In'|translate}}</p>
       </a>
       <a routerLink="/Register"><img src="/images/Vector (4).png" alt="" />
-        <p>Sign Up</p>
+        <p>{{'auth.Sign Up'|translate}}</p>
       </a>
     </div>
     <form [formGroup]="registerForm" class="regForm" (ngSubmit)="register(registerForm)">
       <div class="row">
         <!-- first name -->
-        <div class="col-md-6 mb-1">
+        <div class="col-md-6">
           <label class="form-label">{{"auth.Your first name"| translate}}</label>
           <p-iconfield class="w-100">
             <p-inputicon styleClass="pi pi-id-card" />
-            <input type="text" pInputText placeholder="Type your first name" class="w-100"
+            <input type="text" pInputText placeholder="{{'auth.Placeholder_firstName'|translate}}" class="w-100"
               formControlName="first_name" />
           </p-iconfield>
         </div>
         <!-- last name -->
-        <div class="col-md-6 mb-1">
+        <div class="col-md-6">
           <label class="form-label"> {{"auth.Your last name"| translate}}</label>
           <p-iconfield class="w-100">
             <p-inputicon styleClass="pi pi-id-card" />
-            <input type="text" pInputText placeholder="Type your last name" class="w-100" formControlName="last_name" />
+            <input type="text" pInputText placeholder="{{'auth.Placeholder_lastName'|translate}}" class="w-100"
+              formControlName="last_name" />
           </p-iconfield>
         </div>
       </div>
@@ -33,33 +34,42 @@
       <label class="from-label"> {{"auth.Registered email address"| translate}}</label>
       <p-iconfield class="w-100">
         <p-inputicon styleClass="pi pi-envelope" />
-        <input type="email" pInputText placeholder="Type your email" class="w-100" formControlName="email" />
+        <input type="email" pInputText placeholder="{{'auth.Placeholder_email'|translate}}" class="w-100"
+          formControlName="email" />
       </p-iconfield>
 
 
       <!-- roles -->
-      <label class="form-label">{{"auth.Choose your Role"| translate}}</label>
-      <p-iconfield class="w-100 d-flex align-items-center">
+      <label class="form-label">{{"auth.Your_role"| translate}}</label>
+      <p-iconfield class="w-100 d-flex ">
         <p-inputicon styleClass="pi pi-user"></p-inputicon>
-        <p-select [options]="roles" optionLabel="name" optionValue="value" placeholder="Choose your role"
-          class="flex-grow-1 bg-transparent ps-4" formControlName="role">
+        <p-select [options]="roles" optionLabel="name" optionValue="value"
+          placeholder="{{'auth.Choose_Role'|translate}}" class="flex-grow-1 bg-transparent px-4" formControlName="role">
+          <ng-template let-role pTemplate="item">
+            {{ role.name | translate }}
+          </ng-template>
+          <ng-template let-role pTemplate="selectedItem">
+            {{ role.value | translate }}
+          </ng-template>
         </p-select>
 
       </p-iconfield>
 
       <!-- password -->
-      <label class="form-label">{{"auth.Enter your Password"| translate}}</label>
+      <label class="form-label">{{"auth.Enter_Password"| translate}}</label>
       <p-iconfield class="w-100">
         <p-inputicon styleClass="pi pi-key pass-icon"></p-inputicon>
-        <p-password [toggleMask]="true" formControlName="password" placeholder="Enter your password">
+        <p-password [toggleMask]="true" formControlName="password"
+          placeholder="{{'auth.Placeholder_password'|translate}}">
         </p-password>
       </p-iconfield>
 
       <!-- footer form -->
       <div class="d-flex justify-content-between flex-wrap mt-3 form-buttons">
-        <p-button [label]="'auth.Sign Up' | translate"  icon="pi pi-verified" iconPos="right" styleClass="my-custom-btn" type="submit"
-          [disabled]="registerForm.invalid"></p-button>
-        <p class="mt-2"> {{"auth.Forget password" |translate}} ?<a routerLink="/ForgetPassword">{{"auth.click" |translate}}</a></p>
+        <p-button [label]="'auth.Sign Up' | translate" icon="pi pi-verified" iconPos="right" styleClass="my-custom-btn"
+          type="submit" [disabled]="registerForm.invalid"></p-button>
+        <p class="mt-2"> {{"auth.Forget password" |translate}} ?<a routerLink="/ForgetPassword">{{"auth.click"
+            |translate}}</a></p>
       </div>
     </form>
 

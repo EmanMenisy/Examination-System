@@ -2,15 +2,20 @@
 "auth": {
   "Your first name": "الاسم الأول",
   "Your last name": "اسم العائلة",
-  "Registered email address": "ادخل بريدك الالكتروني",
-  "Choose your Role": "اختر وظيفتك",
-  "Enter your Password": "أدخل كلمة المرور",
+  "Placeholder_firstName":"اكتب الاسم الأول ",
+  "Placeholder_lastName":"اكتب اسم العائلة",
+  "Registered email address":"البريد الإلكتروني المسجَّل",
+  "Placeholder_email": "اكتب بريدك الإلكتروني",
+  "Placeholder_password": "اكتب كلمة المرور الخاصة بك",
+  "Your_role":"وظيفتك",
+  "Choose_Role": "اختر وظيفتك",
+  "Enter_Password": "أدخل كلمة المرور",
   "Sign In":"تسجيل الدخول",
   "Sign Up":"إنشاء حساب",
-  "Forgot password":"نسيت كلمة المرور",
+  "Forget password":"نسيت كلمة المرور",
   "click" : "اضغط هنا",
   "send email" : "ارسل البريد الالكتروني",
-  "Continue your learning journey with QuizWiz":"واصل رحلتك التعليمية مع QuizWiz!"
+  "Continue your learning journey with QuizWiz":"واصل رحلتك التعليمية مع QuizWiz"
     },
     "sidebar":{
       "Dashboard": "لوحة التحكم",
@@ -24,5 +29,7 @@
     "All_Students": "جميع الطلاب",
     "Upcoming_Quizzes": "الاختبارات 5 القادمة",
     "Quiz_Directory": "دليل الاختبارات"
-  }
+  },
+  "Student":"طالب",
+"Instructor":"معلم"
 }
