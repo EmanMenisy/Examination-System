@@ -8,7 +8,9 @@
         "Sign Up":"Sign Up",
         "Sign In":"Sign In",
         "Forget password":"Forget password",
-        "click" : "click here"
+        "click" : "click here",
+        "send email" : "send email",
+        "Continue your learning journey with QuizWiz":"Continue your learning journey with QuizWiz"
     },
     "sidebar":{
         "Dashboard": "Dashboard",
@@ -22,5 +24,6 @@
         "All_Students": "All Students",
         "Upcoming_Quizzes": "Upcoming 5 quizzes",
         "Quiz_Directory": "Quiz directory"
-  }
+
+}
 }
