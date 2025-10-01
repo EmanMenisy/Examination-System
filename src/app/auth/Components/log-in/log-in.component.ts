@@ -26,7 +26,10 @@ value2: any;
     console.log(LoginForm.value)
     this._AuthService.LogIn(LoginForm.value).subscribe({
       next:(res)=>{
-        localStorage.setItem('accessToken' , res.data.accessToken)
+        console.log(res)
+        localStorage.setItem('accessToken' , res.data.accessToken);
+        this._AuthService.Identity(res); //decrypting token
+
       },
       complete:()=>{
         this._ToastrService.success('you have been login successfully')

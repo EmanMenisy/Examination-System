@@ -1,0 +1,153 @@
+$app-height: 80px;
+$app-gap: 24px;
+
+.app-navbar {
+  height: $app-height;
+  border-bottom: 1px solid #e6e6e6;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  margin-bottom: 10px;
+
+  .nav-inner {
+    width: 100%;
+    max-width: 1291.52px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: $app-gap;
+  }
+
+  .nav-left {
+    .brand {
+      font-weight: 700;
+      font-size: 18px;
+      color: #0f1724;
+    }
+  }
+
+  .nav-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .btn-new-quiz {
+      height: 40px;
+      padding: 0 16px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 0 0 1px rgba(15,23,36,0.04) inset;
+      background: #fff;
+      border: 1px solid rgba(15,23,36,0.08);
+
+      .icon {
+        font-size: 18px;
+      }
+
+      span {
+        font-weight: 600;
+      }
+    }
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+
+    .user-area {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .user-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      .user-text {
+        text-align: right;
+        .user-name {
+          font-weight: 600;
+          font-size: 14px;
+          color: #0f1724;
+          line-height: 1;
+        }
+        .user-role {
+          font-size: 12px;
+          color: #8fbf3b;
+          line-height: 1;
+        }
+      }
+
+      .avatar {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+      }
+
+      .user-menu-btn {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        border-radius: 8px;
+      }
+    }
+
+    .icon-box {
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      border: 1px solid #e6e6e6;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .app-navbar {
+    .nav-inner {
+      padding: 0 12px;
+    }
+
+    .nav-center {
+      order: 3;
+      margin-left: auto;
+    }
+
+    .nav-left .brand {
+      font-size: 16px;
+    }
+
+    .nav-right .user-text {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .app-navbar {
+    height: 64px;
+
+    .nav-inner {
+      gap: 12px;
+    }
+
+    .nav-center .btn-new-quiz {
+      padding: 0 10px;
+      span {
+        display: none;
+      }
+    }
+
+    .nav-left .brand {
+      font-size: 14px;
+    }
+  }
+}

@@ -17,6 +17,10 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { SelectModule } from 'primeng/select';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { TranslateModule } from '@ngx-translate/core';
+import { MenuModule } from 'primeng/menu';
+import { AvatarModule } from 'primeng/avatar';
+import { RippleModule } from 'primeng/ripple';
+
 
 
 @NgModule({
@@ -28,20 +32,22 @@ import { TranslateModule } from '@ngx-translate/core';
     CommonModule,
     RouterModule,
     FormsModule,
+    AvatarModule, 
+    RippleModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     IconFieldModule,
     InputIconModule,
     InputTextModule,
     FloatLabelModule,
+    MenuModule,
     ButtonModule,
     PasswordModule,
     InputGroupModule,
     InputGroupAddonModule,
     SelectModule,
     InputNumberModule,
-    TranslateModule
-
+    TranslateModule,
   ],
   exports: [
     CommonModule,
@@ -52,16 +58,20 @@ import { TranslateModule } from '@ngx-translate/core';
     IconFieldModule,
     InputIconModule,
     InputTextModule,
+    AvatarModule,
+     RippleModule,
     FloatLabelModule,
     ButtonModule,
     PasswordModule,
+    MenuModule,
     NavbarComponent,
     SidebarComponent,
     InputGroupModule,
     InputGroupAddonModule,
     SelectModule,
     InputNumberModule,
-    TranslateModule
+    TranslateModule,
+
 
   ],
 })

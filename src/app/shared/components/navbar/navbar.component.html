@@ -1,1 +1,32 @@
-<p>navbar works!</p>
+<nav class="app-navbar">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <div class="brand">Dashboard</div>
+    </div>
+
+    <div class="nav-center">
+      <button pButton type="button" class="btn-new-quiz" (click)="createNewQuiz()">
+        <i class="pi pi-plus-circle icon"></i>
+        <span>New quiz</span>
+      </button>
+    </div>
+
+    <div class="nav-right">
+      <div class="user-area">
+        <div class="user-info">
+          <div class="user-text">
+            <div class="user-name">{{ navName }}</div>
+            <div class="user-role">{{ userRole }}</div>
+          </div>
+
+          <button pButton type="button" class="user-menu-btn" (click)="userMenu.toggle($event)">
+            <i class="pi pi-chevron-down"></i>
+          </button>
+
+          <p-menu #userMenu [popup]="true" [model]="menuItems"></p-menu>
+        </div>
+
+        </div>
+    </div>
+  </div>
+</nav>
