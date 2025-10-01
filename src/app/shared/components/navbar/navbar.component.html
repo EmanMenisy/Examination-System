@@ -1,17 +1,32 @@
 <nav class="app-navbar">
   <div class="nav-inner">
     <div class="nav-left">
-      <div class="brand">Dashboard</div>
+      <div class="brand">{{ 'homeNav.dashboard' | translate}}</div>
     </div>
 
     <div class="nav-center">
-      <button pButton type="button" class="btn-new-quiz" (click)="createNewQuiz()">
+      <button
+        pButton
+        type="button"
+        class="btn-new-quiz"
+        (click)="createNewQuiz()"
+      >
         <i class="pi pi-plus-circle icon"></i>
-        <span>New quiz</span>
+        <span>{{ 'homeNav.newQuiz' | translate}}</span>
       </button>
     </div>
 
     <div class="nav-right">
+      <button
+        pButton
+        type="button"
+        class="lang-toggle-btn"
+        (click)="toggleLanguage()"
+      >
+        <i
+          [ngClass]="currentLang === 'en' ? 'pi pi-globe' : 'pi pi-language'"
+        ></i>
+      </button>
       <div class="user-area">
         <div class="user-info">
           <div class="user-text">
@@ -19,14 +34,18 @@
             <div class="user-role">{{ userRole }}</div>
           </div>
 
-          <button pButton type="button" class="user-menu-btn" (click)="userMenu.toggle($event)">
+          <button
+            pButton
+            type="button"
+            class="user-menu-btn"
+            (click)="userMenu.toggle($event)"
+          >
             <i class="pi pi-chevron-down"></i>
           </button>
 
           <p-menu #userMenu [popup]="true" [model]="menuItems"></p-menu>
         </div>
-
-        </div>
+      </div>
     </div>
   </div>
 </nav>

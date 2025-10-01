@@ -1,19 +1,21 @@
 {
-    "auth":{
-        "Your first name":"Your first name",
-        "Your last name":"Your last name",
-        "Registered email address":"Registered email address",
-        "Choose your Role":"Choose your Role",
-        "Enter your Password":"Enter your Password",
-        "Sign Up":"Sign Up",
-        "Sign In":"Sign In",
-        "Forget password":"Forget password",
-        "click" : "click here",
-        "send email" : "send email",
-        "Continue your learning journey with QuizWiz":"Continue your learning journey with QuizWiz"
-     
-
-
-
-    }
+  "auth": {
+    "firstName": "Your first name",
+    "lastName": "Your last name",
+    "email": "Registered email address",
+    "role": "Choose your Role",
+    "password": "Enter your Password",
+    "signUp": "Sign Up",
+    "signIn": "Sign In",
+    "forgotPassword": "Forget password",
+    "clickHere": "click here",
+    "sendEmail": "send email",
+    "continueLearning": "Continue your learning journey with QuizWiz"
+  },
+  "homeNav": {
+    "dashboard": "Dashboard",
+    "newQuiz": "New quiz",
+    "settings":"Profile Settings",
+    "existing":"Log Out"
+  }
 }
