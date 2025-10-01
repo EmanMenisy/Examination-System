@@ -36,5 +36,12 @@
     "Quiz_Directory": "دليل الاختبارات"
   },
   "Student":"طالب",
-"Instructor":"معلم"
+   "Instructor":"معلم",
+
+  "homeNav": {
+    "dashboard": "المنصة",
+    "newQuiz": "فحص جديد",
+    "settings":"اعدادات الحساب",
+    "existing":"تسجيل الخروج "
+  }
 }

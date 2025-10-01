@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { jwtDecode } from "jwt-decode";
-import { IRegisterReq, IRegisterRes } from '../interfaces/IRegister';
 import { Router } from '@angular/router';
+import {jwtDecode} from "jwt-decode";
+import { IregisterReq, IRegisterRes } from '../interfaces/IRegister';
 
 @Injectable({
   providedIn: 'root'

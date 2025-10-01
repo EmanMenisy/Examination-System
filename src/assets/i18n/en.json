@@ -35,5 +35,11 @@
         "Quiz_Directory": "Quiz directory"
 },
 "Student":"Student",
-"Instructor":"Instructor"
+"Instructor":"Instructor",
+  "homeNav": {
+    "dashboard": "Dashboard",
+    "newQuiz": "New quiz",
+    "settings":"Profile Settings",
+    "existing":"Log Out"
+  }
 }
