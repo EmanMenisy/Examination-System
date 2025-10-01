@@ -11,7 +11,7 @@ export class AuthService {
   constructor(private _HttpClient: HttpClient) { }
 
   Register(data: IregisterReq): Observable<IRegisterRes> {
-    return this._HttpClient.post<IRegisterRes>('api/auth/register', data)
+    return this._HttpClient.post<IRegisterRes>('auth/register', data)
   }
   LogIn(data: any): Observable<any> {
     return this._HttpClient.post('auth/login', data)

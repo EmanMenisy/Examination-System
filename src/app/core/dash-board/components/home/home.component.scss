@@ -13,15 +13,17 @@
   }
 
   .quiz-wrapper {
-    height: 120px;
-    .image-wrapper {
+    .image-wrapper{
       background-color: var(--color-beige);
-      height: 100%;
+      height: auto;
       width: 150px;
       border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       img {
-        width: 100%;
-        height: 100%;
+        width: 80px;
+        height: 80px;
         border-radius: 8px;
         object-fit: contain;
       }
@@ -42,6 +44,7 @@
         font-weight: 400;
       }
       .quiz-footer {
+        
         h6 {
           font-weight: 600px;
           margin: 5px 0;

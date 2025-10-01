@@ -7,8 +7,11 @@
   "Enter your Password": "أدخل كلمة المرور",
   "Sign In":"تسجيل الدخول",
   "Sign Up":"إنشاء حساب",
-  "Forgot password":"نسيت كلمة المرور",
-  "click" : "اضغط هنا" 
+  "Forget password":"نسيت كلمة المرور",
+  "click" : "اضغط هنا",
+  "send email" : "ارسل البريد الالكتروني",
+  "Continue your learning journey with QuizWiz":"واصل رحلتك التعليمية مع QuizWiz!"
+
 }
 
 }

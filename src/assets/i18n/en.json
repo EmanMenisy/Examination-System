@@ -8,7 +8,11 @@
         "Sign Up":"Sign Up",
         "Sign In":"Sign In",
         "Forget password":"Forget password",
-        "click" : "click here"
+        "click" : "click here",
+        "send email" : "send email",
+        "Continue your learning journey with QuizWiz":"Continue your learning journey with QuizWiz"
+     
+
 
 
     }
