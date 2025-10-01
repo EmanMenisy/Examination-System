@@ -13,7 +13,7 @@
         <a class="text-decoration-none d-flex ps-5 align-items-center" [routerLink]="item.menuLink"
           routerLinkActive="active">
           <i [class]="item.icon" class="menu-icon"></i>
-          <span *ngIf="expanded">{{item.title}}</span>
+          <span *ngIf="expanded">{{item.title|translate}}</span>
         </a>
       </li>
 
@@ -24,7 +24,7 @@
         <a class="text-decoration-none d-flex ps-5  align-items-center" routerLink="/test"
         routerLinkActive="active">
         <i class="pi pi-question-circle fs-3 menu-icon"></i>
-        <span *ngIf="expanded">Help</span>
+        <span *ngIf="expanded">{{'sidebar.Help'|translate}}</span>
       </a>
     </li>
     </ul>

@@ -8,7 +8,19 @@
   "Sign In":"تسجيل الدخول",
   "Sign Up":"إنشاء حساب",
   "Forgot password":"نسيت كلمة المرور",
-  "click" : "اضغط هنا" 
-}
-
+  "click" : "اضغط هنا"
+    },
+    "sidebar":{
+      "Dashboard": "لوحة التحكم",
+    "Groups": "المجموعات",
+    "Quizzes": "الاختبارات",
+    "Results": "النتائج",
+    "Help": "المساعدة"
+    },
+    "home": {
+    "Top_5_Students": "أفضل 5 طلاب",
+    "All_Students": "جميع الطلاب",
+    "Upcoming_Quizzes": "الاختبارات 5 القادمة",
+    "Quiz_Directory": "دليل الاختبارات"
+  }
 }

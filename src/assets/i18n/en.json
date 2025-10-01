@@ -9,7 +9,18 @@
         "Sign In":"Sign In",
         "Forget password":"Forget password",
         "click" : "click here"
-
-
-    }
+    },
+    "sidebar":{
+        "Dashboard": "Dashboard",
+        "Groups": "Groups",
+        "Quizzes": "Quizzes",
+        "Results": "Results",
+        "Help": "Help"
+    },
+    "home": {
+        "Top_5_Students": "Top 5 Students",
+        "All_Students": "All Students",
+        "Upcoming_Quizzes": "Upcoming 5 quizzes",
+        "Quiz_Directory": "Quiz directory"
+  }
 }

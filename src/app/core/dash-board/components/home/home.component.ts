@@ -21,7 +21,6 @@ studentList:IStudent[] = []
     this._HomeService.getTopStudents().subscribe({
       next:(res)=>{
         this.studentList = res
-        console.log(this.studentList)
       },
       error:(err)=>{console.log(err)},
     })
