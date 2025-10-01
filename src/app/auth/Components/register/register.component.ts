@@ -3,7 +3,7 @@ import { AuthService } from '../../Services/auth.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { IRole } from '../../interfaces/Iregister';
+import { IRole } from '../../interfaces/IRegister';
 
 @Component({
   selector: 'app-register',
