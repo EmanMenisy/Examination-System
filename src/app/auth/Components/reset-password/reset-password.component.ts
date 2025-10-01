@@ -9,8 +9,8 @@ import { Router } from '@angular/router';
   templateUrl: './reset-password.component.html',
   styleUrl: './reset-password.component.scss',
   standalone : false
-
 })
+
 export class ResetPasswordComponent {
   constructor(private _AuthService: AuthService, private _ToastrService: ToastrService, private _Router: Router) { }
 
@@ -29,11 +29,6 @@ export class ResetPasswordComponent {
         console.log(res);
         this.resetForm.reset();
         this.successMessage = res.message;
-      },
-      error: (err) => {
-        this.errorMessage = err.error?.message || 'Something went wrong!';
-        this._ToastrService.error(this.errorMessage, 'Sorry');
-        console.log(err);
       },
       complete: () => {
         if (this.successMessage) {
