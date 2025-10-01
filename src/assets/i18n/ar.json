@@ -1,17 +1,43 @@
 {
-  "auth": {
-    "firstName": "الاسم الأول",
-    "lastName": "اسم العائلة",
-    "email": "ادخل بريدك الالكتروني",
-    "role": "اختر وظيفتك",
-    "password": "أدخل كلمة المرور",
-    "signIn": "تسجيل الدخول",
-    "signUp": "إنشاء حساب",
-    "forgotPassword": "نسيت كلمة المرور",
-    "clickHere": "اضغط هنا",
-    "sendEmail": "ارسل البريد الالكتروني",
-    "continueLearning": "واصل رحلتك التعليمية مع QuizWiz!"
+"auth": {
+  "Your first name": "الاسم الأول",
+  "Your last name": "اسم العائلة",
+  "Placeholder_firstName":"اكتب الاسم الأول ",
+  "Placeholder_lastName":"اكتب اسم العائلة",
+  "Registered email address":"البريد الإلكتروني المسجَّل",
+  "Placeholder_email": "اكتب بريدك الإلكتروني",
+  "Placeholder_password": "اكتب كلمة المرور الخاصة بك",
+  "Your_role":"وظيفتك",
+  "Choose_Role": "اختر وظيفتك",
+  "Enter_Password": "أدخل كلمة المرور",
+  "Sign In":"تسجيل الدخول",
+  "Sign Up":"إنشاء حساب",
+  "Forget password":"نسيت كلمة المرور",
+  "click" : "اضغط هنا",
+  "send email" : "ارسل البريد الالكتروني",
+  "Continue your learning journey with QuizWiz":"واصل رحلتك التعليمية مع QuizWiz",
+  "Reset":"إعادة تعيين",
+  "Placeholder_otp":"اكتب كلمة المرور المؤقتة",
+  "OTP":"كلمة مرور مؤقتة",
+  "header_resetPass":"إعادة تعيين كلمة المرور"
+
+    },
+    "sidebar":{
+      "Dashboard": "لوحة التحكم",
+    "Groups": "المجموعات",
+    "Quizzes": "الاختبارات",
+    "Results": "النتائج",
+    "Help": "المساعدة"
+    },
+    "home": {
+    "Top_5_Students": "أفضل 5 طلاب",
+    "All_Students": "جميع الطلاب",
+    "Upcoming_Quizzes": "الاختبارات 5 القادمة",
+    "Quiz_Directory": "دليل الاختبارات"
   },
+  "Student":"طالب",
+   "Instructor":"معلم",
+
   "homeNav": {
     "dashboard": "المنصة",
     "newQuiz": "فحص جديد",

@@ -8,23 +8,21 @@
     </p-button>
     <img alt="logo sidebar" src="images/Logo-Sidebar.svg">
   </div>
-  <ul class="list-unstyled flex-grow-1">
+  <ul class="list-unstyled flex-grow-1 p-0">
       <li class="mb-2" *ngFor="let item of menu">
-        <a class="text-decoration-none d-flex ps-5 align-items-center" [routerLink]="item.menuLink"
+        <a class="text-decoration-none d-flex align-items-center" [routerLink]="item.menuLink"
           routerLinkActive="active">
           <i [class]="item.icon" class="menu-icon"></i>
-          <span *ngIf="expanded">{{item.title}}</span>
+          <span *ngIf="expanded">{{item.title|translate}}</span>
         </a>
       </li>
-
-
     </ul>
-    <ul class="list-unstyled">
+    <ul class="list-unstyled p-0">
       <li class="mb-2 border-bottom-0 border-top">
-        <a class="text-decoration-none d-flex ps-5  align-items-center" routerLink="/test"
+        <a class="text-decoration-none d-flex align-items-center" routerLink="/test"
         routerLinkActive="active">
         <i class="pi pi-question-circle fs-3 menu-icon"></i>
-        <span *ngIf="expanded">Help</span>
+        <span *ngIf="expanded">{{'sidebar.Help'|translate}}</span>
       </a>
     </li>
     </ul>

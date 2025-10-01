@@ -15,9 +15,9 @@ export class TranslationService {
       this._TranslateService.use(SavedLanguage!);
       this.changeDirection();
     }
-   }
+  }
 
-   changeDirection() {
+  changeDirection() {
     const SavedLanguage = localStorage.getItem('lang');
     if (SavedLanguage === 'ar') {
       document.documentElement.dir = 'rtl';

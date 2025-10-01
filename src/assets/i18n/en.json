@@ -1,17 +1,41 @@
 {
-  "auth": {
-    "firstName": "Your first name",
-    "lastName": "Your last name",
-    "email": "Registered email address",
-    "role": "Choose your Role",
-    "password": "Enter your Password",
-    "signUp": "Sign Up",
-    "signIn": "Sign In",
-    "forgotPassword": "Forget password",
-    "clickHere": "click here",
-    "sendEmail": "send email",
-    "continueLearning": "Continue your learning journey with QuizWiz"
-  },
+    "auth":{
+        "Your first name":"Your first name",
+        "Your last name":"Your last name",
+        "Placeholder_firstName":"Type Your First Name",
+        "Placeholder_lastName":"Type Your Last Name",
+        "Registered email address":"Registered email address",
+        "Placeholder_email":"Type Your Email",
+        "Placeholder_password":"Type Your Password",
+        "Your_role":"Your role",
+        "Choose_Role":"Choose your Role",
+        "Enter_Password":"Enter your Password",
+        "Sign Up":"Sign Up",
+        "Sign In":"Sign In",
+        "Forget password":"Forget password",
+        "click" : "click here",
+        "send email" : "send email",
+        "Continue your learning journey with QuizWiz":"Continue your learning journey with QuizWiz",
+        "Reset":"Reset",
+        "Placeholder_otp":"Enter your otp",
+        "OTP":"OTP",
+        "header_resetPass":"Reset password"
+    },
+    "sidebar":{
+        "Dashboard": "Dashboard",
+        "Groups": "Groups",
+        "Quizzes": "Quizzes",
+        "Results": "Results",
+        "Help": "Help"
+    },
+    "home": {
+        "Top_5_Students": "Top 5 Students",
+        "All_Students": "All Students",
+        "Upcoming_Quizzes": "Upcoming 5 quizzes",
+        "Quiz_Directory": "Quiz directory"
+},
+"Student":"Student",
+"Instructor":"Instructor",
   "homeNav": {
     "dashboard": "Dashboard",
     "newQuiz": "New quiz",

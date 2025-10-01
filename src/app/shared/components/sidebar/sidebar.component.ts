@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 interface IMenu {
   title: string;
@@ -12,6 +13,11 @@ interface IMenu {
   standalone: false
 })
 export class SidebarComponent {
+    private readonly _translate = inject(TranslateService);
+
+  constructor() {
+    this._translate.use('en');
+  }
   expanded: boolean = true;
 
   toggleSidebar() {
@@ -21,22 +27,22 @@ export class SidebarComponent {
   menu: IMenu[] = [
     {
       menuLink: '/dashboard/home',
-      title: 'Dashboard',
+      title: 'sidebar.Dashboard',
       icon: 'pi pi-home fs-3'
     },
     {
       menuLink: '/test',
-      title: 'Groups',
+      title: 'sidebar.Groups',
       icon: 'pi pi-users fs-3'
     },
     {
       menuLink: '/test',
-      title: 'Quizzes',
+      title: 'sidebar.Quizzes',
       icon: 'pi pi-stopwatch fs-3'
     },
     {
       menuLink: '/test',
-      title: 'Results',
+      title: 'sidebar.Results',
       icon: 'pi pi-chart-bar fs-3'
     }
   ]

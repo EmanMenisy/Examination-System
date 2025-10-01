@@ -16,7 +16,6 @@ export class RegisterComponent {
 
   constructor(private _AuthService: AuthService, private _ToastrService: ToastrService, private _Router: Router) { }
 
-  isShowPass = false;
   errorMessage: string = '';
   successMessage: string = ''
 
@@ -26,9 +25,9 @@ export class RegisterComponent {
     { name: 'Student', value: 'Student' },
     { name: 'Instructor', value: 'Instructor' },
   ];
-  showPass() {
-    this.isShowPass = !this.isShowPass;
-  }
+
+
+
   registerForm = new FormGroup({
     first_name: new FormControl(null, [Validators.required]),
     last_name: new FormControl(null, [Validators.required]),

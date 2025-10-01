@@ -4,11 +4,11 @@
     <div class="login-buttons my-4 d-flex">
       <a routerLink="LogIn"
         ><img src="/images/Vector (3).png" alt="" />
-        <p>Sign in</p></a
+        <p>{{'auth.Sign In'|translate}}</p></a
       >
       <a routerLink="/Register"
         ><img src="/images/Vector (4).png" alt="" />
-        <p>Sign Up</p></a
+        <p>{{'auth.Sign Up'|translate}}</p></a
       >
     </div>
 
@@ -19,18 +19,18 @@
         <input
           type="text"
           pInputText
-          placeholder="Type your email"
+          placeholder="{{'auth.Placeholder_email'|translate}}"
           class="w-75"
           formControlName="email"
-          autocomplete="email" 
+          autocomplete="email"
 
         />
       </p-iconfield>
 
-      <label for="" class="from-label">{{"auth.Enter your Password"| translate}} </label>
+      <label for="" class="from-label">{{"auth.Enter_Password"| translate}} </label>
      <p-iconfield class="w-100">
         <p-inputicon styleClass="pi pi-key pass-icon"></p-inputicon>
-        <p-password [toggleMask]="true" formControlName="password" placeholder="Enter your password" 
+        <p-password [toggleMask]="true" formControlName="password" placeholder="{{'auth.Placeholder_password'|translate}}"
 >
         </p-password>
       </p-iconfield>
@@ -38,7 +38,7 @@
         class="d-flex justify-content-between flex-wrap mt-3 form-buttons w-75 align-items-center"
       >
         <p-button
-          [label]="'auth.Sign In' | translate"
+        [label]="'auth.Sign In' | translate"
           icon="pi pi-verified"
           iconPos="right"
           styleClass="my-custom-btn"
