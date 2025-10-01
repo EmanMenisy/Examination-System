@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import {jwtDecode} from "jwt-decode";
-import { IregisterReq, IRegisterRes } from '../interfaces/IRegister';
+import { IRegisterReq, IRegisterRes } from '../interfaces/IRegister';
 
 @Injectable({
   providedIn: 'root'
