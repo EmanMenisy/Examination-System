@@ -15,7 +15,17 @@ section{
     border-radius: 12px;
     height: 90vh;
 }
-
+.auth-button{
+    background-color: unset !important;
+    border: none;
+    outline: none;
+    img{
+        border-radius: 50%;
+    }
+    span{
+        color: white;
+    }
+}
 }
 
 

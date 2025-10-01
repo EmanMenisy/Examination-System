@@ -1,4 +1,4 @@
-export interface IRegisterReq {
+export interface IregisterReq {
   first_name: string;
   last_name: string;
   email: string;

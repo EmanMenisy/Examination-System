@@ -1,0 +1,17 @@
+{
+"auth": {
+  "Your first name": "الاسم الأول",
+  "Your last name": "اسم العائلة",
+  "Registered email address": "ادخل بريدك الالكتروني",
+  "Choose your Role": "اختر وظيفتك",
+  "Enter your Password": "أدخل كلمة المرور",
+  "Sign In":"تسجيل الدخول",
+  "Sign Up":"إنشاء حساب",
+  "Forget password":"نسيت كلمة المرور",
+  "click" : "اضغط هنا",
+  "send email" : "ارسل البريد الالكتروني",
+  "Continue your learning journey with QuizWiz":"واصل رحلتك التعليمية مع QuizWiz!"
+
+}
+
+}

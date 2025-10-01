@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import {jwtDecode} from "jwt-decode";
 import { IRegisterReq, IRegisterRes } from '../interfaces/iregister';
 import { Router } from '@angular/router';
+import { IRegisterRes , IregisterReq } from '../interfaces/Iregister';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +39,7 @@ export class AuthService {
 
   constructor(private _HttpClient: HttpClient , private _router:Router) { }
 
-  Register(data: IRegisterReq): Observable<IRegisterRes> {
+  Register(data: IregisterReq): Observable<IRegisterRes> {
     return this._HttpClient.post<IRegisterRes>('auth/register', data)
   }
   LogIn(data: any): Observable<any> {

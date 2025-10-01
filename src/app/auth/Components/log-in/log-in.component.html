@@ -1,5 +1,5 @@
 <section class="auth">
-  <h6 class="mt-5">Continue your learning journey with QuizWiz!</h6>
+  <h6 class="mt-5">{{"auth.Continue your learning journey with QuizWiz" | translate}} !</h6>
   <div>
     <div class="login-buttons my-4 d-flex">
       <a routerLink="LogIn"
@@ -13,7 +13,7 @@
     </div>
 
     <form [formGroup]="LoginForm" (ngSubmit)="login(LoginForm)">
-      <label for="" class="from-label">Registered email address</label>
+      <label for="" class="from-label">{{"auth.Registered email address"| translate}}</label>
       <p-iconfield>
         <p-inputicon styleClass="pi pi-envelope" />
         <input
@@ -27,7 +27,7 @@
         />
       </p-iconfield>
 
-      <label for="" class="from-label">Enter your Password</label>
+      <label for="" class="from-label">{{"auth.Enter your Password"| translate}} </label>
      <p-iconfield class="w-100">
         <p-inputicon styleClass="pi pi-key pass-icon"></p-inputicon>
         <p-password [toggleMask]="true" formControlName="password" placeholder="Enter your password" 
@@ -38,14 +38,14 @@
         class="d-flex justify-content-between flex-wrap mt-3 form-buttons w-75 align-items-center"
       >
         <p-button
-          label="Sign In"
+          [label]="'auth.Sign In' | translate"
           icon="pi pi-verified"
           iconPos="right"
           styleClass="my-custom-btn"
           type="submit"
           [disabled]="LoginForm.invalid"
         ></p-button>
-        <p>Forgot password? <a routerLink="/ForgetPassword"> click here</a></p>
+        <p> {{"auth.Forget password"|translate}}? <a routerLink="/ForgetPassword">{{"auth.click" |translate}}</a></p>
       </div>
     </form>
   </div>

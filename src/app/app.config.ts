@@ -1,4 +1,9 @@
-import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
+import {
+  ApplicationConfig,
+  inject,
+  PLATFORM_ID,
+  provideZoneChangeDetection,
+} from '@angular/core';
 import { provideRouter } from '@angular/router';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { routes } from './app.routes';
@@ -7,6 +12,7 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import {
+  HttpClient,
   provideHttpClient,
   withFetch,
   withInterceptors,
@@ -17,9 +23,18 @@ import { provideToastr } from 'ngx-toastr';
 import { providePrimeNG } from 'primeng/config';
 import Aura from '@primeng/themes/aura';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {provideTranslateService} from "@ngx-translate/core";
-import {provideTranslateHttpLoader} from "@ngx-translate/http-loader";
 import { errorInterceptor } from './core/interceptors/error.interceptor';
+import {
+  provideTranslateService,
+  provideTranslateLoader,
+  TranslateLoader,
+} from '@ngx-translate/core';
+import {
+  provideTranslateHttpLoader,
+  TranslateHttpLoader,
+} from '@ngx-translate/http-loader';
+import { isPlatformBrowser } from '@angular/common';
+import { of } from 'rxjs';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -28,7 +43,11 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideHttpClient(
       withFetch(),
-      withInterceptors([globalInterceptor, loadingInterceptor , errorInterceptor])
+      withInterceptors([
+        globalInterceptor,
+        loadingInterceptor,
+        errorInterceptor,
+      ])
     ),
     provideToastr(),
     providePrimeNG({
@@ -37,13 +56,14 @@ export const appConfig: ApplicationConfig = {
       },
     }),
     provideAnimationsAsync(),
+    provideHttpClient(),
     provideTranslateService({
-        loader: provideTranslateHttpLoader({
+      loader: provideTranslateHttpLoader({
         prefix: '/assets/i18n/',
-        suffix: '.json'
+        suffix: '.json',
       }),
-      fallbackLang: 'en',
-      lang: 'en'
-    })
+      fallbackLang: 'ar',
+      lang: 'ar',
+    }),
   ],
 };

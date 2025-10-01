@@ -1,0 +1,19 @@
+{
+    "auth":{
+        "Your first name":"Your first name",
+        "Your last name":"Your last name",
+        "Registered email address":"Registered email address",
+        "Choose your Role":"Choose your Role",
+        "Enter your Password":"Enter your Password",
+        "Sign Up":"Sign Up",
+        "Sign In":"Sign In",
+        "Forget password":"Forget password",
+        "click" : "click here",
+        "send email" : "send email",
+        "Continue your learning journey with QuizWiz":"Continue your learning journey with QuizWiz"
+     
+
+
+
+    }
+}

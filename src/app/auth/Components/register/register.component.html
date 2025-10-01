@@ -1,5 +1,5 @@
 <section class="auth">
-  <h6 class="mt-1">Create your account and start using QuizWiz!</h6>
+  <h6 class="mt-1">{{"auth.Continue your learning journey with QuizWiz" | translate}}!</h6>
   <div>
     <div class="login-buttons my-2 d-flex">
       <a routerLink="/LogIn"><img src="/images/Vector (3).png" alt="" />
@@ -13,7 +13,7 @@
       <div class="row">
         <!-- first name -->
         <div class="col-md-6 mb-1">
-          <label class="form-label">Your first name</label>
+          <label class="form-label">{{"auth.Your first name"| translate}}</label>
           <p-iconfield class="w-100">
             <p-inputicon styleClass="pi pi-id-card" />
             <input type="text" pInputText placeholder="Type your first name" class="w-100"
@@ -22,7 +22,7 @@
         </div>
         <!-- last name -->
         <div class="col-md-6 mb-1">
-          <label class="form-label">Your last name</label>
+          <label class="form-label"> {{"auth.Your last name"| translate}}</label>
           <p-iconfield class="w-100">
             <p-inputicon styleClass="pi pi-id-card" />
             <input type="text" pInputText placeholder="Type your last name" class="w-100" formControlName="last_name" />
@@ -30,7 +30,7 @@
         </div>
       </div>
       <!-- email -->
-      <label class="from-label">Registered email address</label>
+      <label class="from-label"> {{"auth.Registered email address"| translate}}</label>
       <p-iconfield class="w-100">
         <p-inputicon styleClass="pi pi-envelope" />
         <input type="email" pInputText placeholder="Type your email" class="w-100" formControlName="email" />
@@ -38,7 +38,7 @@
 
 
       <!-- roles -->
-      <label class="form-label">Choose your Role</label>
+      <label class="form-label">{{"auth.Choose your Role"| translate}}</label>
       <p-iconfield class="w-100 d-flex align-items-center">
         <p-inputicon styleClass="pi pi-user"></p-inputicon>
         <p-select [options]="roles" optionLabel="name" optionValue="value" placeholder="Choose your role"
@@ -48,7 +48,7 @@
       </p-iconfield>
 
       <!-- password -->
-      <label class="form-label">Enter your Password</label>
+      <label class="form-label">{{"auth.Enter your Password"| translate}}</label>
       <p-iconfield class="w-100">
         <p-inputicon styleClass="pi pi-key pass-icon"></p-inputicon>
         <p-password [toggleMask]="true" formControlName="password" placeholder="Enter your password">
@@ -57,9 +57,9 @@
 
       <!-- footer form -->
       <div class="d-flex justify-content-between flex-wrap mt-3 form-buttons">
-        <p-button label="Sign Up" icon="pi pi-verified" iconPos="right" styleClass="my-custom-btn" type="submit"
+        <p-button [label]="'auth.Sign Up' | translate"  icon="pi pi-verified" iconPos="right" styleClass="my-custom-btn" type="submit"
           [disabled]="registerForm.invalid"></p-button>
-        <p class="mt-2">Forgot password? <a routerLink="/ForgetPassword"> click here</a></p>
+        <p class="mt-2"> {{"auth.Forget password" |translate}} ?<a routerLink="/ForgetPassword">{{"auth.click" |translate}}</a></p>
       </div>
     </form>
 
