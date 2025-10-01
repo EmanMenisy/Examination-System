@@ -47,7 +47,7 @@ export class NavbarComponent {
 
   logout() {
     this.auth.LogOut();
-    this.router.navigate(['/auth/LogIn']).then(() => {
+    this.router.navigate(['/LogIn']).then(() => {
       window.location.reload();
     });
   }

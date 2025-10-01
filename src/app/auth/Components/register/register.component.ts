@@ -43,11 +43,6 @@ export class RegisterComponent {
         this.registerForm.reset();
         this.successMessage = res.message;
       },
-      error: (err) => {
-        this.errorMessage = err.error?.message || 'Something went wrong!';
-        this._ToastrService.error(this.errorMessage, 'Sorry');
-        console.log(err);
-      },
       complete: () => {
         if (this.successMessage) {
           this._ToastrService.success(this.successMessage, 'Success');

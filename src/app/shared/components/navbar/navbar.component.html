@@ -8,11 +8,11 @@
       <button
         pButton
         type="button"
-        class="btn-new-quiz"
+        class="btn-new-quiz text-dark"
         (click)="createNewQuiz()"
       >
         <i class="pi pi-plus-circle icon"></i>
-        <span>{{ 'homeNav.newQuiz' | translate}}</span>
+        <span >{{ 'homeNav.newQuiz' | translate}}</span>
       </button>
     </div>
 
@@ -39,6 +39,7 @@
             type="button"
             class="user-menu-btn"
             (click)="userMenu.toggle($event)"
+          
           >
             <i class="pi pi-chevron-down"></i>
           </button>
