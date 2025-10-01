@@ -10,7 +10,7 @@ export class TranslationService {
   private readonly _PLATFORM_ID = inject(PLATFORM_ID);
   constructor() {
     if (isPlatformBrowser(this._PLATFORM_ID)) {
-      const SavedLanguage = localStorage.getItem('lang') || 'ar';
+      const SavedLanguage = localStorage.getItem('lang') || 'en';
       this._TranslateService.setFallbackLang('en');
       this._TranslateService.use(SavedLanguage!);
       this.changeDirection();

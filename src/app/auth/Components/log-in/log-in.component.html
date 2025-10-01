@@ -1,5 +1,5 @@
 <section class="auth">
-  <h6 class="mt-5">Continue your learning journey with QuizWiz!</h6>
+  <h6 class="mt-5">{{"auth.Continue your learning journey with QuizWiz" | translate}} !</h6>
   <div>
     <div class="login-buttons my-4 d-flex">
       <a routerLink="LogIn"
@@ -38,7 +38,7 @@
         class="d-flex justify-content-between flex-wrap mt-3 form-buttons w-75 align-items-center"
       >
         <p-button
-          label="Sign In"
+          [label]="'auth.Sign In' | translate"
           icon="pi pi-verified"
           iconPos="right"
           styleClass="my-custom-btn"
