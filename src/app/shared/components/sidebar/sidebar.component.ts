@@ -16,7 +16,7 @@ export class SidebarComponent {
     private readonly _translate = inject(TranslateService);
 
   constructor() {
-    this._translate.use('ar');
+    this._translate.use('en');
   }
   expanded: boolean = true;
 

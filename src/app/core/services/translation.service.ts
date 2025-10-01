@@ -15,9 +15,9 @@ export class TranslationService {
       this._TranslateService.use(SavedLanguage!);
       this.changeDirection();
     }
-   }
+  }
 
-   changeDirection() {
+  changeDirection() {
     const SavedLanguage = localStorage.getItem('lang');
     if (SavedLanguage === 'ar') {
       document.documentElement.dir = 'rtl';
@@ -28,7 +28,7 @@ export class TranslationService {
 
   changeLanguage(lang: string = 'en'): void {
     if (isPlatformBrowser(this._PLATFORM_ID)) {
-      localStorage.setItem('lang', lang); 
+      localStorage.setItem('lang', lang);
       this._TranslateService.use(lang);
       this.changeDirection();
     }

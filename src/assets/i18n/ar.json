@@ -15,7 +15,12 @@
   "Forget password":"نسيت كلمة المرور",
   "click" : "اضغط هنا",
   "send email" : "ارسل البريد الالكتروني",
-  "Continue your learning journey with QuizWiz":"واصل رحلتك التعليمية مع QuizWiz"
+  "Continue your learning journey with QuizWiz":"واصل رحلتك التعليمية مع QuizWiz",
+  "Reset":"إعادة تعيين",
+  "Placeholder_otp":"اكتب كلمة المرور المؤقتة",
+  "OTP":"كلمة مرور مؤقتة",
+  "header_resetPass":"إعادة تعيين كلمة المرور"
+
     },
     "sidebar":{
       "Dashboard": "لوحة التحكم",

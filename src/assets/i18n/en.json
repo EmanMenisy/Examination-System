@@ -15,7 +15,11 @@
         "Forget password":"Forget password",
         "click" : "click here",
         "send email" : "send email",
-        "Continue your learning journey with QuizWiz":"Continue your learning journey with QuizWiz"
+        "Continue your learning journey with QuizWiz":"Continue your learning journey with QuizWiz",
+        "Reset":"Reset",
+        "Placeholder_otp":"Enter your otp",
+        "OTP":"OTP",
+        "header_resetPass":"Reset password"
     },
     "sidebar":{
         "Dashboard": "Dashboard",
