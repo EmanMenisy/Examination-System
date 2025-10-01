@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import {jwtDecode} from "jwt-decode";
+import { IRegisterReq, IRegisterRes } from '../interfaces/iregister';
+import { Router } from '@angular/router';
 import { IRegisterRes , IregisterReq } from '../interfaces/Iregister';
 
 @Injectable({
@@ -8,7 +11,33 @@ import { IRegisterRes , IregisterReq } from '../interfaces/Iregister';
 })
 export class AuthService {
 
-  constructor(private _HttpClient: HttpClient) { }
+ Identity(res: any) {
+
+  if (res.data.accessToken) {
+    localStorage.setItem('accessToken', res.data.accessToken);
+  }
+  if (res.data.refreshToken) {
+    localStorage.setItem('refreshToken', res.data.refreshToken);
+  }
+
+  if (res.data.profile) {
+    localStorage.setItem('First', res.data.profile.first_name);
+    localStorage.setItem('Last', res.data.profile.last_name);
+    localStorage.setItem('Email', res.data.profile.email);
+    localStorage.setItem('Status', res.data.profile.status);
+  }
+
+  const encoded: any = localStorage.getItem('accessToken');
+  if (encoded) {
+    const decoded: any = jwtDecode(encoded);
+    console.log("decoded token:", decoded);
+
+    localStorage.setItem('Role', decoded.role);
+    localStorage.setItem('UserId', decoded.sub);
+  }
+}
+
+  constructor(private _HttpClient: HttpClient , private _router:Router) { }
 
   Register(data: IregisterReq): Observable<IRegisterRes> {
     return this._HttpClient.post<IRegisterRes>('auth/register', data)
@@ -27,6 +56,7 @@ export class AuthService {
   }
 
   LogOut() {
-
-  }
+    localStorage.clear()
+   }
 }
+
