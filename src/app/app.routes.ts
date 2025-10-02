@@ -8,6 +8,8 @@ export const routes: Routes = [
     path: 'dashboard',
     canActivate: [authGuard],
     loadChildren: () =>
-      import('./core/dash-board/dash-board.module').then((m) => m.DashBoardModule)
+      import('./features/dash-board/dash-board.module').then((m) => m.DashBoardModule)
   },
+
+
 ];
