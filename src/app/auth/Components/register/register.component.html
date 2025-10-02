@@ -15,7 +15,7 @@
         <div class="col-md-6">
           <label class="form-label">{{"auth.Your first name"| translate}}</label>
           <p-iconfield class="w-100">
-            <p-inputicon styleClass="pi pi-id-card" />
+            <p-inputicon styleClass="pi pi-id-card"/>
             <input type="text" pInputText placeholder="{{'auth.Placeholder_firstName'|translate}}" class="w-100"
               formControlName="first_name" />
           </p-iconfield>
@@ -43,8 +43,8 @@
       <label class="form-label">{{"auth.Your_role"| translate}}</label>
       <p-iconfield class="w-100 d-flex ">
         <p-inputicon styleClass="pi pi-user"></p-inputicon>
-        <p-select [options]="roles" optionLabel="name" optionValue="value"
-          placeholder="{{'auth.Choose_Role'|translate}}" class="flex-grow-1 bg-transparent px-4" formControlName="role">
+        <p-select [options]="roles" optionLabel="name" optionValue="value" panelStyleClass="custom-dropdown-panel"
+          placeholder="{{'auth.Choose_Role'|translate}}" class="flex-grow-1 bg-transparent" formControlName="role">
           <ng-template let-role pTemplate="item">
             {{ role.name | translate }}
           </ng-template>
@@ -65,7 +65,7 @@
       </p-iconfield>
 
       <!-- footer form -->
-      <div class="d-flex justify-content-between flex-wrap mt-3 form-buttons">
+      <div class="d-flex justify-content-between flex-wrap mt-5 pt-2 form-buttons">
         <p-button [label]="'auth.Sign Up' | translate" icon="pi pi-verified" iconPos="right" styleClass="my-custom-btn"
           type="submit" [disabled]="registerForm.invalid"></p-button>
         <p class="mt-2"> {{"auth.Forget password" |translate}} ?<a routerLink="/ForgetPassword">{{"auth.click"
