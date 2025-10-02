@@ -20,9 +20,9 @@ import { RippleModule } from 'primeng/ripple';
 
 import { TranslateModule } from '@ngx-translate/core';
 
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-
+import { NavbarComponent } from './components/navbar/navbar.component';
+NavbarComponent
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -72,10 +72,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     InputNumberModule,
     AvatarModule,
     RippleModule,
-
     // Translate
     TranslateModule,
-
     // Components
     NavbarComponent,
     SidebarComponent,
