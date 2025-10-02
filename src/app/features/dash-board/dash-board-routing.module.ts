@@ -9,7 +9,8 @@ const routes: Routes = [
     path: '', component: DashBoardComponent, children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      {  path: 'instructor',loadComponent: () => import('./instructor/instructor.module').then(m => m.InstructorModule)}
+      {  path: 'instructor',loadChildren: () => import('./instructor/instructor.module').then(m => m.InstructorModule)},
+      {  path: 'students',loadChildren: () => import('./students/students.module').then(m => m.StudentsModule)}
 
     ]
   }
