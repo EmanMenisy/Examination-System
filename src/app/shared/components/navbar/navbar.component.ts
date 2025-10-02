@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../auth/Services/auth.service';
 import { TranslationService } from '../../../core/services/translation.service';
-
+import { AuthService } from '../../../features/auth/Services/auth.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',

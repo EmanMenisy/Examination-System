@@ -31,7 +31,7 @@ export class SidebarComponent {
       icon: 'pi pi-home fs-3'
     },
     {
-      menuLink: '/test',
+      menuLink: '/dashboard/instructor/listGroup',
       title: 'sidebar.Groups',
       icon: 'pi pi-users fs-3'
     },
@@ -42,6 +42,11 @@ export class SidebarComponent {
     },
     {
       menuLink: '/test',
+      title: 'sidebar.Results',
+      icon: 'pi pi-chart-bar fs-3'
+    },
+    {
+      menuLink: '/dashboard/instructor/listStudent',
       title: 'sidebar.Results',
       icon: 'pi pi-chart-bar fs-3'
     }
