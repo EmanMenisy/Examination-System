@@ -31,7 +31,7 @@ export class SidebarComponent {
       icon: 'pi pi-home fs-3'
     },
     {
-      menuLink: '/test',
+      menuLink: '/dashboard/instructor',
       title: 'sidebar.Groups',
       icon: 'pi pi-users fs-3'
     },
