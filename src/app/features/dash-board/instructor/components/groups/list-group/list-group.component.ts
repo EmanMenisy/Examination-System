@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { InstructorService } from '../../../services/instructor.service';
-import { IGroup } from '../../../interfaces/igroup';
+import { IGroup } from '../../../interfaces/IGroup';
 import { SharedModule } from '../../../../../../shared/shared.module';
 import { PaginatorState } from 'primeng/paginator';
 

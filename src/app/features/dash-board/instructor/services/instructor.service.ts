@@ -2,7 +2,7 @@ import { DeleteGroupComponent } from '../components/groups/delete-group/delete-g
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { IGroupReq, IGroupRes, IGroup, IUpdateGroupRes } from '../interfaces/igroup';
+import { IGroupReq, IGroupRes, IGroup, IUpdateGroupRes } from '../interfaces/IGroup';
 
 @Injectable({
   providedIn: 'root'
