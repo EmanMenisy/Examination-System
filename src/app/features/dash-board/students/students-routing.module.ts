@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ListStudentsComponent } from './components/list-students/list-students.component';
 
-const routes: Routes = [
-  
+const routes: Routes = [  //localhost/dashboard/students
+  { path: '', redirectTo: 'show', pathMatch: 'full' },
+  { path: 'show', component: ListStudentsComponent ,title:'Enrollers List' }
 ];
 
 @NgModule({

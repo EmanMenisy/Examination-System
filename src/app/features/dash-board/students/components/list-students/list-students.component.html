@@ -1,1 +1,45 @@
-<p>list-students works!</p>
+<div class="students-container">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>Students list</h2>
+    <p-button label="Add Student" icon="pi pi-plus" styleClass="p-button-rounded p-button-sm p-button-help">
+    </p-button>
+  </div>
+
+  <!-- Groups Tabs -->
+  <div class="groups">
+    <button pButton label="Group 1" class="group-btn active"></button>
+    <button pButton label="Group 2" class="group-btn"></button>
+    <button pButton label="Group 3" class="group-btn"></button>
+  </div>
+
+  <!-- Students Grid -->
+  <div class="students-grid">
+    <div class="student-card" *ngFor="let student of paginatedStudents; let i = index">
+
+      <!-- Student Info -->
+      <div class="student-info">
+        <img [src]="studentImages[i % studentImages.length]" alt="{{student.first_name}}" class="avatar" />
+        <div class="details">
+          <h3>{{ student.first_name }} {{ student.last_name }}</h3>
+          <p>
+            Class rank: {{ i + 1 }} &nbsp; | &nbsp;
+            Average score: 87%
+          </p>
+        </div>
+      </div>
+
+      <!-- Actions Menu -->
+      <p-menu #menu [popup]="true" [model]="menuItems"></p-menu>
+      <button pButton icon="pi pi-arrow-right" class="arrow-btn" (click)="openMenu($event, menu, student)">
+      </button>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <p-paginator [rows]="rows" [totalRecords]="students.length" [first]="first" (onPageChange)="onPageChange($event)"
+    styleClass="custom-paginator">
+  </p-paginator>
+
+</div>

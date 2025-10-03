@@ -17,12 +17,16 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { MenuModule } from 'primeng/menu';
 import { AvatarModule } from 'primeng/avatar';
 import { RippleModule } from 'primeng/ripple';
+import { TableModule } from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator';
+
 
 import { TranslateModule } from '@ngx-translate/core';
 
+// Components
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-NavbarComponent
+
 @NgModule({
   declarations: [
     NavbarComponent,
@@ -48,6 +52,8 @@ NavbarComponent
     InputNumberModule,
     AvatarModule,
     RippleModule,
+    TableModule,
+    PaginatorModule,   
 
     // Translate
     TranslateModule
@@ -72,8 +78,12 @@ NavbarComponent
     InputNumberModule,
     AvatarModule,
     RippleModule,
+    TableModule,
+    PaginatorModule,   
+
     // Translate
     TranslateModule,
+
     // Components
     NavbarComponent,
     SidebarComponent,

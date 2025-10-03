@@ -47,7 +47,7 @@ export class SidebarComponent {
     },
     {
       menuLink: '/dashboard/instructor/listStudent',
-      title: 'sidebar.Results',
+      title: 'Students',
       icon: 'pi pi-chart-bar fs-3'
     }
   ]
