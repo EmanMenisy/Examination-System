@@ -19,8 +19,13 @@
   "Reset":"إعادة تعيين",
   "Placeholder_otp":"اكتب كلمة المرور المؤقتة",
   "OTP":"كلمة مرور مؤقتة",
-  "header_resetPass":"إعادة تعيين كلمة المرور"
-
+  "header_resetPass":"إعادة تعيين كلمة المرور",
+    "FirstNameRequired": "الاسم الأول مطلوب",
+    "LastNameRequired": "الاسم الأخير مطلوب",
+    "EmailRequired": "البريد الإلكتروني مطلوب",
+    "EmailInvalid": "الرجاء إدخال بريد إلكتروني صحيح مثل example@gmail.com ",
+    "RoleRequired": "الوظيفة مطلوب",
+    "PasswordRequired": "كلمة المرور مطلوبة"
     },
     "sidebar":{
       "Dashboard": "لوحة التحكم",

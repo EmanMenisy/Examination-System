@@ -23,6 +23,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PaginatorModule } from 'primeng/paginator';
+import { Message } from 'primeng/message';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { PaginatorModule } from 'primeng/paginator';
     AvatarModule,
     RippleModule,
     PaginatorModule,
+    Message,
     // Translate
     TranslateModule
   ],
@@ -74,6 +76,7 @@ import { PaginatorModule } from 'primeng/paginator';
     AvatarModule,
     RippleModule,
     PaginatorModule,
+    Message,
     // Translate
     TranslateModule,
     // Components

@@ -15,7 +15,7 @@ export class ListGroupComponent implements OnInit {
   groupList: IGroup[] = []
   paginatedGroups: IGroup[] = [];
   first: number = 0;
-  rows: number = 10;
+  rows: number = 6
 
   constructor(private _instructorService: InstructorService) { }
   ngOnInit(): void {
@@ -35,7 +35,7 @@ export class ListGroupComponent implements OnInit {
 
   onPageChange(event: PaginatorState) {
     this.first = event.first ?? 0;
-    this.rows = event.rows ?? 5;
+    this.rows = event.rows ?? 6;
     this.updatePaginatedGroups();
   }
 

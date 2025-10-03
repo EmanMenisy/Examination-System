@@ -8,6 +8,7 @@ import { ForgetPasswordComponent } from './Components/forget-password/forget-pas
 import { ChangePasswordComponent } from './Components/change-password/change-password.component';
 import { AuthLayoutComponent } from './Components/auth-layout/auth-layout.component';
 import { SharedModule } from '../../shared/shared.module';
+import { MessageComponent } from "../../shared/components/message/message.component";
 
 const routes: Routes = [
   {path:'' , component : AuthLayoutComponent , children:[
@@ -34,6 +35,7 @@ const routes: Routes = [
     CommonModule,
     SharedModule,
     RouterModule.forChild(routes),
+    MessageComponent
 ]
 })
 export class AuthModule { }

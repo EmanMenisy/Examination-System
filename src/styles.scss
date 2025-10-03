@@ -62,7 +62,11 @@
   border-color: transparent !important;
   color: var(--color-black) !important;
 }
-
+.p-paginator-page.p-paginator-page-selected {
+    background-color:var(--color-beige)!important;
+  border-color: transparent !important;
+  color: var(--color-black) !important;
+}
 // select options
 .custom-dropdown-panel {
   background: var(--color-black) !important;
