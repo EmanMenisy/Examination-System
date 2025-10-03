@@ -57,7 +57,6 @@ export class ListStudentsComponent implements OnInit {
     this.paginatedStudents = this.students.slice(this.first, this.first + this.rows);
   }
 
-  // open actions menu
   openMenu(event: Event, menu: any, student: Istudents) {
     this.selectedStudent = student;
 
