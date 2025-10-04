@@ -9,6 +9,7 @@ import { HomeService } from '../../../../core/services/home.service';
   standalone: false
 })
 export class HomeComponent implements OnInit {
+  
 studentList:IStudent[] = []
   constructor(private _HomeService:HomeService) {
   }
