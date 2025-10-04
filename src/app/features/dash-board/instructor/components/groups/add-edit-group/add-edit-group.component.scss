@@ -38,12 +38,12 @@ section {
   font-weight: 500;
 }
 
-.input-label{
+.input-label-en{
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
-  width: fit-content;
+  width: 100px;
   z-index: 9999999;
   border-radius: 5px 0 0 5px;
   background-color: var(--color-beige) !important;
@@ -53,13 +53,34 @@ section {
   font-weight: 500;
 }
 
+.input-label-ar{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  z-index: 9999999;
+  border-radius: 5px 5px 0 0;
+  background-color: var(--color-beige) !important;
+  background-color: red;
+  color: black !important;
+  border-left: 1px solid #d6d6d6;
+  font-size: 14px;
+  font-weight: 500;
+}
+
 .input-wrapper {
   z-index: 99999;
 }
 
-p-multiselect{
+.select-en{
   height: 40px;
   padding-left: 98px;
+}
+
+.select-ar{
+  height: 40px;
+  padding-right: 98px;
 }
 
 :host ::ng-deep .p-dynamic-dialog-mask {

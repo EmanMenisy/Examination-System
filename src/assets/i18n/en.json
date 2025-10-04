@@ -48,5 +48,11 @@
     "newQuiz": "New quiz",
     "settings":"Profile Settings",
     "existing":"Log Out"
+  },
+  "add-edit":{
+    "Set up a new Group": "Set up a new Group",
+    "Update Your Group": "Update Your Group",
+    "Group Name":"Group Name",
+    "Select Student":"Select Student"
   }
 }

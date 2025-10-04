@@ -22,8 +22,11 @@
                   <h6>No. of student’s enrolled: 32</h6>
                   <a class="d-flex align-items-center"
                     ><span>Open</span
-                    ><span class="footer-icon mx-1 d-flex align-items-center"
+                      ><span *ngIf="currentLang == 'en'" class="footer-icon mx-1 d-flex align-items-center"
                       ><i class="pi left pi-arrow-circle-right"></i></span
+                  >
+                  <span *ngIf="currentLang == 'ar'" class="footer-icon mx-1 d-flex align-items-center"
+                      ><i class="pi left pi-arrow-circle-left"></i></span
                   ></a>
                 </div>
               </div>
@@ -44,8 +47,11 @@
                   <h6>No. of student’s enrolled: 32</h6>
                   <a class="d-flex align-items-center"
                     ><span>Open</span
-                    ><span class="footer-icon mx-1 d-flex align-items-center"
+                     ><span *ngIf="currentLang == 'en'" class="footer-icon mx-1 d-flex align-items-center"
                       ><i class="pi left pi-arrow-circle-right"></i></span
+                  >
+                  <span *ngIf="currentLang == 'ar'" class="footer-icon mx-1 d-flex align-items-center"
+                      ><i class="pi left pi-arrow-circle-left"></i></span
                   ></a>
                 </div>
               </div>
@@ -66,9 +72,13 @@
                   <h6>No. of student’s enrolled: 32</h6>
                   <a class="d-flex align-items-center"
                     ><span>Open</span
-                    ><span class="footer-icon mx-1 d-flex align-items-center"
+                  ><span *ngIf="currentLang == 'en'" class="footer-icon mx-1 d-flex align-items-center"
                       ><i class="pi left pi-arrow-circle-right"></i></span
-                  ></a>
+                  >
+                  <span *ngIf="currentLang == 'ar'" class="footer-icon mx-1 d-flex align-items-center"
+                      ><i class="pi left pi-arrow-circle-left"></i></span
+                  >
+                </a>
                 </div>
               </div>
             </div>
@@ -128,7 +138,12 @@
                 <h6><span>Class rank: {{ i + 1}}</span> | <span>Average score: 87%</span></h6>
               </div>
               <div>
-                <a><i class="pi left pi-arrow-circle-right"></i></a>
+                <a><span *ngIf="currentLang == 'en'" class="footer-icon mx-1 d-flex align-items-center"
+                      ><i class="pi left pi-arrow-circle-right"></i></span
+                  >
+                  <span *ngIf="currentLang == 'ar'" class="footer-icon mx-1 d-flex align-items-center"
+                      ><i class="pi left pi-arrow-circle-left"></i></span
+                  ></a>
               </div>
                </div>
             </div>

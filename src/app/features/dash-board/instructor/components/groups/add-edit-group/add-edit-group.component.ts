@@ -10,6 +10,7 @@ import {
 import { IStudent } from '../../../../Interfaces/home';
 import { ToastrService } from 'ngx-toastr';
 import { DynamicDialogConfig, DynamicDialogModule, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-add-edit-group',
@@ -23,14 +24,21 @@ export class AddEditGroupComponent implements OnInit {
   selectedCities: any;
   selectedIds:string[]=[];
   data:any;
+  currentLang = 'en'
   constructor(
     private _InstructorService: InstructorService,
     private _ToastrService: ToastrService,
     private ref: DynamicDialogRef,
-    private config: DynamicDialogConfig 
+    private config: DynamicDialogConfig ,
+    private _TranslateService:TranslateService
   ) {}
   ngOnInit(): void {
-    
+    this.currentLang = this._TranslateService.currentLang ?? this._TranslateService.getDefaultLang() ?? 'en';
+    this._TranslateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      console.log('Language changed to:', event.lang);
+      this.currentLang = event.lang;
+    });
+
     this.getAllStudents();
     this.updatedData();
   }

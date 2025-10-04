@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
 // PrimeNG
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
@@ -23,10 +22,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { Message } from 'primeng/message';
-import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
@@ -100,6 +97,6 @@ import { MultiSelectModule } from 'primeng/multiselect';
     NavbarComponent,
     SidebarComponent,
   ],
-  providers: [DialogService]
+
 })
 export class SharedModule { }
