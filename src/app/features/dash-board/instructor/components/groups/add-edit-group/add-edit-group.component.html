@@ -1,36 +1,43 @@
 <section>
   <div class="d-flex justify-content-between dialouge-title">
     <div class="w-75 px-4 title">
-        <p class="mb-0">Set up a new Group</p><p class="mb-0">Set up a new Group</p>
+      <p class="mb-0" *ngIf="data">{{"add-edit.Update Your Group"| translate}}</p>
+      <p class="mb-0" *ngIf="!data">{{"add-edit.Set up a new Group"|translate}}</p>
     </div>
     <div class="header-buttton px-3">
-      <button (click)="AddNewGroup()"><i class="pi pi-check" style="color: black"></i></button>
+      <button (click)="AddNewGroup()">
+        <i class="pi pi-check" style="color: black"></i>
+      </button>
     </div>
     <div class="header-buttton px-3">
-      <button (click)="close()"><i class="pi pi-times" style="color: black"></i></button>
+      <button (click)="close()">
+        <i class="pi pi-times" style="color: black"></i>
+      </button>
     </div>
   </div>
   <div class="py-3 input-wrapper mt-2">
     <form [formGroup]="addGroupForm">
       <p-inputgroup class="my-4">
-        <p-inputgroup-addon class="inputlabel">Group Name</p-inputgroup-addon>
-        <input
-          pInputText
-          id="on_label"
-          formControlName="name"
-        />
+        <p-inputgroup-addon class="inputlabel">{{"add-edit.Group Name" |translate}}</p-inputgroup-addon>
+        <input pInputText id="on_label" formControlName="name" />
       </p-inputgroup>
-        <div class="card flex justify-center w-100 ">
-          <p-multiselect
-            formControlName="students"
-            [options]="StudentsList"
-            optionLabel="first_name"
-            optionValue="_id"
-            display="chip"
-            class="w-100 position-relative"
-          />
-        <p class="input-label px-1 d-flex align-items-center">Select Student</p>
-        </div>
+      <div class="card flex justify-center w-100">
+        <p-multiselect
+          formControlName="students"
+          [options]="StudentsList"
+          optionLabel="first_name"
+          optionValue="_id"
+          display="chip"
+          class="w-100 position-relative"
+          [ngClass]="currentLang === 'en' ? 'select-en' : 'select-ar'"
+        />
+        <p
+          class="input-label px-1 d-flex align-items-center justify-content-center"
+          [ngClass]="currentLang === 'en' ? 'input-label-en' : 'input-label-ar'"
+        >
+          {{"add-edit.Select Student"|translate}}
+        </p>
+      </div>
     </form>
   </div>
 </section>

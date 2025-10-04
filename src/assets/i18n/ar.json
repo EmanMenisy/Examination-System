@@ -49,5 +49,11 @@
     "newQuiz": "فحص جديد",
     "settings":"اعدادات الحساب",
     "existing":"تسجيل الخروج "
-  }
+  },
+  "add-edit": {
+  "Set up a new Group": "إنشاء مجموعة جديدة",
+  "Update Your Group": "تحديث مجموعتك",
+  "Group Name": "اسم المجموعة",
+  "Select Student": "اختر الطلاب"
+}
 }
