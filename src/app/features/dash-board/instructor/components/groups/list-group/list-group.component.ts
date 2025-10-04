@@ -61,7 +61,7 @@ export class ListGroupComponent implements OnInit {
       next:(res)=>{
         console.log(res)
       },complete:()=> {
-        this.getAll()
+        this.getAllGroups()
       },
     })
   }
