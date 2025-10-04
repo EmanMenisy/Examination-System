@@ -14,14 +14,17 @@ export class StudentsService {
     return this.http.get<Istudents[]>('student')
   }
 
-  
   GetterWithout():Observable<Istudents[]>{ // not linked to specific group
     return this.http.get<Istudents[]>('student/without-group')
   }
 
-  Top_5():Observable<any>{ //Elite
+  Top_5():Observable<any>{ //Elite five
     return this.http.get('student/top-five')
   }
+
+  DeleteStudent(_id: string):Observable<Istudents[]>{
+  return this.http.delete<Istudents[]>(`student/${_id}`);
+}
 
 
 }

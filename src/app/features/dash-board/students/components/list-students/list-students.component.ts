@@ -1,36 +1,48 @@
-import { Istudents } from './../../Interfaces/istudents';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StudentsService } from '../../Services/students.service';
-import { SharedModule } from '../../../../../shared/shared.module';
 import { MenuItem } from 'primeng/api';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { DeleteStudentsComponent } from '../delete-students/delete-students.component';
+import { Istudents } from '../../Interfaces/istudents';
+import { SharedModule } from '../../../../../shared/shared.module';
 
 @Component({
   selector: 'app-list-students',
+  standalone: true,
   imports: [SharedModule],
   templateUrl: './list-students.component.html',
-  styleUrls: ['./list-students.component.scss']
+  styleUrls: ['./list-students.component.scss'],
+  providers: [DialogService]
 })
-export class ListStudentsComponent implements OnInit {
-  students: Istudents[] = [];            // all data
-  paginatedStudents: Istudents[] = [];   // data for current page
+export class ListStudentsComponent implements OnInit, OnDestroy {
 
+  students: Istudents[] = [];
+  paginatedStudents: Istudents[] = [];
   studentImages: string[] = [
     '/images/user img (1).png',
     '/images/user img.png'
   ];
 
-  loading: boolean = true;
-  rows: number = 8;       // students per page
-  first: number = 0;      // paginator offset
+  loading = true;
+  rows = 8;
+  first = 0;
 
-  // menu state
   menuItems: MenuItem[] = [];
   selectedStudent!: Istudents;
+  ref?: DynamicDialogRef;
 
-  constructor(private myService: StudentsService) {}
+  constructor(
+    private studentService: StudentsService,
+    private dialogService: DialogService
+  ) {}
 
-  Fetcher() {
-    this.myService.GetterWithout().subscribe({
+  ngOnInit(): void {
+    this.fetchStudents();
+  }
+
+  fetchStudents() {
+    this.loading = true;
+    this.studentService.GetterWithout().subscribe({
       next: (res) => {
         this.students = res;
         this.updatePaginatedStudents();
@@ -41,10 +53,6 @@ export class ListStudentsComponent implements OnInit {
         this.loading = false;
       }
     });
-  }
-
-  ngOnInit(): void {
-    this.Fetcher();
   }
 
   onPageChange(event: any) {
@@ -69,7 +77,7 @@ export class ListStudentsComponent implements OnInit {
       {
         label: 'Delete',
         icon: 'pi pi-trash',
-        command: () => this.onDelete(this.selectedStudent)
+        command: () => this.openDeleteDialog(this.selectedStudent._id)
       }
     ];
 
@@ -78,9 +86,26 @@ export class ListStudentsComponent implements OnInit {
 
   onEdit(student: Istudents) {
     console.log('Edit student:', student);
-    }
+  }
+openDeleteDialog(id: string) {
+  this.ref = this.dialogService.open(DeleteStudentsComponent, {
+    header: 'Confirm Delete',
+    width: '350px',
+    closable: true,
+    modal: true,
+    dismissableMask: true,
+    data: { id }
+  });
 
-  onDelete(student: Istudents) {
-    console.log('Delete student:', student);
-     }
+  this.ref.onClose.subscribe((confirmed: boolean) => {
+    if (confirmed) {
+      this.fetchStudents();
+    }
+  });
+}
+  ngOnDestroy() {
+    if (this.ref) {
+      this.ref.close();
+    }
+  }
 }
