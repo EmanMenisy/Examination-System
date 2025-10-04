@@ -19,6 +19,7 @@
             <input type="text" pInputText placeholder="{{'auth.Placeholder_firstName'|translate}}" class="w-100"
               formControlName="first_name" />
           </p-iconfield>
+          <app-message error="required" [control]="registerForm.get('first_name')" text="{{'auth.FirstNameRequired'|translate}}" size="small"></app-message>
         </div>
         <!-- last name -->
         <div class="col-md-6">
@@ -28,6 +29,7 @@
             <input type="text" pInputText placeholder="{{'auth.Placeholder_lastName'|translate}}" class="w-100"
               formControlName="last_name" />
           </p-iconfield>
+          <app-message error="required" [control]="registerForm.get('last_name')" text="{{'auth.LastNameRequired'|translate}}" size="small"></app-message>
         </div>
       </div>
       <!-- email -->
@@ -37,8 +39,8 @@
         <input type="email" pInputText placeholder="{{'auth.Placeholder_email'|translate}}" class="w-100"
           formControlName="email" />
       </p-iconfield>
-
-
+          <app-message error="required" [control]="registerForm.get('email')" text="{{'auth.EmailRequired'|translate}}" size="small"></app-message>
+          <app-message error="email" [control]="registerForm.get('email')" text="{{'auth.EmailInvalid'|translate}}" size="small"></app-message>
       <!-- roles -->
       <label class="form-label">{{"auth.Your_role"| translate}}</label>
       <p-iconfield class="w-100 d-flex ">
@@ -52,9 +54,8 @@
             {{ role.value | translate }}
           </ng-template>
         </p-select>
-
       </p-iconfield>
-
+      <app-message error="required" [control]="registerForm.get('role')" text="{{'auth.RoleRequired'|translate}}" size="small"></app-message>
       <!-- password -->
       <label class="form-label">{{"auth.Enter_Password"| translate}}</label>
       <p-iconfield class="w-100">
@@ -63,7 +64,7 @@
           placeholder="{{'auth.Placeholder_password'|translate}}">
         </p-password>
       </p-iconfield>
-
+      <app-message error="required" [control]="registerForm.get('password')" text="{{'auth.PasswordRequired'|translate}}" size="small"></app-message>
       <!-- footer form -->
       <div class="d-flex justify-content-between flex-wrap mt-5 pt-2 form-buttons">
         <p-button [label]="'auth.Sign Up' | translate" icon="pi pi-verified" iconPos="right" styleClass="my-custom-btn"

@@ -19,7 +19,13 @@
         "Reset":"Reset",
         "Placeholder_otp":"Enter your otp",
         "OTP":"OTP",
-        "header_resetPass":"Reset password"
+        "header_resetPass":"Reset password",
+        "FirstNameRequired": "First name is required",
+        "LastNameRequired": "Last name is required",
+        "EmailRequired": "Email is required",
+        "EmailInvalid": "Please enter email like example@gmail.com",
+        "RoleRequired": "Role is required",
+        "PasswordRequired": "Password is required"
     },
     "sidebar":{
         "Dashboard": "Dashboard",

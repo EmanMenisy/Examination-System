@@ -17,6 +17,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { MenuModule } from 'primeng/menu';
 import { AvatarModule } from 'primeng/avatar';
 import { RippleModule } from 'primeng/ripple';
+import { DialogModule } from 'primeng/dialog';
 import { TableModule } from 'primeng/table';
 import { TranslateModule } from '@ngx-translate/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -24,6 +25,8 @@ import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PaginatorModule } from 'primeng/paginator';
+import { Message } from 'primeng/message';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
@@ -51,8 +54,10 @@ import { MultiSelectModule } from 'primeng/multiselect';
     InputNumberModule,
     AvatarModule,
     RippleModule,
+    PaginatorModule,
+    Message,
+    DialogModule,
     TableModule,
-    PaginatorModule,   
     DynamicDialogModule,
     MultiSelectModule ,
     // Translate
@@ -81,6 +86,9 @@ import { MultiSelectModule } from 'primeng/multiselect';
     InputNumberModule,
     AvatarModule,
     RippleModule,
+    Message,
+    DialogModule,
+    DynamicDialogModule,
     TableModule,
     PaginatorModule,   
     DynamicDialogModule,
@@ -92,5 +100,6 @@ import { MultiSelectModule } from 'primeng/multiselect';
     NavbarComponent,
     SidebarComponent,
   ],
+  providers: [DialogService]
 })
 export class SharedModule { }

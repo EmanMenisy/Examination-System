@@ -4,6 +4,7 @@ import { IGroup } from '../../../interfaces/IGroup';
 import { SharedModule } from '../../../../../../shared/shared.module';
 import { PaginatorState } from 'primeng/paginator';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { DeleteGroupComponent } from '../delete-group/delete-group.component';
 import { AddEditGroupComponent } from '../add-edit-group/add-edit-group.component';
 
 @Component({
@@ -18,16 +19,16 @@ export class ListGroupComponent implements OnInit {
   groupList: IGroup[] = [];
   paginatedGroups: IGroup[] = [];
   first: number = 0;
-  rows: number = 10;
+  rows: number = 6;
   ref: DynamicDialogRef | undefined;
+  constructor(private _instructorService: InstructorService, private dialogService: DialogService) { }
 
-  constructor(
-    private _instructorService: InstructorService,
-    public dialogService: DialogService
-  ) {}
+
+
   ngOnInit(): void {
     this.getAllGroups();
   }
+
   getAllGroups() {
     this._instructorService.getAll().subscribe({
       next: (res: any) => {
@@ -39,7 +40,31 @@ export class ListGroupComponent implements OnInit {
 
   }
 
-  //open dialoge
+  // open dialog delete
+  open(id:string) {
+    this.ref = this.dialogService.open(DeleteGroupComponent, {
+      header: 'Delete Group',
+      width: '300px',
+      closable: true
+    });
+
+    this.ref.onClose.subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        console.log("Group deleted!");
+        this.deleteGroup(id);
+      }
+    });
+  }
+
+  deleteGroup(id:string) {
+    this._instructorService.DeleteGroup(id).subscribe({
+      next:(res)=>{
+        console.log(res)
+      },complete:()=> {
+        this.getAll()
+      },
+    })
+  }
   show() {
     this.ref = this.dialogService.open(AddEditGroupComponent, {
       width: '40rem',
@@ -57,9 +82,10 @@ export class ListGroupComponent implements OnInit {
     });
   }
 
+  // pagination
   onPageChange(event: PaginatorState) {
     this.first = event.first ?? 0;
-    this.rows = event.rows ?? 5;
+    this.rows = event.rows ?? 6;
     this.updatePaginatedGroups();
   }
 
