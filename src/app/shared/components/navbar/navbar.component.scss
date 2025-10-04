@@ -1,14 +1,13 @@
-$app-height: 80px;
+$app-height: 87px;
 $app-gap: 24px;
 
 .app-navbar {
   height: $app-height;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 2px solid #e6e6e6;
   display: flex;
   align-items: center;
   background: #ffffff;
   margin-bottom: 10px;
-
   .nav-inner {
     width: 100%;
     max-width: 1291.52px;

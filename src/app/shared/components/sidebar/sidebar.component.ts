@@ -35,6 +35,11 @@ export class SidebarComponent {
       title: 'sidebar.Groups',
       icon: 'pi pi-users fs-3'
     },
+        {
+      menuLink: '/dashboard/instructor/listStudent',
+      title: 'sidebar.Students',
+      icon: 'pi pi-chart-bar fs-3'
+    },
     {
       menuLink: '/test',
       title: 'sidebar.Quizzes',
@@ -45,10 +50,12 @@ export class SidebarComponent {
       title: 'sidebar.Results',
       icon: 'pi pi-chart-bar fs-3'
     },
+
     {
       menuLink: '/dashboard/instructor/listStudent',
       title: 'Students',
       icon: 'pi pi-chart-bar fs-3'
     }
+
   ]
 }

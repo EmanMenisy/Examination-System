@@ -20,6 +20,9 @@
   }
 
   & ul li {
+    &.help{
+      border-top: 2px solid #00000033; ;
+    }
     padding-block: 24px;
 
     &:not(:last-child) {

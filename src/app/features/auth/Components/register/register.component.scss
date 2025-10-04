@@ -1,6 +1,8 @@
-.regForm{
+
+.regForm {
   width: 75%;
 }
+
 .login-buttons a {
   background-color: var(--dark-gray);
   width: 150px;
@@ -58,7 +60,9 @@
   i {
     color: var(--color-white);
   }
+
 }
+
 
 ::ng-deep .p-password {
   width: 100% !important;
@@ -70,7 +74,7 @@
 }
 
 ::ng-deep .p-select-label.p-placeholder,
-::ng-deep .p-select-label{
+::ng-deep .p-select-label {
   color: var(--color-white) !important;
+  margin-inline-start: 20px !important;
 }
-

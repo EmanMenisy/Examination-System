@@ -18,14 +18,13 @@ import { MenuModule } from 'primeng/menu';
 import { AvatarModule } from 'primeng/avatar';
 import { RippleModule } from 'primeng/ripple';
 import { TableModule } from 'primeng/table';
-import { PaginatorModule } from 'primeng/paginator';
-
-
 import { TranslateModule } from '@ngx-translate/core';
-
-// Components
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PaginatorModule } from 'primeng/paginator';
+import { MultiSelectModule } from 'primeng/multiselect';
 
 @NgModule({
   declarations: [
@@ -54,9 +53,13 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RippleModule,
     TableModule,
     PaginatorModule,   
-
+    DynamicDialogModule,
+    MultiSelectModule ,
     // Translate
     TranslateModule
+  ],
+  providers:[
+    DialogService
   ],
   exports: [
     CommonModule,
@@ -80,7 +83,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     RippleModule,
     TableModule,
     PaginatorModule,   
-
+    DynamicDialogModule,
+    MultiSelectModule ,
     // Translate
     TranslateModule,
 

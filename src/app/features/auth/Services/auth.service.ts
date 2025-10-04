@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import {jwtDecode} from "jwt-decode";
-import { IRegisterReq, IRegisterRes } from '../interfaces/IRegister';
+import { IRegisterReq, IRegisterRes, IRestPassReq, IRestPassRes } from '../interfaces/IRegister';
 
 @Injectable({
   providedIn: 'root'
@@ -47,8 +47,8 @@ export class AuthService {
   changePassword(data: any): Observable<any> {
     return this._HttpClient.post('auth/change-password', data)
   }
-  resetPassword(data: any): Observable<any> {
-    return this._HttpClient.post('auth/reset-password', data)
+  resetPassword(data: IRestPassReq): Observable<IRestPassRes> {
+    return this._HttpClient.post<IRestPassRes>('auth/reset-password', data)
   }
   forgetPassword(data: any): Observable<any> {
     return this._HttpClient.post('auth/forgot-password', data)
