@@ -3,6 +3,8 @@ import { InstructorService } from '../../../services/instructor.service';
 import { IGroup } from '../../../interfaces/IGroup';
 import { SharedModule } from '../../../../../../shared/shared.module';
 import { PaginatorState } from 'primeng/paginator';
+import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { DeleteGroupComponent } from '../delete-group/delete-group.component';
 
 @Component({
   selector: 'app-list-group',
@@ -16,23 +18,53 @@ export class ListGroupComponent implements OnInit {
   paginatedGroups: IGroup[] = [];
   first: number = 0;
   rows: number = 6
+  ref: DynamicDialogRef | undefined;
 
-  constructor(private _instructorService: InstructorService) { }
+  constructor(private _instructorService: InstructorService, private dialogService: DialogService) { }
+
+
   ngOnInit(): void {
     this.getAll()
   }
+
   getAll() {
     this._instructorService.getAll().subscribe({
       next: (res: any) => {
         this.groupList = res
         console.log(this.groupList)
-            this.updatePaginatedGroups();
+        this.updatePaginatedGroups();
       }
     })
   }
 
 
+  // open dialog delete
+  open(id:string) {
+    this.ref = this.dialogService.open(DeleteGroupComponent, {
+      header: 'Delete Group',
+      width: '300px',
+      closable: true
+    });
 
+    this.ref.onClose.subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        console.log("Group deleted!");
+        this.deleteGroup(id);
+      }
+    });
+  }
+
+  deleteGroup(id:string) {
+    this._instructorService.DeleteGroup(id).subscribe({
+      next:(res)=>{
+        console.log(res)
+      },complete:()=> {
+        this.getAll()
+      },
+    })
+  }
+
+  // pagination
   onPageChange(event: PaginatorState) {
     this.first = event.first ?? 0;
     this.rows = event.rows ?? 6;

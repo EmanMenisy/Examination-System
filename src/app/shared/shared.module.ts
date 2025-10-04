@@ -17,13 +17,14 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { MenuModule } from 'primeng/menu';
 import { AvatarModule } from 'primeng/avatar';
 import { RippleModule } from 'primeng/ripple';
-
+import { DialogModule } from 'primeng/dialog';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { Message } from 'primeng/message';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,8 @@ import { Message } from 'primeng/message';
     RippleModule,
     PaginatorModule,
     Message,
+    DialogModule,
+    DynamicDialogModule,
     // Translate
     TranslateModule
   ],
@@ -77,11 +80,14 @@ import { Message } from 'primeng/message';
     RippleModule,
     PaginatorModule,
     Message,
+    DialogModule,
+    DynamicDialogModule,
     // Translate
     TranslateModule,
     // Components
     NavbarComponent,
     SidebarComponent,
   ],
+  providers: [DialogService]
 })
 export class SharedModule { }
