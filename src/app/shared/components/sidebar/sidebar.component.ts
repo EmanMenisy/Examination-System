@@ -50,5 +50,12 @@ export class SidebarComponent {
       title: 'sidebar.Results',
       icon: 'pi pi-chart-bar fs-3'
     },
+
+    {
+      menuLink: '/dashboard/instructor/listStudent',
+      title: 'Students',
+      icon: 'pi pi-chart-bar fs-3'
+    }
+
   ]
 }

@@ -17,8 +17,10 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { MenuModule } from 'primeng/menu';
 import { AvatarModule } from 'primeng/avatar';
 import { RippleModule } from 'primeng/ripple';
-import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
+import { TableModule } from 'primeng/table';
 import { TranslateModule } from '@ngx-translate/core';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PaginatorModule } from 'primeng/paginator';
@@ -49,7 +51,8 @@ import { MultiSelectModule } from 'primeng/multiselect';
     InputNumberModule,
     AvatarModule,
     RippleModule,
-    PaginatorModule,
+    TableModule,
+    PaginatorModule,   
     DynamicDialogModule,
     MultiSelectModule ,
     // Translate
@@ -78,11 +81,13 @@ import { MultiSelectModule } from 'primeng/multiselect';
     InputNumberModule,
     AvatarModule,
     RippleModule,
-    PaginatorModule,
+    TableModule,
+    PaginatorModule,   
     DynamicDialogModule,
     MultiSelectModule ,
     // Translate
     TranslateModule,
+
     // Components
     NavbarComponent,
     SidebarComponent,

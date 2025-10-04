@@ -1,0 +1,146 @@
+.students-container {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+
+ .header {
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  margin-bottom: 1rem;
+
+  h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 0;
+    color: #111;
+  }
+
+ ::ng-deep .p-button.p-button-help {
+    background: transparent !important;
+    border: 1px solid #ccc !important;
+    border-radius: 25px !important;  
+    color: #111 !important;
+    font-size: 0.85rem !important;
+    padding: 0.4rem 1rem !important;
+    box-shadow: none !important;
+  }
+}
+
+  .groups {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+
+    .group-btn {
+      border-radius: 25px !important;
+      padding: 0.5rem 1.5rem !important;
+      font-weight: 500;
+      background: transparent;
+      border: 1px solid #ccc;
+      color: #333;
+
+      &.active {
+        background: #111 !important;
+        color: #fff !important;
+        border: none !important;
+      }
+    }
+  }
+
+  .students-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .student-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+
+    .student-info {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1;
+    }
+
+    .avatar {
+      width: 55px;
+      height: 55px;
+      border-radius: 8px; 
+      object-fit: cover;
+    }
+
+    .details {
+      h3 {
+        margin: 0 0 0.3rem 0;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #111;
+      }
+
+      p {
+        margin: 0;
+        font-size: 0.85rem;
+        color: #555;
+      }
+    }
+
+    .arrow-btn {
+      border: none !important;
+      background: none !important;
+      color: #111 !important;
+      font-size: 1rem;
+    }
+  }
+
+  .custom-paginator {
+  border: none !important;
+  background: transparent !important;
+  margin-top: 2.5rem;
+  text-align: center;
+
+  ::ng-deep .p-paginator {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    justify-content: center !important;
+    padding: 0 !important;
+  }
+
+  ::ng-deep .p-paginator .p-paginator-page,
+  ::ng-deep .p-paginator .p-paginator-next,
+  ::ng-deep .p-paginator .p-paginator-prev {
+    border: none !important;
+    background: transparent !important;
+    color: #111 !important;
+    margin: 0 0.25rem;
+    font-size: 0.9rem;
+    min-width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    transition: all 0.2s;
+  }
+
+  ::ng-deep .p-paginator .p-paginator-page.p-highlight {
+    background: #111 !important;
+    color: #fff !important;
+    border-radius: 50%;
+  }
+}
+
+
+  @media (max-width: 768px) {
+    .students-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
