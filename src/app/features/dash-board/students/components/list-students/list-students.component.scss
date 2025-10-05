@@ -4,29 +4,29 @@
   border-radius: 10px;
   border: 1px solid #e0e0e0;
 
- .header {
-  display: flex; 
-  justify-content: space-between; 
-  align-items: center;
-  margin-bottom: 1rem;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
 
-  h2 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 0;
-    color: #111;
-  }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin: 0;
+      color: #111;
+    }
 
- ::ng-deep .p-button.p-button-help {
-    background: transparent !important;
-    border: 1px solid #ccc !important;
-    border-radius: 25px !important;  
-    color: #111 !important;
-    font-size: 0.85rem !important;
-    padding: 0.4rem 1rem !important;
-    box-shadow: none !important;
+    ::ng-deep .p-button.p-button-help {
+      background: transparent !important;
+      border: 1px solid #ccc !important;
+      border-radius: 25px !important;
+      color: #111 !important;
+      font-size: 0.85rem !important;
+      padding: 0.4rem 1rem !important;
+      box-shadow: none !important;
+    }
   }
-}
 
   .groups {
     display: flex;
@@ -75,7 +75,7 @@
     .avatar {
       width: 55px;
       height: 55px;
-      border-radius: 8px; 
+      border-radius: 8px;
       object-fit: cover;
     }
 
@@ -103,40 +103,39 @@
   }
 
   .custom-paginator {
-  border: none !important;
-  background: transparent !important;
-  margin-top: 2.5rem;
-  text-align: center;
-
-  ::ng-deep .p-paginator {
     border: none !important;
     background: transparent !important;
-    box-shadow: none !important;
-    justify-content: center !important;
-    padding: 0 !important;
-  }
+    margin-top: 2.5rem;
+    text-align: center;
 
-  ::ng-deep .p-paginator .p-paginator-page,
-  ::ng-deep .p-paginator .p-paginator-next,
-  ::ng-deep .p-paginator .p-paginator-prev {
-    border: none !important;
-    background: transparent !important;
-    color: #111 !important;
-    margin: 0 0.25rem;
-    font-size: 0.9rem;
-    min-width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    transition: all 0.2s;
-  }
+    ::ng-deep .p-paginator {
+      border: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      justify-content: center !important;
+      padding: 0 !important;
+    }
 
-  ::ng-deep .p-paginator .p-paginator-page.p-highlight {
-    background: #111 !important;
-    color: #fff !important;
-    border-radius: 50%;
-  }
-}
+    ::ng-deep .p-paginator .p-paginator-page,
+    ::ng-deep .p-paginator .p-paginator-next,
+    ::ng-deep .p-paginator .p-paginator-prev {
+      border: none !important;
+      background: transparent !important;
+      color: #111 !important;
+      margin: 0 0.25rem;
+      font-size: 0.9rem;
+      min-width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      transition: all 0.2s;
+    }
 
+    ::ng-deep .p-paginator .p-paginator-page.p-highlight {
+      background: #111 !important;
+      color: #fff !important;
+      border-radius: 50%;
+    }
+  }
 
   @media (max-width: 768px) {
     .students-grid {
