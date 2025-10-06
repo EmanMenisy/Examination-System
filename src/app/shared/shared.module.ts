@@ -25,6 +25,8 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { SelectModule } from 'primeng/select';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { MessageModule } from 'primeng/message';
+import { DropdownModule } from 'primeng/dropdown';
+
 
 // 🌍 Translation
 import { TranslateModule } from '@ngx-translate/core';
@@ -50,6 +52,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     DynamicDialogModule,
     ConfirmDialogModule,
     InputTextModule,
+    DropdownModule,
     PasswordModule,
     MenuModule,
     AvatarModule,
@@ -83,6 +86,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ConfirmDialogModule,
     InputTextModule,
     PasswordModule,
+    DropdownModule,
     MenuModule,
     AvatarModule,
     RippleModule,

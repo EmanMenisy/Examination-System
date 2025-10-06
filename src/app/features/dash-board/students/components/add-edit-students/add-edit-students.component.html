@@ -1,1 +1,38 @@
-<p>add-edit-students works!</p>
+<div class="add-edit-modal">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="modal-header">
+      <h2>{{ action === 'add' ? 'Add Student' : 'Edit Student' }}</h2>
+      <div class="header-buttons">
+        <button type="submit" class="icon-btn save">
+          ✔
+        </button>
+        <button type="button" class="icon-btn close" (click)="closeDialog()">
+          ✖
+        </button>
+      </div>
+    </div>
+
+    <div class="modal-body">
+      <div class="form-field">
+        <input
+          type="text"
+          placeholder="Name"
+          formControlName="name" />
+      </div>
+
+      <div class="form-field">
+        <input
+          type="text"
+          placeholder="phone"
+          formControlName="email" />
+      </div>
+
+      <div class="form-field">
+        <select formControlName="group">
+          <option value="" disabled>Select Group</option>
+          <option *ngFor="let g of groups" [value]="g._id">{{ g.name }}</option>
+        </select>
+      </div>
+    </div>
+  </form>
+</div>
