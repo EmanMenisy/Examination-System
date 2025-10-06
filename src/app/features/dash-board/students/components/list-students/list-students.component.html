@@ -3,11 +3,12 @@
   <div class="header">
     <h2>Students list</h2>
     <p-button
-      label="Add Student"
-      icon="pi pi-plus"
-      styleClass="p-button-rounded p-button-sm p-button-help">
-    </p-button>
-  </div>
+  label="Add Student"
+  icon="pi pi-plus"
+  styleClass="p-button-rounded p-button-sm p-button-help"
+  (onClick)="showDialog('add')">
+</p-button>
+</div>
 
   <div class="groups">
     <button pButton label="Group 1" class="group-btn active"></button>
