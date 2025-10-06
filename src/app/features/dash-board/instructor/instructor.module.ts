@@ -9,8 +9,8 @@ export const routes: Routes = [
    {path: '' , component: InstructorComponent, children:[
    {path : 'listGroup' ,  component : ListGroupComponent },
    {path : 'listStudent' ,  component : ListStudentsComponent },
-   ]  
-  }
+   {path:'quiz' ,loadChildren: () => import('./quiz/quiz.module').then(m => m.QuizModule)}
+  ]} 
 ];
 
 @NgModule({

@@ -25,6 +25,9 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { PaginatorModule } from 'primeng/paginator';
 import { Message } from 'primeng/message';
 import { MultiSelectModule } from 'primeng/multiselect';
+import { TextareaModule } from 'primeng/textarea';
+import { DatePickerModule } from 'primeng/datepicker';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,10 @@ import { MultiSelectModule } from 'primeng/multiselect';
     TableModule,
     DynamicDialogModule,
     MultiSelectModule ,
+    TextareaModule,
+    DatePickerModule,
+    BreadcrumbModule,
+    
     // Translate
     TranslateModule
   ],
@@ -90,6 +97,9 @@ import { MultiSelectModule } from 'primeng/multiselect';
     PaginatorModule,   
     DynamicDialogModule,
     MultiSelectModule ,
+    TextareaModule,
+    DatePickerModule,
+    BreadcrumbModule,
     // Translate
     TranslateModule,
 
