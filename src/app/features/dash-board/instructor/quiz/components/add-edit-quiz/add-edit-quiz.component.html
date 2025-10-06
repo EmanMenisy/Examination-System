@@ -1,0 +1,154 @@
+<section>
+  <div class="d-flex justify-content-between dialouge-title">
+    <div class="w-75 px-4 title">
+      <!-- <p class="mb-0">{{"Update Your quiz"}}</p> -->
+      <p class="mb-0">{{ "Set up a new quiz" }}</p>
+    </div>
+    <div class="header-buttton px-3">
+      <button (click)="AddNewQuiz()">
+        <i class="pi pi-check" style="color: black"></i>
+      </button>
+    </div>
+    <div class="header-buttton px-3">
+      <button (click)="close()">
+        <i class="pi pi-times" style="color: black"></i>
+      </button>
+    </div>
+  </div>
+  <div class="py-3 input-wrapper mt-2">
+    <form [formGroup]="addQuizForm">
+      <!-- Title -->
+      <div>
+        <p-inputgroup class="my-4">
+          <p-inputgroup-addon class="inputlabel">{{
+            "Title:"
+          }}</p-inputgroup-addon>
+          <input pInputText id="on_label" formControlName="title" />
+        </p-inputgroup>
+      </div>
+      <!-- lists -->
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="card flex justify-center">
+          <p-select  formControlName="duration"
+            [options]="durations"
+            display="chip"
+            class="w-100 position-relative"
+            [ngClass]="currentLang === 'en' ? 'select-en' : 'select-ar'" 
+            />
+          <p
+            class="input-label px-1 d-flex align-items-center justify-content-center"
+            [ngClass]="
+              currentLang === 'en' ? 'input-label-en' : 'input-label-ar'
+            "
+          >
+            {{ "Duration (in minutes)" }}
+          </p>
+        </div>
+        <div class="card flex justify-center mx-2">
+            <p-select  formControlName="questions_number"
+            [options]="questionsNumbers"
+            display="chip"
+            class="w-100 position-relative"
+            [ngClass]="currentLang === 'en' ? 'select-en' : 'select-ar'" 
+            />
+          <p
+            class="input-label px-1 d-flex align-items-center justify-content-center"
+            [ngClass]="
+              currentLang === 'en' ? 'input-label-en' : 'input-label-ar'
+            "
+          >
+            {{ "No. of questions" | translate }}
+          </p>
+        </div>
+        <div class="card flex justify-center">
+            <p-select  formControlName="score_per_question"
+            [options]="scoresPerQuestion"
+            display="chip"
+            class="w-100 position-relative"
+            [ngClass]="currentLang === 'en' ? 'select-en' : 'select-ar'" 
+            />
+          <p
+            class="input-label px-1 d-flex align-items-center justify-content-center"
+            [ngClass]="
+              currentLang === 'en' ? 'input-label-en' : 'input-label-ar'
+            "
+          >
+            {{ "Score per question" | translate }}
+          </p>
+        </div>
+      </div>
+      <!-- text area -->
+      <div class="card flex justify-center my-2">
+        <textarea rows="2" cols="30" pTextarea  formControlName="description"></textarea>
+        <p
+          class="input-label px-1 d-flex align-items-center justify-content-center"
+          [ngClass]="currentLang === 'en' ? 'input-label-en' : 'input-label-ar'"
+        >
+          {{ "Description"}}
+        </p>
+      </div>
+      <!-- date -->
+      <div class="card flex justify-center my-2">
+        <p-datepicker inputId="calendar-12h" [showTime]="true"  formControlName="schadule"/>
+        <p
+          class="input-label px-1 d-flex align-items-center justify-content-center"
+          [ngClass]="currentLang === 'en' ? 'input-label-en' : 'input-label-ar'"
+        >
+          {{ "Schedule" }}
+        </p>
+      </div>
+      <!-- lists -->
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="card flex justify-center">
+          <p-select  formControlName="difficulty"
+            [options]="difficulties"
+            display="chip"
+            class="w-100 position-relative"
+            [ngClass]="currentLang === 'en' ? 'select-en' : 'select-ar'" 
+            />
+          <p
+            class="input-label px-1 d-flex align-items-center justify-content-center"
+            [ngClass]="
+              currentLang === 'en' ? 'input-label-en' : 'input-label-ar'
+            "
+          >
+            {{ "Difficulty level" }}
+          </p>
+        </div>
+        <div class="card flex justify-center mx-2">
+          <p-select  formControlName="type"
+            [options]="categories"
+            display="chip"
+            class="w-100 position-relative"
+            [ngClass]="currentLang === 'en' ? 'select-en' : 'select-ar'" 
+            />
+          <p
+            class="input-label px-1 d-flex align-items-center justify-content-center"
+            [ngClass]="
+              currentLang === 'en' ? 'input-label-en' : 'input-label-ar'
+            "
+          >
+            {{ "Category type" }}
+          </p>
+        </div>
+           <div class="card flex justify-center">
+        <p-select
+          formControlName="group"
+          [options]="listGroup"
+          optionLabel="name"
+          optionValue="_id"
+          display="chip"
+          class="w-100 position-relative"
+          [ngClass]="currentLang === 'en' ? 'select-en' : 'select-ar'"
+        />
+        <p
+          class="input-label px-1 d-flex align-items-center justify-content-center"
+          [ngClass]="currentLang === 'en' ? 'input-label-en' : 'input-label-ar'"
+        >
+          {{"Group name"}}
+        </p>
+      </div>
+      </div>
+    </form>
+  </div>
+</section>

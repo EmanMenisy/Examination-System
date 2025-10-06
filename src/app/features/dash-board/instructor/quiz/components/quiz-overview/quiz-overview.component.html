@@ -1,0 +1,102 @@
+<div class="container-fluid p-3">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="d-flex">
+        <div class="quiz-buttons">
+          <button (click)="show()">
+            <img src="/images/new quiz icon.png" alt="" />
+            <p>Set up a new quiz</p>
+          </button>
+        </div>
+        <div class="quiz-buttons mx-3">
+          <button routerLink="/dashboard/instructor/quiz/quizlist">
+            <img src="/images/Vault icon.png" alt="" />
+            <p>Question Bank</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="wrapper p-3">
+        <div class="quiz-wrapper mt-2">
+          <div class="d-flex h-100">
+            <div class="image-wrapper p-3">
+              <img
+                src="/images/1020fb426ec7bad8c01e2e82c8767d214a6c6e2c.png"
+                alt=""
+              />
+            </div>
+            <div class="quiz-details p-3 w-100">
+              <p>Introduction to computer programming</p>
+              <h5><span>12 / 03 / 2023</span> | <span>09:00 AM</span></h5>
+              <div class="d-flex justify-content-between quiz-footer mt-3">
+                <h6>No. of student’s enrolled: 32</h6>
+                <a class="d-flex align-items-center"
+                  ><span>Open</span
+                  ><span
+                    *ngIf="currentLang == 'en'"
+                    class="footer-icon mx-1 d-flex align-items-center"
+                    ><i class="pi left pi-arrow-circle-right"></i
+                  ></span>
+                  <span
+                    *ngIf="currentLang == 'ar'"
+                    class="footer-icon mx-1 d-flex align-items-center"
+                    ><i class="pi left pi-arrow-circle-left"></i></span
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper p-3">
+        <div>
+          <div
+            class="d-flex justify-content-between align-items-center quiz-title px-3"
+          >
+            <p>{{ "Completed Quizzes" }}</p>
+            <a class="d-flex justify-content-between align-items-center"
+              >
+              <span>Open</span>
+              <span
+                *ngIf="currentLang == 'en'"
+                class="footer-icon mx-1 d-flex align-items-center"
+                ><i class="pi left pi-arrow-circle-right"></i
+              ></span>
+              <span
+                *ngIf="currentLang == 'ar'"
+                class="footer-icon mx-1 d-flex align-items-center"
+                ><i class="pi left pi-arrow-circle-left"></i></span
+            ></a>
+          </div>
+          <div>
+            <div class="card">
+              <!-- <p-table
+                showGridlines
+                [tableStyle]="{ 'min-width': '50rem' }"
+                [scrollable]="false"
+              >
+                <ng-template #header class="bg-black">
+                  <tr>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                  </tr>
+                </ng-template>
+                <ng-template >
+                  <tr>
+                    <td>{{ 'oooo'}}</td>
+                    <td>{{ 'hhh' }}</td>
+                    <td>{{ 'pppp'}}</td>
+                    <td>{{ 'uuuu' }}</td>
+                  </tr>
+                </ng-template>
+              </p-table> -->
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

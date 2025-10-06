@@ -55,5 +55,9 @@
   "Update Your Group": "تحديث مجموعتك",
   "Group Name": "اسم المجموعة",
   "Select Student": "اختر الطلاب"
+},
+"group": {
+  "Groups list": "قائمة المجموعات",
+  "Add Group": "إضافة مجموعة"
 }
 }
