@@ -25,4 +25,11 @@ export class QuizService {
     return this._HttpClient.put(`quiz/${Id}`, payload)
   }
 
+  lastComplatedQuiz():Observable<any>{
+    return this._HttpClient.get('quiz/completed')
+  }
+  firstFiveIncome():Observable<any>{
+    return this._HttpClient.get('quiz/incomming')
+  }
+
 }

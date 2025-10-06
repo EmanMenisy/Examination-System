@@ -1,8 +1,8 @@
 <section>
   <div class="d-flex justify-content-between dialouge-title">
     <div class="w-75 px-4 title">
-      <!-- <p class="mb-0">{{"Update Your quiz"}}</p> -->
-      <p class="mb-0">{{ "Set up a new quiz" }}</p>
+      <p class="mb-0" *ngIf="data">{{"add_quiz.Update Your quiz" |translate}}</p>
+      <p class="mb-0" *ngIf="!data">{{ 'add_quiz.title' | translate }}</p>
     </div>
     <div class="header-buttton px-3">
       <button (click)="AddNewQuiz()">
@@ -20,9 +20,7 @@
       <!-- Title -->
       <div>
         <p-inputgroup class="my-4">
-          <p-inputgroup-addon class="inputlabel">{{
-            "Title:"
-          }}</p-inputgroup-addon>
+          <p-inputgroup-addon class="inputlabel">{{ 'add_quiz.quiz_title' | translate }}</p-inputgroup-addon>
           <input pInputText id="on_label" formControlName="title" />
         </p-inputgroup>
       </div>
@@ -41,7 +39,7 @@
               currentLang === 'en' ? 'input-label-en' : 'input-label-ar'
             "
           >
-            {{ "Duration (in minutes)" }}
+            {{ 'add_quiz.duration' | translate }}
           </p>
         </div>
         <div class="card flex justify-center mx-2">
@@ -57,7 +55,7 @@
               currentLang === 'en' ? 'input-label-en' : 'input-label-ar'
             "
           >
-            {{ "No. of questions" | translate }}
+            {{ 'add_quiz.number_of_questions' | translate }}
           </p>
         </div>
         <div class="card flex justify-center">
@@ -73,7 +71,7 @@
               currentLang === 'en' ? 'input-label-en' : 'input-label-ar'
             "
           >
-            {{ "Score per question" | translate }}
+            {{ 'add_quiz.score_per_question' | translate }}
           </p>
         </div>
       </div>
@@ -84,7 +82,7 @@
           class="input-label px-1 d-flex align-items-center justify-content-center"
           [ngClass]="currentLang === 'en' ? 'input-label-en' : 'input-label-ar'"
         >
-          {{ "Description"}}
+          {{ 'add_quiz.description' | translate }}
         </p>
       </div>
       <!-- date -->
@@ -94,7 +92,7 @@
           class="input-label px-1 d-flex align-items-center justify-content-center"
           [ngClass]="currentLang === 'en' ? 'input-label-en' : 'input-label-ar'"
         >
-          {{ "Schedule" }}
+         {{ 'add_quiz.schedule' | translate }}
         </p>
       </div>
       <!-- lists -->
@@ -112,7 +110,7 @@
               currentLang === 'en' ? 'input-label-en' : 'input-label-ar'
             "
           >
-            {{ "Difficulty level" }}
+            {{ 'add_quiz.difficulty_level' | translate }}
           </p>
         </div>
         <div class="card flex justify-center mx-2">
@@ -128,7 +126,7 @@
               currentLang === 'en' ? 'input-label-en' : 'input-label-ar'
             "
           >
-            {{ "Category type" }}
+            {{ 'add_quiz.category_type' | translate }}
           </p>
         </div>
            <div class="card flex justify-center">
@@ -145,7 +143,7 @@
           class="input-label px-1 d-flex align-items-center justify-content-center"
           [ngClass]="currentLang === 'en' ? 'input-label-en' : 'input-label-ar'"
         >
-          {{"Group name"}}
+         {{ 'add_quiz.group_name' | translate }}
         </p>
       </div>
       </div>
