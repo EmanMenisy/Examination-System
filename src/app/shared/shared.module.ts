@@ -2,32 +2,42 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-// PrimeNG
+
+// 🌟 PrimeNG Modules
+import { ButtonModule } from 'primeng/button';
+import { DialogModule } from 'primeng/dialog';
+import { DynamicDialogModule, DialogService } from 'primeng/dynamicdialog';
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { ConfirmationService, MessageService } from 'primeng/api';
+import { InputTextModule } from 'primeng/inputtext';
+import { PasswordModule } from 'primeng/password';
+import { MenuModule } from 'primeng/menu';
+import { AvatarModule } from 'primeng/avatar';
+import { RippleModule } from 'primeng/ripple';
+import { PaginatorModule } from 'primeng/paginator';
+import { TableModule } from 'primeng/table';
+import { MultiSelectModule } from 'primeng/multiselect';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
-import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
-import { ButtonModule } from 'primeng/button';
-import { PasswordModule } from 'primeng/password';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { SelectModule } from 'primeng/select';
 import { InputNumberModule } from 'primeng/inputnumber';
-import { MenuModule } from 'primeng/menu';
-import { AvatarModule } from 'primeng/avatar';
-import { RippleModule } from 'primeng/ripple';
-import { DialogModule } from 'primeng/dialog';
-import { TableModule } from 'primeng/table';
+import { MessageModule } from 'primeng/message';
+
+// 🌍 Translation
 import { TranslateModule } from '@ngx-translate/core';
+
+// 🧩 Shared Components
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { DialogService, DynamicDialogModule } from 'primeng/dynamicdialog';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { PaginatorModule } from 'primeng/paginator';
 import { Message } from 'primeng/message';
-import { MultiSelectModule } from 'primeng/multiselect';
 import { TextareaModule } from 'primeng/textarea';
 import { DatePickerModule } from 'primeng/datepicker';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
+=======
+
 
 @NgModule({
   declarations: [
@@ -40,50 +50,65 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     FormsModule,
     ReactiveFormsModule,
 
-    // PrimeNG
+    // ✅ PrimeNG imports
+    ButtonModule,
+    DialogModule,
+    DynamicDialogModule,
+    ConfirmDialogModule,
+    InputTextModule,
+    PasswordModule,
+    MenuModule,
+    AvatarModule,
+    RippleModule,
+    PaginatorModule,
+    TableModule,
+    MultiSelectModule,
     IconFieldModule,
     InputIconModule,
-    InputTextModule,
     FloatLabelModule,
-    MenuModule,
-    ButtonModule,
-    PasswordModule,
     InputGroupModule,
     InputGroupAddonModule,
     SelectModule,
     InputNumberModule,
     AvatarModule,
     RippleModule,
-    PaginatorModule,
     Message,
     DialogModule,
     TableModule,
     DynamicDialogModule,
-    MultiSelectModule ,
     TextareaModule,
     DatePickerModule,
     BreadcrumbModule,
     
     // Translate
+    MessageModule,
+
+    // 🌍 Translate
     TranslateModule
   ],
-  providers:[
-    DialogService
-  ],
   exports: [
+    // Angular basics
     CommonModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
 
-    // PrimeNG
+    // ✅ PrimeNG exports
+    ButtonModule,
+    DialogModule,
+    DynamicDialogModule,
+    ConfirmDialogModule,
+    InputTextModule,
+    PasswordModule,
+    MenuModule,
+    AvatarModule,
+    RippleModule,
+    PaginatorModule,
+    TableModule,
+    MultiSelectModule,
     IconFieldModule,
     InputIconModule,
-    InputTextModule,
     FloatLabelModule,
-    MenuModule,
-    ButtonModule,
-    PasswordModule,
     InputGroupModule,
     InputGroupAddonModule,
     SelectModule,
@@ -94,19 +119,24 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     DialogModule,
     DynamicDialogModule,
     TableModule,
-    PaginatorModule,   
     DynamicDialogModule,
-    MultiSelectModule ,
     TextareaModule,
     DatePickerModule,
     BreadcrumbModule,
     // Translate
+    MessageModule,
+
+    // 🌍 Translate
     TranslateModule,
 
     // Components
     NavbarComponent,
-    SidebarComponent,
+    SidebarComponent
   ],
-
+  providers: [
+    DialogService,
+    ConfirmationService,
+    MessageService
+  ]
 })
 export class SharedModule { }
