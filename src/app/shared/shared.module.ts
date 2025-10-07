@@ -34,6 +34,11 @@ import { TranslateModule } from '@ngx-translate/core';
 // 🧩 Shared Components
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { Message } from 'primeng/message';
+import { TextareaModule } from 'primeng/textarea';
+import { DatePickerModule } from 'primeng/datepicker';
+import { BreadcrumbModule } from 'primeng/breadcrumb';
+
 
 @NgModule({
   declarations: [
@@ -68,6 +73,17 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     InputGroupAddonModule,
     SelectModule,
     InputNumberModule,
+    AvatarModule,
+    RippleModule,
+    Message,
+    DialogModule,
+    TableModule,
+    DynamicDialogModule,
+    TextareaModule,
+    DatePickerModule,
+    BreadcrumbModule,
+    
+    // Translate
     MessageModule,
 
     // 🌍 Translate
@@ -101,6 +117,17 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     InputGroupAddonModule,
     SelectModule,
     InputNumberModule,
+    AvatarModule,
+    RippleModule,
+    Message,
+    DialogModule,
+    DynamicDialogModule,
+    TableModule,
+    DynamicDialogModule,
+    TextareaModule,
+    DatePickerModule,
+    BreadcrumbModule,
+    // Translate
     MessageModule,
 
     // 🌍 Translate

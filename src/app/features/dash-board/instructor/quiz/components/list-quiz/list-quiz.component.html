@@ -1,0 +1,50 @@
+<section class="p-5">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-md-6" *ngFor="let quiz of QuizList">
+        <div class="quiz p-3">
+          <h6>{{quiz.title}}</h6>
+          <p>
+            <span> <i class="pi pi-calendar-clock"> </i> {{ quiz.schadule | date:'yyyy-MM-dd' }} </span> <span class="mx-3"> <i class="pi pi-clock"> </i>  {{ quiz.schadule | date:'HH:mm:ss' }} </span>
+          </p>
+          <div>
+            <div>
+              <p-inputgroup class="my-4">
+                <p-inputgroup-addon class="inputlabel">{{ 'list_quiz.duration' | translate }}</p-inputgroup-addon>
+                <input pInputText id="on_label" [value]="quiz.duration" />
+              </p-inputgroup>
+            </div>
+            <div>
+              <p-inputgroup class="my-4">
+                <p-inputgroup-addon class="inputlabel">{{ 'list_quiz.number_of_questions' | translate }}</p-inputgroup-addon>
+                <input pInputText id="on_label" [value]="quiz.questions_number"/>
+              </p-inputgroup>
+            </div>
+            <div>
+              <p-inputgroup class="my-4">
+                <p-inputgroup-addon class="inputlabel">{{ 'list_quiz.score_per_question' | translate }}</p-inputgroup-addon>
+                <input pInputText id="on_label" [value]="quiz.score_per_question" />
+              </p-inputgroup>
+            </div>
+            <!-- area -->
+            <div class="card flex justify-center my-2">
+              <textarea rows="4" cols="30" pTextarea [value]="quiz.description" class="pt-5"></textarea>
+              <p class="input-label">
+                {{ 'list_quiz.description' | translate }}
+              </p>
+            </div>
+            <div>
+              <p-inputgroup class="my-4">
+                <p-inputgroup-addon class="inputlabel">{{ 'list_quiz.question_bank_used' | translate }}</p-inputgroup-addon>
+                <input pInputText id="on_label" [value]="quiz.type"/>
+              </p-inputgroup>
+            </div>
+          </div>
+          <div class="text-end">
+            <p-button [label]="'list_quiz.edit' | translate" icon="pi pi-pen-to-square" severity="contrast" class="px-2" (click)="openEditDialouge(quiz)" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

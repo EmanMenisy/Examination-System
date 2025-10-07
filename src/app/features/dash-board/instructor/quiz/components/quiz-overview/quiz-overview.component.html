@@ -1,0 +1,114 @@
+<div class="container-fluid p-3">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="d-flex">
+        <div class="quiz-buttons">
+          <button (click)="show()">
+            <img src="/images/new quiz icon.png" alt="" />
+            <p>Set up a new quiz</p>
+          </button>
+        </div>
+        <div class="quiz-buttons mx-3">
+          <button>
+            <img src="/images/Vault icon.png" alt="" />
+            <p>Question Bank</p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="wrapper p-3">
+        <p class="fw-bold">{{"quiz-overView.upcoming_quizzes" |translate}}</p>
+        <div class="quiz-wrapper mt-2"  *ngFor="let quiz of firstFiveQuizes">
+          <div class="d-flex h-100">
+            <div class="image-wrapper p-3">
+              <img
+                src="/images/1020fb426ec7bad8c01e2e82c8767d214a6c6e2c.png"
+                alt=""
+              />
+            </div>
+            <div
+              class="quiz-details p-3 w-100"
+            >
+              <p>{{ quiz.title }}</p>
+              <h5>
+                <span>
+                  <i class="pi pi-calendar-clock"> </i>
+                  {{ quiz.schadule | date : "yyyy-MM-dd" }}
+                </span>
+                <span class="mx-3">
+                  <i class="pi pi-clock"> </i>
+                  {{ quiz.schadule | date : "HH:mm:ss" }}
+                </span>
+              </h5>
+              <div class="d-flex justify-content-between quiz-footer mt-3">
+                <h6>No. of student’s enrolled: {{quiz.studentsCount}}</h6>
+                <a class="d-flex align-items-center"
+                  ><span>Open</span
+                  ><span
+                    *ngIf="currentLang == 'en'"
+                    class="footer-icon mx-1 d-flex align-items-center"
+                    ><i class="pi left pi-arrow-circle-right"></i
+                  ></span>
+                  <span
+                    *ngIf="currentLang == 'ar'"
+                    class="footer-icon mx-1 d-flex align-items-center"
+                    ><i class="pi left pi-arrow-circle-left"></i></span
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper p-3">
+        <div>
+          <div
+            class="d-flex justify-content-between align-items-center quiz-title px-3"
+          >
+            <p>{{ "quiz-overView.completed_quizzes" |translate}}</p>
+            <a
+              class="d-flex justify-content-between align-items-center text-decoration-none text-dark"
+              routerLink="/dashboard/instructor/quiz/quizlist"
+            >
+              <span>{{"quiz-overView.all_quizzes" |translate}}</span>
+              <span
+                *ngIf="currentLang == 'en'"
+                class="footer-icon mx-1 d-flex align-items-center"
+                ><i class="pi left pi-arrow-circle-right"></i
+              ></span>
+              <span
+                *ngIf="currentLang == 'ar'"
+                class="footer-icon mx-1 d-flex align-items-center"
+                ><i class="pi left pi-arrow-circle-left"></i></span
+            ></a>
+          </div>
+          <div>
+            <div class="card">
+              <div class="card">
+                <p-table
+                  showGridlines
+                  [tableStyle]="{ 'min-width': '50rem' }"
+                >
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th>Title</th>
+                      <th>Group name</th>
+                      <th>No. of persons in group</th>
+                      <th>Date</th>
+                    </tr>
+                  </ng-template>
+                  <ng-template  pTemplate="emptymessage">
+                    <tr class="h-25">
+                      <td colspan="4" class="text-center text-danger fw-bold">No Data To display</td>
+                    </tr>
+                  </ng-template>
+                </p-table>
+              </div>
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
