@@ -1,88 +1,93 @@
-.add-edit-modal {
-  width: 500px;
-  max-width: 90%;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
-  font-family: Arial, sans-serif;
+section {
+  position: relative;
+}
+.dialouge-title {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  border-bottom: 1px solid #d6d6d6;
 
-  .modal-header {
+  .title {
+    font-weight: 600;
+    font-size: 18px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
-    background: #f5f5f5;
-    border-bottom: 1px solid #ddd;
-
-    h2 {
-      margin: 0;
-      font-size: 1.2rem;
-      font-weight: 600;
-    }
-
-    .header-buttons {
-      display: flex;
-      gap: 0.5rem;
-
-      .icon-btn {
-        border: none;
-        background: transparent;
-        font-size: 1.2rem;
-        cursor: pointer;
-        padding: 0.2rem 0.5rem;
-        border-radius: 5px;
-        transition: all 0.3s;
-
-        &.save {
-          color: green;
-          &:hover {
-            background: #e0f2e9;
-          }
-        }
-
-        &.close {
-          color: red;
-          &:hover {
-            background: #fde0e0;
-          }
-        }
-      }
-    }
   }
+}
 
-  .modal-body {
-    padding: 1rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-
-    .form-field {
-      display: flex;
-      flex-direction: column;
-
-      input,
-      select {
-        padding: 0.7rem 1rem;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        font-size: 1rem;
-        transition: border 0.3s;
-        width: 100%;
-
-        &:focus {
-          border-color: #5a9df9;
-          outline: none;
-        }
-      }
-
-      select {
-        appearance: none;
-        background: #fff
-          url('data:image/svg+xml;utf8,<svg fill="gray" height="12" viewBox="0 0 24 24" width="12" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>')
-          no-repeat right 1rem center;
-        background-size: 12px;
-      }
+.header-buttton {
+  border-left: 1px solid #d6d6d6;
+  display: flex;
+  align-items: center;
+  button {
+    border: none;
+    background-color: unset;
+    i {
+      font-weight: 800;
+      font-size: 20px;
     }
   }
 }
+
+.inputlabel{
+  background-color: var(--color-beige) !important;
+  color: black !important;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-label-en{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  z-index: 9999999;
+  border-radius: 5px 0 0 5px;
+  background-color: var(--color-beige) !important;
+  color: black !important;
+  border-right: 1px solid #d6d6d6;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-label-ar{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100px;
+  z-index: 9999999;
+  border-radius: 5px 5px 0 0;
+  background-color: var(--color-beige) !important;
+  background-color: red;
+  color: black !important;
+  border-left: 1px solid #d6d6d6;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.input-wrapper {
+  z-index: 99999;
+}
+
+.select-en{
+  height: 40px;
+  padding-left: 98px;
+}
+
+.select-ar{
+  height: 40px;
+  padding-right: 98px;
+}
+
+:host ::ng-deep .p-dynamic-dialog-mask {
+  width: 100% !important;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+

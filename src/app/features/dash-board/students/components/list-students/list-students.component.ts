@@ -59,7 +59,7 @@ export class ListStudentsComponent implements OnInit, OnDestroy {
 
   getAllStudents(): void {
     this.loading = true;
-    this.studentsService.GetterWithout().subscribe({
+    this.studentsService.Getter().subscribe({
       next: (res) => {
         console.log(res);
         this.students = res;
@@ -79,7 +79,7 @@ export class ListStudentsComponent implements OnInit, OnDestroy {
       (s) => s.group?._id === this.studentData.group._id
     );
   } else {
-    this.filteredStudents = this.students; 
+    this.filteredStudents = this.students;
   }
   this.paginate();
 }
@@ -114,29 +114,41 @@ export class ListStudentsComponent implements OnInit, OnDestroy {
   }
 
   showDialog(action: 'add' | 'edit', student?: Istudents): void {
-    this.ref = this.dialogService.open(AddEditStudentComponent, {
-      header: action === 'add' ? 'Add Student' : 'Edit Student',
-      width: '500px',
-      data: { action, student },
-    });
+  this.ref = this.dialogService.open(AddEditStudentComponent, {
+    data: { action, student },
+    //header: action === 'add' ? 'Add Student' : 'Edit Student',
+    width: '40rem',
+    height: 'auto',
+    contentStyle: { 'max-height': '500px', overflow: 'unset' },
+    baseZIndex: 10000,
+    breakpoints: "{ '1199px': '75vw', '575px': '90vw'}",
+    modal: true,
+    dismissableMask: true
+  });
 
-    this.ref.onClose.subscribe((updated) => {
-      if (updated) this.getAllStudents();
-    });
-  }
+  this.ref.onClose.subscribe((result) => {
+    if (result === true) {
+      this.getAllStudents();
+    }
+  });
+}
 
-  showDeleteDialog(id: string): void {
-    this.ref = this.dialogService.open(DeleteStudentsComponent, {
-      header: 'Confirm Delete',
-      width: '350px',
-      closable: true,
-      modal: true,
-      dismissableMask: true,
-      data: { id },
-    });
+ showDeleteDialog(id: string): void {
+  this.ref = this.dialogService.open(DeleteStudentsComponent, {
+    header: 'Delete Student',
+    width: '300px',
+    closable: true,
+    modal: true,
+    dismissableMask: true,
+    styleClass: 'delete-dialog-container',
+    data: { id },
+  });
 
-    this.ref.onClose.subscribe((confirmed: boolean) => {
-      if (confirmed) this.getAllStudents();
-    });
-  }
+  this.ref.onClose.subscribe((confirmed: boolean) => {
+    if (confirmed) {
+      console.log("✅ Student deleted!");
+      this.getAllStudents();
+    }
+  });
+}
 }

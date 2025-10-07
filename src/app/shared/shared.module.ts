@@ -26,7 +26,7 @@ import { SelectModule } from 'primeng/select';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { MessageModule } from 'primeng/message';
 import { DropdownModule } from 'primeng/dropdown';
-
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 // 🌍 Translation
 import { TranslateModule } from '@ngx-translate/core';
@@ -49,6 +49,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     CommonModule,
     RouterModule,
     FormsModule,
+    AutoCompleteModule,
     ReactiveFormsModule,
 
     // ✅ PrimeNG imports
@@ -64,7 +65,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     RippleModule,
     PaginatorModule,
     TableModule,
-    MultiSelectModule,
+     MultiSelectModule,
     IconFieldModule,
     InputIconModule,
     FloatLabelModule,

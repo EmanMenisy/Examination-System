@@ -8,21 +8,26 @@ import { StudentsService } from '../../Services/students.service';
   standalone: true,
   imports: [SharedModule],
   templateUrl: './delete-students.component.html',
-  styleUrls: ['./delete-students.component.scss']
+  styleUrls: ['./delete-students.component.scss'],
 })
 export class DeleteStudentsComponent {
   studentId!: string;
 
   constructor(
-    public ref: DynamicDialogRef,
-    public config: DynamicDialogConfig,
-    private studentService: StudentsService
+    private ref: DynamicDialogRef,
+    private config: DynamicDialogConfig,
+    private studentsService: StudentsService
   ) {
-    this.studentId = this.config.data.id;
+    this.studentId = this.config.data?.id;
   }
 
-  confirmDelete() {
-    this.studentService.DeleteStudent(this.studentId).subscribe({
+  confirmDelete(): void {
+    if (!this.studentId) {
+      console.error('❌ No student ID provided');
+      return;
+    }
+
+    this.studentsService.DeleteStudent(this.studentId).subscribe({
       next: () => {
         console.log(`✅ Student with ID ${this.studentId} deleted successfully`);
         this.ref.close(true);
@@ -31,7 +36,11 @@ export class DeleteStudentsComponent {
     });
   }
 
-  closeDialog() {
+  cancel(): void {
+    this.ref.close(false);
+  }
+
+  closeDialog(): void {
     this.ref.close(false);
   }
 }
