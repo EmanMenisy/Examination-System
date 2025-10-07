@@ -56,6 +56,38 @@
   "Group Name": "اسم المجموعة",
   "Select Student": "اختر الطلاب"
 },
+  "question": {
+    "title": "العنوان",
+    "Placeholder_title": "ادخل عنوان السؤال",
+    "Description": "الوصف",
+    "RightAnswer": "الإجابة الصحيحة",
+    "Add": "إضافة",
+    "Update": "تحديث",
+    "save": "حفظ",
+    "buttonAdd": "إضافة سؤال",
+    "BankQuestions": "بنك الأسئلة",
+    "options": {
+    "A": "أ",
+    "B": "ب",
+    "C": "ج",
+    "D": "د"
+    },
+    "status": "الحالة",
+    "CategoryType": "الفئة",
+    "type": {
+      "FrontEnd": "الواجهة الأمامية",
+      "BackEnd": "الواجهة الخلفية",
+      "DevOps": "ديف أوبس"
+    },
+    "DifficultyLevel": "مستوى الصعوبة",
+    "level": {
+      "Easy": "سهل",
+      "Medium": "متوسط",
+      "Hard": "صعب"
+    },
+    "Points": "النقاط",
+    "Actions": "الإجراءات"
+  },
 "group": {
   "Groups list": "قائمة المجموعات",
   "Add Group": "إضافة مجموعة"

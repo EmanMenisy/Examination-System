@@ -93,7 +93,7 @@ export class AddEditQuizComponent implements OnInit {
   }
 
   getAllGroups() {
-    this._InstructorService.getAll().subscribe({
+    this._InstructorService.getAllGroup().subscribe({
       next: (res) => {
         this.listGroup = res;
       },
