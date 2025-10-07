@@ -26,7 +26,7 @@ import { SelectModule } from 'primeng/select';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { MessageModule } from 'primeng/message';
 import { DropdownModule } from 'primeng/dropdown';
-
+import { AutoCompleteModule } from 'primeng/autocomplete';
 
 // 🌍 Translation
 import { TranslateModule } from '@ngx-translate/core';
@@ -44,6 +44,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     CommonModule,
     RouterModule,
     FormsModule,
+    AutoCompleteModule,
     ReactiveFormsModule,
 
     // ✅ PrimeNG imports
@@ -59,7 +60,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     RippleModule,
     PaginatorModule,
     TableModule,
-    MultiSelectModule,
+     MultiSelectModule,
     IconFieldModule,
     InputIconModule,
     FloatLabelModule,

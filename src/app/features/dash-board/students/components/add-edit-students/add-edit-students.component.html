@@ -1,38 +1,72 @@
-<div class="add-edit-modal">
-  <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <div class="modal-header">
-      <h2>{{ action === 'add' ? 'Add Student' : 'Edit Student' }}</h2>
-      <div class="header-buttons">
-        <button type="submit" class="icon-btn save">
-          ✔
-        </button>
-        <button type="button" class="icon-btn close" (click)="closeDialog()">
-          ✖
-        </button>
-      </div>
+<section>
+  <!-- Header -->
+  <div class="d-flex justify-content-between dialouge-title">
+    <div class="w-75 px-4 title">
+      <p class="mb-0" *ngIf="action === 'edit'">Update Student</p>
+      <p class="mb-0" *ngIf="action === 'add'">Set up a new Student</p>
     </div>
 
-    <div class="modal-body">
-      <div class="form-field">
-        <input
-          type="text"
-          placeholder="Name"
-          formControlName="name" />
-      </div>
-
-      <div class="form-field">
-        <input
-          type="text"
-          placeholder="phone"
-          formControlName="email" />
-      </div>
-
-      <div class="form-field">
-        <select formControlName="group">
-          <option value="" disabled>Select Group</option>
-          <option *ngFor="let g of groups" [value]="g._id">{{ g.name }}</option>
-        </select>
-      </div>
+    <div class="header-buttton px-3">
+      <button type="submit" (click)="onSubmit()" [disabled]="form.invalid">
+        <i class="pi pi-check" style="color: black"></i>
+      </button>
     </div>
-  </form>
-</div>
+
+    <div class="header-buttton px-3">
+      <button (click)="closeDialog()">
+        <i class="pi pi-times" style="color: black"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Form Body -->
+  <div class="py-3 input-wrapper mt-2">
+    <form [formGroup]="form">
+
+      <!-- Student Dropdown -->
+      <div class="card flex justify-center w-100 my-4 position-relative">
+        <p-dropdown
+          formControlName="student"
+          [options]="students"
+          optionLabel="first_name"
+          optionValue="_id"
+          [filter]="true"
+          [showClear]="true"
+          placeholder="Select Student"
+          class="w-100 position-relative select-en"
+        >
+          <ng-template let-s pTemplate="item">
+            {{ getFullName(s) }}
+          </ng-template>
+        </p-dropdown>
+
+        <p
+          class="input-label px-1 d-flex align-items-center justify-content-center input-label-en"
+        >
+          Student
+        </p>
+      </div>
+
+      <!-- Group Dropdown -->
+      <div class="card flex justify-center w-100 my-4 position-relative">
+        <p-dropdown
+          formControlName="group"
+          [options]="groups"
+          optionLabel="name"
+          optionValue="_id"
+          [filter]="true"
+          [showClear]="true"
+          placeholder="Select Group"
+          class="w-100 position-relative select-en"
+        >
+        </p-dropdown>
+
+        <p
+          class="input-label px-1 d-flex align-items-center justify-content-center input-label-en"
+        >
+          Group
+        </p>
+      </div>
+    </form>
+  </div>
+</section>

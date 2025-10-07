@@ -16,9 +16,9 @@ import { Istudents } from '../../Interfaces/istudents';
 export class AddEditStudentComponent implements OnInit {
   form!: FormGroup;
   groups: IGroup[] = [];
+  students: Istudents[] = [];
   action!: 'add' | 'edit';
-  studentToEdit: any;
-students: Istudents[] = [];
+  studentToEdit!: Istudents | null;
 
   constructor(
     private fb: FormBuilder,
@@ -29,47 +29,85 @@ students: Istudents[] = [];
 
   ngOnInit(): void {
     this.action = this.config.data.action;
-    this.studentToEdit = this.config.data.student;
+    this.studentToEdit = this.config.data.student || null;
 
     this.form = this.fb.group({
-      name: [this.studentToEdit?.name || '', Validators.required],
-      email: [
-        this.studentToEdit?.email || '',
-        [Validators.required, Validators.email],
-      ],
-      group: [this.studentToEdit?.group?._id || '', Validators.required],
+      student: [null, Validators.required],
+      group: [null, Validators.required],
     });
 
-    this.getGroups();
+    this.loadStudents();
+    this.loadGroups();
   }
 
-  getGroups() {
+  loadStudents() {
+    this.studentsService.Getter().subscribe({
+      next: (res) => {
+        this.students = res;
+        if (this.action === 'edit' && this.studentToEdit) {
+          const foundStudent = this.students.find(
+            (s) => s._id === this.studentToEdit!._id
+          );
+          this.form.patchValue({ student: foundStudent });
+        }
+      },
+      error: (err) => console.error('Error loading students:', err),
+    });
+  }
+
+  loadGroups() {
     this.studentsService.Groups().subscribe({
-      next: (res) => (this.groups = res),
+      next: (res) => {
+        this.groups = res;
+        if (this.action === 'edit' && this.studentToEdit?.group) {
+          const foundGroup = this.groups.find(
+            (g) => g._id === this.studentToEdit!.group!._id
+          );
+          this.form.patchValue({ group: foundGroup });
+        }
+      },
       error: (err) => console.error('Error loading groups:', err),
     });
   }
 
+  getFullName(student: Istudents): string {
+    return `${student.first_name} ${student.last_name}`;
+  }
+
   onSubmit() {
-    if (this.form.invalid) return;
+  if (this.form.invalid) return;
 
-    const formValue = this.form.value;
-    const payload = { ...formValue, group: { _id: formValue.group } };
+  const formValue = this.form.value;
 
-    if (this.action === 'add') {
-      this.studentsService.addStudent(payload).subscribe({
-        next: () => this.ref.close(true),
-        error: (err) => console.error('Error adding student:', err),
-      });
-    } else {
-      this.studentsService.updateStudent(this.studentToEdit._id, payload).subscribe({
-        next: () => this.ref.close(true),
-        error: (err) => console.error('Error updating student:', err),
-      });
-    }
+  const studentId =
+    this.action === 'edit'
+      ? this.studentToEdit?._id
+      : formValue.student?._id;
+
+  if (!studentId) {
+    console.error('❌ No student ID found!');
+    return;
   }
 
-  closeDialog() {
-    this.ref.close(false);
+  const payload = {
+    group: { _id: formValue.group._id },
+  };
+
+  if (this.action === 'add') {
+    this.studentsService.addStudent({ _id: studentId, ...payload }).subscribe({
+      next: () => this.ref.close(true),
+      error: (err) => console.error('❌ Error adding student:', err),
+    });
+  } else {
+    this.studentsService.updateStudent(studentId, payload).subscribe({
+      next: () => this.ref.close(true),
+      error: (err) => console.error('❌ Error updating student:', err),
+    });
   }
+}
+
+closeDialog(): void {
+  this.ref.close(false);
+}
+
 }
