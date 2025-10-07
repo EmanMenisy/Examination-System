@@ -1,0 +1,30 @@
+<div class="question-view-root">
+  <!-- Header -->
+  <div class="q-header">
+    <h2 class="q-title">{{ question?.title }}</h2>
+    <div class="meta">
+      <span class="chip type">{{'question.CategoryType'|translate}}: {{ displayType(question?.type) }}</span>
+      <span class="chip difficulty" [ngClass]="question?.difficulty">
+        {{ question?.difficulty}}
+      </span>
+      <span class="chip points">{{'question.Points'|translate}}: {{ question?.points }}</span>
+      <span class="chip status" [ngClass]="{'active': question?.status === 'active'}">
+        {{ question?.status}}
+      </span>
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div class="q-desc">
+    <p><strong>{{'question.Description'|translate}}:</strong> {{ question?.description }}</p>
+  </div>
+
+  <!-- Options -->
+  <div class="options-list">
+    <div *ngFor="let key of optionKeys()" class="option-row" [ngClass]="{'correct': key === question?.answer}">
+      <div class="option-label">{{  'question.options.' + key | translate }}</div>
+      <div class="option-text">{{ question?.options?.[key] }}</div>
+      <div class="option-badge" *ngIf="key === question?.answer">{{'question.RightAnswer'|translate}}</div>
+    </div>
+  </div>
+</div>

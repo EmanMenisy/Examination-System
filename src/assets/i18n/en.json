@@ -43,16 +43,48 @@
 },
 "Student":"Student",
 "Instructor":"Instructor",
-  "homeNav": {
-    "dashboard": "Dashboard",
-    "newQuiz": "New quiz",
-    "settings":"Profile Settings",
-    "existing":"Log Out"
-  },
-  "add-edit":{
-    "Set up a new Group": "Set up a new Group",
-    "Update Your Group": "Update Your Group",
-    "Group Name":"Group Name",
-    "Select Student":"Select Student"
-  }
+    "homeNav": {
+      "dashboard": "Dashboard",
+      "newQuiz": "New quiz",
+      "settings":"Profile Settings",
+      "existing":"Log Out"
+    },
+    "add-edit":{
+      "Set up a new Group": "Set up a new Group",
+      "Update Your Group": "Update Your Group",
+      "Group Name":"Group Name",
+      "Select Student":"Select Student"
+    },
+    "question":{
+      "title":"Title",
+      "Placeholder_title":"Enter title question",
+      "Description":"Description",
+      "RightAnswer":"Right Answer",
+      "Update":"Update",
+      "Add":"Add",
+      "save": "Save",
+      "buttonAdd": "Add Question",
+      "status":"Status",
+      "BankQuestions":"Bank Of Questions",
+      "options":{
+        "A":"A",
+        "B":"B",
+        "C":"C",
+        "D":"D"
+      },
+      "CategoryType":"Category Type",
+      "type":{
+        "FrontEnd":"Front End",
+        "BackEnd":"Back End",
+        "DevOps":"DevOps"
+      },
+      "DifficultyLevel":"Difficulty level",
+      "level":{
+        "Easy":"Easy",
+        "Hard":"Hard",
+        "Medium":"Medium"
+      },
+      "Points":"Points",
+      "Actions":"Actions"
+    }
 }

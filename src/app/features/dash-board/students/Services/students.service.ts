@@ -8,13 +8,13 @@ import { Istudents } from '../Interfaces/istudents';
 })
 export class StudentsService {
 
-   constructor(private http :HttpClient) { }
+  constructor(private http :HttpClient) { }
 
   Getter():Observable<Istudents[]>{  //whole
     return this.http.get<Istudents[]>('student')
   }
 
-  
+
   GetterWithout():Observable<Istudents[]>{ // not linked to specific group
     return this.http.get<Istudents[]>('student/without-group')
   }

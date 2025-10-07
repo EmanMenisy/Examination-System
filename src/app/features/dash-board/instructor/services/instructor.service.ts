@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IGroupReq, IGroupRes, IGroup, IUpdateGroupRes, Student } from '../interfaces/IGroup';
+import { IQuestionsReq, IQuestionsRes } from '../interfaces/IQuestions';
 
 @Injectable({
   providedIn: 'root'
@@ -10,8 +11,8 @@ import { IGroupReq, IGroupRes, IGroup, IUpdateGroupRes, Student } from '../inter
 export class InstructorService {
 
   constructor(private _httpClient: HttpClient) { }
-
-  getAll(): Observable<IGroup> {
+  // groups
+  getAllGroup(): Observable<IGroup> {
     return this._httpClient.get<IGroup>(`group`)
   }
   createGroup(data: any): Observable<IGroupRes> {
@@ -27,7 +28,26 @@ export class InstructorService {
     return this._httpClient.delete<IGroupRes>(`group/${id}`)
   }
 
-  getAllStudents():Observable<Student[]>{
+  //students
+  getAllStudents(): Observable<Student[]> {
     return this._httpClient.get<Student[]>('student')
+  }
+
+
+  // Questions
+  getAllQuestions(): Observable<IQuestionsRes[]> {
+    return this._httpClient.get<IQuestionsRes[]>(`question`)
+  }
+  createQuestions(data: IQuestionsReq): Observable<IGroupRes> {
+    return this._httpClient.post<IGroupRes>(`question`, data)
+  }
+  DeleteQuestions(id: string): Observable<IGroupRes> {
+    return this._httpClient.delete<IGroupRes>(`question/${id}`)
+  }
+  getQuestionsById(id: string): Observable<IGroup> {
+    return this._httpClient.get<IGroup>(`question/${id}`)
+  }
+  updateQuestions(id: string, data: any): Observable<any> {
+    return this._httpClient.put<any>(`question/${id}`, data)
   }
 }
