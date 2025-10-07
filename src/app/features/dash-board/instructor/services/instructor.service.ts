@@ -12,7 +12,7 @@ export class InstructorService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  getAll():Observable<any> {
+  getAllGroup():Observable<any> {
     return this._httpClient.get<IGroup[]>(`group`)
   }
   createGroup(data: any): Observable<IGroupRes> {
