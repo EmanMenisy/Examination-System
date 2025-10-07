@@ -43,48 +43,52 @@
 },
 "Student":"Student",
 "Instructor":"Instructor",
-    "homeNav": {
-      "dashboard": "Dashboard",
-      "newQuiz": "New quiz",
-      "settings":"Profile Settings",
-      "existing":"Log Out"
-    },
-    "add-edit":{
-      "Set up a new Group": "Set up a new Group",
-      "Update Your Group": "Update Your Group",
-      "Group Name":"Group Name",
-      "Select Student":"Select Student"
-    },
-    "question":{
-      "title":"Title",
-      "Placeholder_title":"Enter title question",
-      "Description":"Description",
-      "RightAnswer":"Right Answer",
-      "Update":"Update",
-      "Add":"Add",
-      "save": "Save",
-      "buttonAdd": "Add Question",
-      "status":"Status",
-      "BankQuestions":"Bank Of Questions",
-      "options":{
-        "A":"A",
-        "B":"B",
-        "C":"C",
-        "D":"D"
-      },
-      "CategoryType":"Category Type",
-      "type":{
-        "FrontEnd":"Front End",
-        "BackEnd":"Back End",
-        "DevOps":"DevOps"
-      },
-      "DifficultyLevel":"Difficulty level",
-      "level":{
-        "Easy":"Easy",
-        "Hard":"Hard",
-        "Medium":"Medium"
-      },
-      "Points":"Points",
-      "Actions":"Actions"
-    }
+  "homeNav": {
+    "dashboard": "Dashboard",
+    "newQuiz": "New quiz",
+    "settings":"Profile Settings",
+    "existing":"Log Out"
+  },
+  "add-edit":{
+    "Set up a new Group": "Set up a new Group",
+    "Update Your Group": "Update Your Group",
+    "Group Name":"Group Name",
+    "Select Student":"Select Student"
+  },
+  "group":{
+    "Groups list":"Groups list",
+    "Add Group":"Add Group"
+  },
+  "quiz-overView":{
+        "setup_new_quiz": "Set up a new quiz",
+        "question_bank": "Question Bank",
+        "upcoming_quizzes": "Upcoming quizzes",
+        "completed_quizzes": "Completed Quizzes",
+        "all_quizzes": "All Quizes"
+  },
+  "list_quiz": {
+    "duration": "Duration",
+    "number_of_questions": "Number of questions",
+    "score_per_question": "Score per question",
+    "description": "Description",
+    "question_bank_used": "Question bank used",
+    "edit": "Edit"
+  },
+    "add_quiz": {
+    "title": "Set up a new quiz",
+    "quiz_title": "Title",
+    "score_per_question": "Score per question",
+    "number_of_questions": "No. of questions",
+    "duration": "Duration (in minutes)",
+    "description": "Description",
+    "schedule": "Schedule",
+    "group_name": "Group name",
+    "category_type": "Category type",
+    "difficulty_level": "Difficulty level",
+    "Update Your quiz":"Update Your quiz",
+    "Quiz was successfully created":"Quiz was successfully created",
+    "close":"Close",
+    "code":"code"
+  }
+
 }

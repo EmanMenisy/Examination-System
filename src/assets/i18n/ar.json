@@ -87,5 +87,39 @@
     },
     "Points": "النقاط",
     "Actions": "الإجراءات"
+  },
+"group": {
+  "Groups list": "قائمة المجموعات",
+  "Add Group": "إضافة مجموعة"
+},
+"quiz-overView":{
+  "setup_new_quiz": "إعداد اختبار جديد",
+  "question_bank": "بنك الأسئلة",
+  "upcoming_quizzes": "الاختبارات القادمة",
+  "completed_quizzes": "الاختبارات المكتملة",
+  "all_quizzes": "جميع الاختبارات"
+},
+ "list_quiz": {
+    "duration": "المدة",
+    "number_of_questions": "عدد الأسئلة",
+    "score_per_question": "الدرجة لكل سؤال",
+    "description": "الوصف",
+    "question_bank_used": "بنك الأسئلة المستخدم",
+    "edit": "تعديل"
+  },
+   "add_quiz": {
+    "title": "إعداد اختبار جديد",
+    "quiz_title": "العنوان",
+    "score_per_question": "الدرجة لكل سؤال",
+    "number_of_questions": "عدد الأسئلة",
+    "duration": "المدة (بالدقائق)",
+    "description": "الوصف",
+    "schedule": "الجدول",
+    "group_name": "اسم المجموعة",
+    "category_type": "نوع الفئة",
+    "difficulty_level": "مستوى الصعوبة",
+    "Quiz was successfully created": "تم إنشاء الاختبار بنجاح",
+     "close": "إغلاق",
+     "code":"الكود"
   }
 }

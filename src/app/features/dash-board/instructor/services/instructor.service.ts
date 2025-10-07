@@ -11,9 +11,9 @@ import { IQuestionsReq, IQuestionsRes } from '../interfaces/IQuestions';
 export class InstructorService {
 
   constructor(private _httpClient: HttpClient) { }
-  // groups
-  getAllGroup(): Observable<IGroup> {
-    return this._httpClient.get<IGroup>(`group`)
+
+  getAll():Observable<any> {
+    return this._httpClient.get<IGroup[]>(`group`)
   }
   createGroup(data: any): Observable<IGroupRes> {
     return this._httpClient.post<IGroupRes>(`group`, data)
