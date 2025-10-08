@@ -9,13 +9,16 @@
     <img alt="logo sidebar" src="images/Logo-Sidebar.svg">
   </div>
   <ul class="list-unstyled flex-grow-1 p-0">
-      <li class="mb-2" *ngFor="let item of menu">
-        <a class="text-decoration-none d-flex align-items-center" [routerLink]="item.menuLink"
+    @for (item of menu; track $index) {
+      <li class="mb-2" *ngIf="item.isActive">
+         <a  class="text-decoration-none d-flex align-items-center" [routerLink]="item.menuLink"
           routerLinkActive="active">
           <i [class]="item.icon" class="menu-icon"></i>
           <span *ngIf="expanded">{{item.title|translate}}</span>
         </a>
       </li>
+    }
+      
     </ul>
     <ul class="list-unstyled p-0">
       <li class="mb-2 help">

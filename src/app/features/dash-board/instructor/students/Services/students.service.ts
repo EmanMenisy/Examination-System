@@ -1,8 +1,8 @@
+import { IGroup } from './../../interfaces/IGroup';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Istudents } from '../Interfaces/istudents';
-import { IGroup } from '../../instructor/interfaces/IGroup';
 
 @Injectable({
   providedIn: 'root'

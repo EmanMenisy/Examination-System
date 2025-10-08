@@ -1,3 +1,4 @@
+import { Student } from './../../../features/dash-board/instructor/interfaces/IGroup';
 import { Component, inject } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -5,6 +6,7 @@ interface IMenu {
   title: string;
   icon: string;
   menuLink: string;
+  isActive:boolean
 }
 @Component({
   selector: 'app-sidebar',
@@ -13,42 +15,72 @@ interface IMenu {
   standalone: false
 })
 export class SidebarComponent {
-    private readonly _translate = inject(TranslateService);
-
+  private readonly _translate = inject(TranslateService);
+  userRole: any
   constructor() {
     this._translate.use('en');
+    
   }
+
   expanded: boolean = true;
+
+  isInstructor(): boolean {
+    this.userRole = localStorage.getItem('Role'); 
+    return this.userRole === 'Instructor';
+  }
+
+  isStudent(): boolean {
+    this.userRole = localStorage.getItem('Role'); 
+    return this.userRole === 'Student';
+  }
 
   toggleSidebar() {
     this.expanded = !this.expanded
   }
 
+  
   menu: IMenu[] = [
     {
+      title: 'Home',
       menuLink: '/dashboard/home',
-      title: 'sidebar.Dashboard',
-      icon: 'pi pi-home fs-3'
+      icon: 'pi pi-home fs-3',
+      isActive: this.isInstructor() ||  this.isStudent()
     },
     {
+      title: 'Groups',
       menuLink: '/dashboard/instructor/listGroup',
-      title: 'sidebar.Groups',
-      icon: 'pi pi-users fs-3'
+      icon: 'pi pi-users fs-3',
+      isActive: this.isInstructor()
     },
-        {
+    {
+      title: 'Students',
       menuLink: '/dashboard/instructor/listStudent',
-      title: 'sidebar.Students',
-      icon: 'pi pi-chart-bar fs-3'
+      icon: 'pi pi-chart-bar fs-3',
+      isActive: this.isInstructor()
     },
     {
+      title: 'Quizzes',
       menuLink: '/dashboard/instructor/quiz',
-      title: 'sidebar.Quizzes',
-      icon: 'pi pi-stopwatch fs-3'
+      icon: 'pi pi-stopwatch fs-3',
+      isActive: this.isInstructor()
+    },
+     {
+      title: 'Quizzes',
+      menuLink: '/dashboard/learner/viewQuiz',
+      icon: 'pi pi-stopwatch fs-3',
+      isActive: this.isStudent()
     },
     {
+      title: 'Results',
       menuLink: '/test',
-      title: 'sidebar.Results',
-      icon: 'pi pi-chart-bar fs-3'
+      icon: 'pi pi-chart-bar fs-3',
+      isActive: this.isInstructor()
     },
-  ]
+       {
+      title: 'Results',
+      menuLink: '/dashboard/learner/viewQuiz',
+      icon: 'pi pi-chart-bar fs-3',
+      isActive: this.isStudent()
+    },
+  ];
 }

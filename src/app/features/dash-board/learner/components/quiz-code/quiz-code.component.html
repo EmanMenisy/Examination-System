@@ -1,0 +1,24 @@
+<section class="p-3">
+<div class="d-flex justify-content-end dialouge-title">
+    <div class="header-buttton px-3">
+      <button (click)="JoinQuiz()">
+        <i class="pi pi-check" style="color: black"></i>
+      </button>
+    </div>
+    <div class="header-buttton px-3">
+      <button (click)="close()">
+        <i class="pi pi-times" style="color: black"></i>
+      </button>
+    </div>
+  </div>
+<div class="p-4 text-center quiz-code my-4">
+  <span class="fw-bold text-lg">Join Quiz</span>
+  <p class="my-3">{{"Input the code received for the quiz below to join"}}</p>
+  <form action="">
+  <p-inputgroup>
+    <p-inputgroup-addon class="inputlabel">{{"add_quiz.code" |translate }}</p-inputgroup-addon>
+    <input pInputText  [(ngModel)]="inputValue"  name="quizCode" />
+  </p-inputgroup>
+</form>
+</div>
+</section>
