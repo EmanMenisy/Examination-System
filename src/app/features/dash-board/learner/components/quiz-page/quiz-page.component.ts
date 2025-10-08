@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SharedModule } from '../../../../../shared/shared.module';
 import { StudentQuizService } from '../../service/student-quiz.service';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DynamicDialogConfig } from 'primeng/dynamicdialog';
 
 @Component({
@@ -22,10 +22,12 @@ export class QuizPageComponent implements OnInit {
     private StudentQuizService: StudentQuizService,
     private _ToastrService: ToastrService,
     private _Router: Router,
-    private _Config : DynamicDialogConfig
-  ) {}
+    private route: ActivatedRoute
+  ) {
+
+      this.quizId = this.route.snapshot.paramMap.get('id')!; 
+  }
   ngOnInit(): void {
-    this.quizId = this._Config.data
     this.getQuizQuestions();
   }
 

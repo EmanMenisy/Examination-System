@@ -23,7 +23,7 @@ export class AddEditQuizComponent implements OnInit {
   durations: number[] = [10, 20, 30, 45, 60]; // in minutes
   questionsNumbers: number[] = [1, 5, 10, 15, 20];
   scoresPerQuestion: number[] = [1, 2, 5, 10];
-  difficulties: string[] = ['entry', 'easy', 'medium', 'hard'];
+  difficulties: string[] = ['easy', 'medium', 'hard'];
   categories: string[] = ['FE', 'BE', 'DO'];
   listGroup: IGroup[] = [];
   code: any;

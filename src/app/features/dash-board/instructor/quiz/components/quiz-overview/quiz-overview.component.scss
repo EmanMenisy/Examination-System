@@ -84,18 +84,7 @@
   }
 }
 
-::ng-deep .p-datatable-thead > tr > th {
-  background-color: black;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 5px;
-}
-::ng-deep .p-datatable table {
-  table-layout: fixed;
-  width: 100%;
-}
+
 
 ::ng-deep .p-datatable-thead > tr > th,
 ::ng-deep .p-datatable-tbody > tr > td {
