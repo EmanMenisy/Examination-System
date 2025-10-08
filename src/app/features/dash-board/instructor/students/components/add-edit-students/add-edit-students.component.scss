@@ -44,7 +44,7 @@ section {
   top: 0;
   height: 100%;
   width: 100px;
-  z-index: 9999999;
+  z-index: 999999999999;
   border-radius: 5px 0 0 5px;
   background-color: var(--color-beige) !important;
   color: black !important;
@@ -59,7 +59,7 @@ section {
   top: 0;
   height: 100%;
   width: 100px;
-  z-index: 9999999;
+  z-index: 99999999999;
   border-radius: 5px 5px 0 0;
   background-color: var(--color-beige) !important;
   background-color: red;
@@ -76,11 +76,13 @@ section {
 .select-en{
   height: 40px;
   padding-left: 98px;
+  z-index: 99999999;
 }
 
 .select-ar{
   height: 40px;
   padding-right: 98px;
+  z-index: 999999999;
 }
 
 :host ::ng-deep .p-dynamic-dialog-mask {

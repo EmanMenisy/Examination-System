@@ -27,12 +27,12 @@ export class StudentsService {
     return this.http.get<IGroup[]>('group');
   }
 
-  addStudent(studentData: any): Observable<any> {
-    return this.http.get<any>('student', studentData);
+  addStudent(studentId: string, studentGroup: string): Observable<any> {
+    return this.http.get<any>(`student/${studentId}/${studentGroup}`);
   }
 
-  updateStudent(studentId: string, studentData: any): Observable<any> {
-    return this.http.put<any>(`student/${studentId}`, studentData);
+  updateStudent(studentId: string, studentGroup: string): Observable<any> {
+    return this.http.put<any>(`student/${studentId}/${studentGroup}`,{});
   }
 
   DeleteStudent(_id: string): Observable<any> {
