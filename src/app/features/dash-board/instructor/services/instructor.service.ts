@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IGroupReq, IGroupRes, IGroup, IUpdateGroupRes, Student } from '../interfaces/IGroup';
 import { IQuestionsReq, IQuestionsRes } from '../interfaces/IQuestions';
+import { IResult } from '../interfaces/IResult';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ import { IQuestionsReq, IQuestionsRes } from '../interfaces/IQuestions';
 export class InstructorService {
 
   constructor(private _httpClient: HttpClient) { }
-
+// groups
   getAllGroup():Observable<any> {
     return this._httpClient.get<IGroup[]>(`group`)
   }
@@ -50,4 +51,11 @@ export class InstructorService {
   updateQuestions(id: string, data: any): Observable<any> {
     return this._httpClient.put<any>(`question/${id}`, data)
   }
+  //Results
+  getAllResults(): Observable<IResult[]> {
+    return this._httpClient.get<IResult[]>(`quiz/result`)
+  }
+  // getQuizById(id: string): Observable<IGroup> {
+  //   return this._httpClient.get<IGroup>(`quiz/${id}`)
+  // }
 }

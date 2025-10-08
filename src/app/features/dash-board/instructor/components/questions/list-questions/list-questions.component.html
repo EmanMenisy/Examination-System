@@ -8,7 +8,7 @@
         <span>{{"question.buttonAdd"|translate}}</span>
         </p-button>
       </div>
-      <p-table [value]="questionList" [paginator]="true" [showFirstLastIcon]="false" [rows]="5" class="table p-5">
+      <p-table [value]="questionList" [paginator]="true" [style.direction]="'ltr'" [showFirstLastIcon]="false" [rows]="5" class="table p-5">
         <ng-template #header>
           <tr>
             <th>{{'question.title'|translate}}</th>

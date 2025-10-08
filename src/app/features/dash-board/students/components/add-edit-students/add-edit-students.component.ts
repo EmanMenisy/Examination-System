@@ -84,10 +84,10 @@ export class AddEditStudentComponent implements OnInit {
       ? this.studentToEdit?._id
       : formValue.student?._id;
 
-  if (!studentId) {
-    console.error('❌ No student ID found!');
-    return;
-  }
+  // if (!studentId) {
+  //   console.error('❌ No student ID found!');
+  //   return;
+  // }
 
   const payload = {
     group: { _id: formValue.group._id },

@@ -27,7 +27,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { MessageModule } from 'primeng/message';
 import { DropdownModule } from 'primeng/dropdown';
 import { AutoCompleteModule } from 'primeng/autocomplete';
-
+import { TabsModule } from 'primeng/tabs';
 // 🌍 Translation
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -65,7 +65,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     RippleModule,
     PaginatorModule,
     TableModule,
-     MultiSelectModule,
+    MultiSelectModule,
     IconFieldModule,
     InputIconModule,
     FloatLabelModule,
@@ -82,7 +82,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     TextareaModule,
     DatePickerModule,
     BreadcrumbModule,
-    
+    TabsModule,
     // Translate
     MessageModule,
 
@@ -127,6 +127,7 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     TextareaModule,
     DatePickerModule,
     BreadcrumbModule,
+    TabsModule,
     // Translate
     MessageModule,
 

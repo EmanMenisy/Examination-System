@@ -46,7 +46,7 @@ export class SidebarComponent {
       icon: 'pi pi-stopwatch fs-3'
     },
     {
-      menuLink: '/test',
+      menuLink: '/dashboard/instructor/listResults',
       title: 'sidebar.Results',
       icon: 'pi pi-chart-bar fs-3'
     },

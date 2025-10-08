@@ -89,6 +89,49 @@
     "Quiz was successfully created":"Quiz was successfully created",
     "close":"Close",
     "code":"code"
-  }
-
+  },
+   "question":{
+      "title":"Title",
+      "Placeholder_title":"Enter title question",
+      "Description":"Description",
+      "RightAnswer":"Right Answer",
+      "Update":"Update",
+      "Add":"Add",
+      "save": "Save",
+      "buttonAdd": "Add Question",
+      "status":"Status",
+      "BankQuestions":"Bank Of Questions",
+      "options":{
+        "A":"A",
+        "B":"B",
+        "C":"C",
+        "D":"D"
+      },
+      "CategoryType":"Category Type",
+      "type":{
+        "FrontEnd":"Front End",
+        "BackEnd":"Back End",
+        "DevOps":"DevOps"
+      },
+      "DifficultyLevel":"Difficulty level",
+      "level":{
+        "Easy":"Easy",
+        "Hard":"Hard",
+        "Medium":"Medium"
+      },
+      "Points":"Points",
+      "Actions":"Actions"
+    },
+    "result":{
+      "name":"Student Name",
+      "score":"Score",
+      "date":"Time Submitted",
+      "Completed Quizzes": "Completed Quizzes",
+      "View":"View",
+      "No. of Participants":"No. of person in group",
+      "Participants":"Participants",
+      "Group name":"Group name",
+      "Title":"Title",
+      "Date":"Date"
+    }
 }

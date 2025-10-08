@@ -13,7 +13,6 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       {  path: 'instructor',loadChildren: () => import('./instructor/instructor.module').then(m => m.InstructorModule)},
       {  path: 'students',loadChildren: () => import('./students/students.module').then(m => m.StudentsModule)},
-      { path: 'listQuestions', component: ListQuestionsComponent },
     ]
   }
 ];

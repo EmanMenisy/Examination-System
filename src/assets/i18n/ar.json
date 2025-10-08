@@ -119,7 +119,19 @@
     "category_type": "نوع الفئة",
     "difficulty_level": "مستوى الصعوبة",
     "Quiz was successfully created": "تم إنشاء الاختبار بنجاح",
-     "close": "إغلاق",
-     "code":"الكود"
-  }
+    "close": "إغلاق",
+    "code":"الكود"
+  },
+      "result":{
+      "name":"اسم الطالب",
+      "score":"الدرجة",
+      "date":"وقت التقديم",
+      "Completed Quizzes": "الاختبارات المكتملة",
+      "View":"عرض",
+      "No. of Participants":"عدد المشاركين",
+      "Participants":"المشاركون",
+      "Group name":"اسم المجموعة",
+      "Title":"العنوان",
+      "Date":"التاريخ"
+    }
 }
