@@ -48,7 +48,8 @@ export class AddEditStudentComponent implements OnInit {
           const foundStudent = this.students.find(
             (s) => s._id === this.studentToEdit!._id
           );
-          this.form.patchValue({ student: foundStudent });
+          console.log(foundStudent);
+          this.form.patchValue({ student: foundStudent!._id ,group:foundStudent!.group?._id});
         }
       },
       error: (err) => console.error('Error loading students:', err),
@@ -75,32 +76,36 @@ export class AddEditStudentComponent implements OnInit {
   }
 
   onSubmit() {
+   console.log(this.form.value)
   if (this.form.invalid) return;
 
   const formValue = this.form.value;
 
-  const studentId =
-    this.action === 'edit'
-      ? this.studentToEdit?._id
-      : formValue.student?._id;
-
-  if (!studentId) {
-    console.error('❌ No student ID found!');
-    return;
-  }
-
-  const payload = {
-    group: { _id: formValue.group._id },
-  };
+  // const studentId =
+  //   this.action === 'edit'
+  //     ? this.studentToEdit?._id
+  //     : formValue.student?._id;
+  //  console.log(studentId)
+  // if (!studentId) {
+  //   console.error('❌ No student ID found!');
+  //   return;
+  // }
+ 
 
   if (this.action === 'add') {
-    this.studentsService.addStudent({ _id: studentId, ...payload }).subscribe({
-      next: () => this.ref.close(true),
+    this.studentsService.addStudent(this.form.get('student')!.value , this.form.get('group')!.value).subscribe({
+      next: (res) =>{
+        console.log(res)
+        
+      } ,
       error: (err) => console.error('❌ Error adding student:', err),
     });
   } else {
-    this.studentsService.updateStudent(studentId, payload).subscribe({
-      next: () => this.ref.close(true),
+    this.studentsService.updateStudent(this.form.get('student')!.value , this.form.get('group')!.value).subscribe({
+       next: (res) =>{
+        console.log(res)
+        
+      } ,
       error: (err) => console.error('❌ Error updating student:', err),
     });
   }
