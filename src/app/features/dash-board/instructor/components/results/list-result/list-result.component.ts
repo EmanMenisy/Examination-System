@@ -38,7 +38,7 @@ export class ListResultComponent {
 
 
   goToView(participants: any) {
-    this.router.navigate(['/dashboard/instructor/viewResults']);
+    this.router.navigate(['/dashboard/instructor/viewResultsInstructor']);
     localStorage.setItem('participants', JSON.stringify(participants));
   }
 }

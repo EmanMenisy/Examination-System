@@ -8,25 +8,23 @@
         <ng-template #header>
           <tr>
             <th>{{'result.Title'|translate}}</th>
-            <th>{{'result.GroupName'|translate}}</th>
-            <th>{{'result.No. of Participants'|translate}}</th>
-            <th>{{'result.Participants'|translate}}</th>
+            <th>{{'result.score'|translate}}</th>
+            <th>{{'result.statues'|translate}}</th>
             <th>{{'result.Date'|translate}}</th>
-            <th></th>
+            <!-- <th></th> -->
           </tr>
         </ng-template>
         <ng-template #body let-result>
           <tr [pSelectableRow]="result">
             <td>{{ result.quiz.title }}</td>
-            <td>{{ result.quiz.group }}</td>
-            <td>{{ result.participants.length }} Person</td>
-            <td>{{ result.participants.length}} participants</td>
+            <td>{{ result.quiz.status }}</td>
+            <td>{{ result.result.score }}</td>
             <td>{{ result.quiz.schadule| date: 'dd / MM / yyyy'}}</td>
-            <td>
+            <!-- <td>
               <div class="d-flex justify-content-center gap-2 icon_action">
-              <p-button styleClass="custom_btn" class="btn_view" (click)="goToView(result.participants)"><i class="pi pi-eye"></i>{{'result.View'|translate}}</p-button>
+              <p-button styleClass="custom_btn" class="btn_view" (click)="goToView(result)"><i class="pi pi-eye"></i>{{'result.View'|translate}}</p-button>
             </div>
-            </td>
+            </td> -->
           </tr>
         </ng-template>
       </p-table>
