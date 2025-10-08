@@ -30,7 +30,7 @@ export class ListGroupComponent implements OnInit {
   }
 
   getAllGroups() {
-    this._instructorService.getAll().subscribe({
+    this._instructorService.getAllGroup().subscribe({
       next: (res: any) => {
         this.groupList = res;
         console.log(this.groupList);
@@ -72,8 +72,8 @@ export class ListGroupComponent implements OnInit {
       contentStyle: { 'max-height': '500px', overflow: 'unset' },
       baseZIndex: 10000,
       breakpoints: "{ '1199px': '75vw', '575px': '90vw'}",
-      modal: true,  
-      dismissableMask: true 
+      modal: true,
+      dismissableMask: true
     });
       this.ref.onClose.subscribe((result) => {
       if (result === 'success') {
@@ -106,14 +106,14 @@ export class ListGroupComponent implements OnInit {
       contentStyle: { 'max-height': '500px', overflow: 'unset' },
       baseZIndex: 10000,
       breakpoints: "{ '1199px': '75vw', '575px': '90vw'}",
-      modal: true,   
-      dismissableMask: true 
+      modal: true,
+      dismissableMask: true
     });
 
     this.ref.onClose.subscribe((result) => {
     if (result === 'success') {
       this.getAllGroups();
-    } 
+    }
 })
 
 

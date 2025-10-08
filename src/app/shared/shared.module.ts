@@ -27,6 +27,7 @@ import { InputNumberModule } from 'primeng/inputnumber';
 import { MessageModule } from 'primeng/message';
 import { DropdownModule } from 'primeng/dropdown';
 import { AutoCompleteModule } from 'primeng/autocomplete';
+import { StepperModule } from 'primeng/stepper';
 
 // 🌍 Translation
 import { TranslateModule } from '@ngx-translate/core';
@@ -38,7 +39,8 @@ import { Message } from 'primeng/message';
 import { TextareaModule } from 'primeng/textarea';
 import { DatePickerModule } from 'primeng/datepicker';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
-
+import { RadioButtonModule } from 'primeng/radiobutton';
+ 
 
 @NgModule({
   declarations: [
@@ -82,6 +84,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     TextareaModule,
     DatePickerModule,
     BreadcrumbModule,
+    StepperModule,
+    RadioButtonModule,
     
     // Translate
     MessageModule,
@@ -127,6 +131,8 @@ import { BreadcrumbModule } from 'primeng/breadcrumb';
     TextareaModule,
     DatePickerModule,
     BreadcrumbModule,
+    StepperModule,
+    RadioButtonModule,
     // Translate
     MessageModule,
 

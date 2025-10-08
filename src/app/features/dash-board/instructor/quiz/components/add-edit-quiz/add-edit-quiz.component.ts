@@ -71,7 +71,7 @@ export class AddEditQuizComponent implements OnInit {
 
   AddNewQuiz() {
       if (this.config && this.config.data){
-        this.quiz = this.config.data
+      this.quiz = this.config.data
        this._QuizService.UpdateQuiz(this.quiz._id , this.addQuizForm.value.title).subscribe({
         next:(res)=>{
          this._ToastrService.success('your quiz has been updated successfully')
@@ -93,7 +93,7 @@ export class AddEditQuizComponent implements OnInit {
   }
 
   getAllGroups() {
-    this._InstructorService.getAll().subscribe({
+    this._InstructorService.getAllGroup().subscribe({
       next: (res) => {
         this.listGroup = res;
       },

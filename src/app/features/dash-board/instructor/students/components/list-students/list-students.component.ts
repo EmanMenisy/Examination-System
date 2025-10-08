@@ -1,13 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { SharedModule } from '../../../../../shared/shared.module';
 import { StudentsService } from '../../Services/students.service';
-import { Istudents } from '../../Interfaces/istudents';
-import { IGroup } from '../../../instructor/interfaces/IGroup';
+import { IGroup, Istudents } from '../../Interfaces/istudents';
 import { MenuItem } from 'primeng/api';
 import { DialogService, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { DeleteStudentsComponent } from '../delete-students/delete-students.component';
 import { AddEditStudentComponent } from '../add-edit-students/add-edit-students.component';
-
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @Component({
   selector: 'app-list-students',
@@ -19,7 +17,7 @@ import { AddEditStudentComponent } from '../add-edit-students/add-edit-students.
 })
 export class ListStudentsComponent implements OnInit, OnDestroy {
 
-  groups: IGroup[] = [];
+  groups: any[] = [];
   students: Istudents[] = [];
   filteredStudents: Istudents[] = [];
   paginatedStudents: Istudents[] = [];

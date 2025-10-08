@@ -1,7 +1,8 @@
-import { IStudent } from './../../Interfaces/home';
-import { Component, OnInit } from '@angular/core';
-import { HomeService } from '../../../../core/services/home.service';
+import { IStudent } from '../../../Interfaces/home';
+import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { HomeService } from '../../../../../core/services/home.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 })
 export class HomeComponent implements OnInit {
   currentLang = 'en'
-studentList:IStudent[] = []
+   studentList:IStudent[] = []
+   role:any
   constructor(private _HomeService:HomeService ,  private _TranslateService:TranslateService
 ) {
   }
@@ -22,8 +24,12 @@ studentList:IStudent[] = []
       console.log('Language changed to:', event.lang);
       this.currentLang = event.lang;
     });
-    this.getTopStudents()
-  }
+
+   this.role = localStorage.getItem('Role')
+    if (this.role === 'Instructor') {
+     this.getTopStudents()
+    }
+}
 
   getTopStudents(){
     this._HomeService.getTopStudents().subscribe({
