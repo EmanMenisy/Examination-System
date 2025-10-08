@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { authGuard } from './features/auth/Guards/auth.guard';
+import { authGuard } from './core/Guards/auth.guard';
 export const routes: Routes = [
 
   { path: '', loadChildren: () => import('./features/auth/auth.module').then((m) => m.AuthModule) },

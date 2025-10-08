@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { DynamicDialogRef, DynamicDialogConfig } from 'primeng/dynamicdialog';
-import { SharedModule } from '../../../../../shared/shared.module';
 import { StudentsService } from '../../Services/students.service';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @Component({
   selector: 'app-delete-students',

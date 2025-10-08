@@ -1,10 +1,10 @@
+import { IGroup } from './../../../interfaces/IGroup';
 import { Component, OnInit } from '@angular/core';
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { StudentsService } from '../../Services/students.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IGroup } from '../../../instructor/interfaces/IGroup';
-import { SharedModule } from '../../../../../shared/shared.module';
 import { Istudents } from '../../Interfaces/istudents';
+import { SharedModule } from '../../../../../../shared/shared.module';
 
 @Component({
   selector: 'app-add-edit-student',

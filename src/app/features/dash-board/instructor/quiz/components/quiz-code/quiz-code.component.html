@@ -1,6 +1,6 @@
 <div class="p-4 text-center quiz-code">
   <span><i class="pi pi-check"></i></span>
-  <p class="my-2">{{"add_quiz.Quiz was successfully created"}}</p>
+  <p class="my-2">{{"add_quiz.Quiz was successfully created" |translate}}</p>
   <p-inputgroup>
       <p-inputgroup-addon class="inputlabel">{{ "add_quiz.code" |translate }}</p-inputgroup-addon>
     <input pInputText [(ngModel)]="code"/>
@@ -15,6 +15,6 @@
     </p-inputgroup-addon>
   </p-inputgroup>
   <div class="text-center mt-2">
-    <button class="code-button" (click)="close()"></button>
+    <button class="code-button" (click)="close()">close</button>
   </div>
 </div>
