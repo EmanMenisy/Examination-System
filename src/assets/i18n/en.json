@@ -92,9 +92,10 @@
     "code":"code",
     "joinQuiz":"Join Quiz"
   },
-   "question":{
+  "question":{
       "title":"Title",
       "Placeholder_title":"Enter title question",
+      "Placeholder_description":"Enter description question",
       "Description":"Description",
       "RightAnswer":"Right Answer",
       "Update":"Update",

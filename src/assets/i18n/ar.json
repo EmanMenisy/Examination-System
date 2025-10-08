@@ -43,7 +43,7 @@
     "Quiz_Directory": "دليل الاختبارات"
   },
   "Student":"طالب",
-   "Instructor":"معلم",
+  "Instructor":"معلم",
 
   "homeNav": {
     "dashboard": "المنصة",
@@ -60,6 +60,7 @@
   "question": {
     "title": "العنوان",
     "Placeholder_title": "ادخل عنوان السؤال",
+    "Placeholder_description": "ادخل وصف السؤال",
     "Description": "الوصف",
     "RightAnswer": "الإجابة الصحيحة",
     "Add": "إضافة",
