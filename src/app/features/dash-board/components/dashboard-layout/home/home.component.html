@@ -108,7 +108,7 @@
         </div>
       </div>
       <div class="col-md-5">
-        <div class="wrapper p-3">
+        <div class="wrapper p-3" *ngIf="this.role === 'Instructor'">
           <div class="d-flex justify-content-between student-title">
             <p>{{'home.Top_5_Students'|translate}}</p>
             <p>{{'home.All_Students'|translate}}</p>

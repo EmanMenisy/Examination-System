@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <div class="card shadow-sm p-4 mx-auto">
+    <p-stepper [value]="1">
+      <p-step-list class="d-flex justify-content-between">
+        <p-step *ngFor="let quiz of questions; let i = index" [value]="i + 1">
+          Question {{ i + 1 }}
+        </p-step>
+      </p-step-list>
+
+      <p-step-panels>
+        <p-step-panel
+          *ngFor="let question of questions; let i = index"
+          [value]="i + 1"
+        >
+          <ng-template #content let-activateCallback="activateCallback">
+            <div class="card-body text-center border rounded bg-light">
+              <h4 class="fw-semibold mb-4">{{ question.title }}</h4>
+
+              <div class="d-flex flex-column align-items-start gap-2 ps-4">
+                <ng-container
+                  *ngFor="let answer of question.options | keyvalue"
+                >
+                  @if(answer.key != '_id'){
+                  <div class="form-check">
+                    <p-radio-button
+                      name="{{ question._id }}"
+                      [id]="question._id + answer.key"
+                      [value]="answer.key"
+                      [(ngModel)]="selectedAnswers[i]"
+                      (onClick)="onAnswerSelect(question._id, answer.key)"
+                      class="mx-2">
+                    </p-radio-button> 
+                    <label
+                      class="form-check-label"
+                      [for]="question._id + answer.key"
+                    >
+                      {{ answer.value }}
+                    </label>
+                  </div>
+                  }
+                </ng-container>
+              </div>
+
+              <div class="d-flex justify-content-between mt-4">
+                <button
+                  *ngIf="i > 0"
+                  class="btn btn-outline-secondary"
+                  (click)="activateCallback(i)"
+                >
+                  <i class="pi pi-arrow-left me-1"></i> Back
+                </button>
+
+                <button
+                  *ngIf="i < questions.length - 1"
+                  class="btn btn-primary ms-auto"
+                  (click)="activateCallback(i + 2)"
+                >
+                  Next <i class="pi pi-arrow-right ms-1"></i>
+                </button>
+
+                <button
+                  *ngIf="i === questions.length - 1"
+                  class="btn btn-success ms-auto"
+                  (click)="submitQuiz()"
+                >
+                  <i class="pi pi-check me-1"></i> Submit
+                </button>
+              </div>
+            </div>
+          </ng-template>
+        </p-step-panel>
+      </p-step-panels>
+    </p-stepper>
+  </div>
+</div>
