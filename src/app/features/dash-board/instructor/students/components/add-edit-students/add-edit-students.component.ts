@@ -5,6 +5,7 @@ import { StudentsService } from '../../Services/students.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Istudents } from '../../Interfaces/istudents';
 import { SharedModule } from '../../../../../../shared/shared.module';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-add-edit-student',
@@ -24,7 +25,8 @@ export class AddEditStudentComponent implements OnInit {
     private fb: FormBuilder,
     private studentsService: StudentsService,
     private ref: DynamicDialogRef,
-    private config: DynamicDialogConfig
+    private config: DynamicDialogConfig,
+    private toaster:ToastrService
   ) {}
 
   ngOnInit(): void {
@@ -48,7 +50,9 @@ export class AddEditStudentComponent implements OnInit {
           const foundStudent = this.students.find(
             (s) => s._id === this.studentToEdit!._id
           );
-          this.form.patchValue({ student: foundStudent });
+          console.log(foundStudent);
+          
+          this.form.patchValue({ student: foundStudent?._id,group:foundStudent?.group?._id});
         }
       },
       error: (err) => console.error('Error loading students:', err),
@@ -63,7 +67,7 @@ export class AddEditStudentComponent implements OnInit {
           const foundGroup = this.groups.find(
             (g) => g._id === this.studentToEdit!.group!._id
           );
-          this.form.patchValue({ group: foundGroup });
+         
         }
       },
       error: (err) => console.error('Error loading groups:', err),
@@ -79,28 +83,22 @@ export class AddEditStudentComponent implements OnInit {
 
   const formValue = this.form.value;
 
-  const studentId =
-    this.action === 'edit'
-      ? this.studentToEdit?._id
-      : formValue.student?._id;
-
-  // if (!studentId) {
-  //   console.error('❌ No student ID found!');
-  //   return;
-  // }
-
-  const payload = {
-    group: { _id: formValue.group._id },
-  };
-
+  let student = this.form.get('student')!.value
+  let group = this.form.get('group')!.value
   if (this.action === 'add') {
-    this.studentsService.addStudent({ _id: studentId, ...payload }).subscribe({
-      next: () => this.ref.close(true),
+    this.studentsService.addStudent(student,group).subscribe({
+      next: (res) => {
+        this.toaster.success(res.message)
+        this.ref.close(true)
+      },
       error: (err) => console.error('❌ Error adding student:', err),
     });
   } else {
-    this.studentsService.updateStudent(studentId, payload).subscribe({
-      next: () => this.ref.close(true),
+    this.studentsService.updateStudent(student,group).subscribe({
+      next: (res) => {
+        this.toaster.success(res.message);
+        this.ref.close(true)
+      },
       error: (err) => console.error('❌ Error updating student:', err),
     });
   }
