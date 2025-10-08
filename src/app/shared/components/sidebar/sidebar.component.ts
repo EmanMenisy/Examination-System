@@ -19,18 +19,18 @@ export class SidebarComponent {
   userRole: any
   constructor() {
     this._translate.use('en');
-    
+
   }
 
   expanded: boolean = true;
 
   isInstructor(): boolean {
-    this.userRole = localStorage.getItem('Role'); 
+    this.userRole = localStorage.getItem('Role');
     return this.userRole === 'Instructor';
   }
 
   isStudent(): boolean {
-    this.userRole = localStorage.getItem('Role'); 
+    this.userRole = localStorage.getItem('Role');
     return this.userRole === 'Student';
   }
 
@@ -38,47 +38,47 @@ export class SidebarComponent {
     this.expanded = !this.expanded
   }
 
-  
+
   menu: IMenu[] = [
     {
-      title: 'Home',
+      title: 'sidebar.home',
       menuLink: '/dashboard/home',
       icon: 'pi pi-home fs-3',
       isActive: this.isInstructor() ||  this.isStudent()
     },
     {
-      title: 'Groups',
+      title: 'sidebar.Groups',
       menuLink: '/dashboard/instructor/listGroup',
       icon: 'pi pi-users fs-3',
       isActive: this.isInstructor()
     },
     {
-      title: 'Students',
+      title: 'sidebar.Students',
       menuLink: '/dashboard/instructor/listStudent',
       icon: 'pi pi-chart-bar fs-3',
       isActive: this.isInstructor()
     },
     {
-      title: 'Quizzes',
+      title: 'sidebar.Quizzes',
       menuLink: '/dashboard/instructor/quiz',
       icon: 'pi pi-stopwatch fs-3',
       isActive: this.isInstructor()
     },
      {
-      title: 'Quizzes',
+      title: 'sidebar.Quizzes',
       menuLink: '/dashboard/learner/viewQuiz',
       icon: 'pi pi-stopwatch fs-3',
       isActive: this.isStudent()
     },
     {
-      title: 'Results',
-      menuLink: '/test',
+      title: 'sidebar.Results',
+      menuLink: '/dashboard/instructor/listResultsInstructor',
       icon: 'pi pi-chart-bar fs-3',
       isActive: this.isInstructor()
     },
-       {
-      title: 'Results',
-      menuLink: '/dashboard/learner/viewQuiz',
+    {
+      title: 'sidebar.Results',
+      menuLink: '/dashboard/learner/listResults',
       icon: 'pi pi-chart-bar fs-3',
       isActive: this.isStudent()
     },

@@ -28,7 +28,7 @@ export class StudentsService {
   }
 
   addStudent(studentData: any): Observable<any> {
-    return this.http.post<any>('student', studentData);
+    return this.http.get<any>('student', studentData);
   }
 
   updateStudent(studentId: string, studentData: any): Observable<any> {
@@ -41,5 +41,9 @@ export class StudentsService {
 
   GroupsRemover(studentId: string, studentGroup: string): Observable<any> {
     return this.http.delete<any>(`student/${studentId}/${studentGroup}`);
+  }
+
+  getById(id: string): Observable<any> {
+    return this.http.get(`group/${id}`);
   }
 }

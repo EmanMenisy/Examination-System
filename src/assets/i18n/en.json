@@ -33,7 +33,8 @@
         "Quizzes": "Quizzes",
         "Results": "Results",
         "Help": "Help",
-        "Students": "Students"
+        "Students": "Students",
+    "home": "Home"
     },
     "home": {
         "Top_5_Students": "Top 5 Students",
@@ -88,7 +89,53 @@
     "Update Your quiz":"Update Your quiz",
     "Quiz was successfully created":"Quiz was successfully created",
     "close":"Close",
-    "code":"code"
-  }
-
+    "code":"code",
+    "joinQuiz":"Join Quiz"
+  },
+  "question":{
+      "title":"Title",
+      "Placeholder_title":"Enter title question",
+      "Placeholder_description":"Enter description question",
+      "Description":"Description",
+      "RightAnswer":"Right Answer",
+      "Update":"Update",
+      "Add":"Add",
+      "save": "Save",
+      "buttonAdd": "Add Question",
+      "status":"Status",
+      "BankQuestions":"Bank Of Questions",
+      "options":{
+        "A":"A",
+        "B":"B",
+        "C":"C",
+        "D":"D"
+      },
+      "CategoryType":"Category Type",
+      "type":{
+        "FrontEnd":"Front End",
+        "BackEnd":"Back End",
+        "DevOps":"DevOps"
+      },
+      "DifficultyLevel":"Difficulty level",
+      "level":{
+        "Easy":"Easy",
+        "Hard":"Hard",
+        "Medium":"Medium"
+      },
+      "Points":"Points",
+      "Actions":"Actions"
+    },
+    "result":{
+      "name":"Student Name",
+      "score":"Score",
+      "date":"Time Submitted",
+      "Completed Quizzes": "Completed Quizzes",
+      "View":"View",
+      "No. of Participants":"No. of person in group",
+      "Participants":"Participants",
+      "GroupName":"Group name",
+      "Title":"Title",
+      "Date":"Date",
+      "status":"Status"
+    }
 }

@@ -33,7 +33,8 @@
     "Quizzes": "الاختبارات",
     "Results": "النتائج",
     "Help": "المساعدة",
-    "Students": "الطلاب"
+    "Students": "الطلاب",
+    "home": "الرئيسية"
     },
     "home": {
     "Top_5_Students": "أفضل 5 طلاب",
@@ -42,7 +43,7 @@
     "Quiz_Directory": "دليل الاختبارات"
   },
   "Student":"طالب",
-   "Instructor":"معلم",
+  "Instructor":"معلم",
 
   "homeNav": {
     "dashboard": "المنصة",
@@ -59,6 +60,7 @@
   "question": {
     "title": "العنوان",
     "Placeholder_title": "ادخل عنوان السؤال",
+    "Placeholder_description": "ادخل وصف السؤال",
     "Description": "الوصف",
     "RightAnswer": "الإجابة الصحيحة",
     "Add": "إضافة",
@@ -119,7 +121,21 @@
     "category_type": "نوع الفئة",
     "difficulty_level": "مستوى الصعوبة",
     "Quiz was successfully created": "تم إنشاء الاختبار بنجاح",
-     "close": "إغلاق",
-     "code":"الكود"
-  }
+    "close": "إغلاق",
+    "code":"الكود",
+    "joinQuiz":"انضم إلى الاختبار"
+  },
+      "result":{
+      "name":"اسم الطالب",
+      "score":"الدرجة",
+      "date":"وقت التقديم",
+      "Completed Quizzes": "الاختبارات المكتملة",
+      "View":"عرض",
+      "No. of Participants":"عدد المشاركين",
+      "Participants":"المشاركون",
+      "GroupName":"اسم المجموعة",
+      "Title":"العنوان",
+      "Date":"التاريخ",
+      "statues":"الحالة"
+    }
 }

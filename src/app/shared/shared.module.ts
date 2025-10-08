@@ -40,7 +40,7 @@ import { TextareaModule } from 'primeng/textarea';
 import { DatePickerModule } from 'primeng/datepicker';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { RadioButtonModule } from 'primeng/radiobutton';
- 
+
 
 @NgModule({
   declarations: [
@@ -67,7 +67,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     RippleModule,
     PaginatorModule,
     TableModule,
-     MultiSelectModule,
+    MultiSelectModule,
     IconFieldModule,
     InputIconModule,
     FloatLabelModule,
@@ -86,7 +86,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     BreadcrumbModule,
     StepperModule,
     RadioButtonModule,
-    
+
     // Translate
     MessageModule,
 

@@ -1,0 +1,25 @@
+<section>
+  <div class="container px-5 mt-4">
+    <div class="card w-50">
+      <div class="d-flex justify-content-between m-3">
+        <h2>{{'sidebar.Results'|translate}}</h2>
+      </div>
+      <p-table [value]="participants" class="table p-5">
+        <ng-template #header>
+          <tr>
+            <th>{{'result.name'|translate}}</th>
+            <th>{{'result.score'|translate}}</th>
+            <th>{{'result.date'|translate}}</th>
+          </tr>
+        </ng-template>
+        <ng-template #body let-result>
+          <tr [pSelectableRow]="result">
+            <td>{{ result.participant.first_name }}</td>
+            <td>{{ result.score}}</td>
+            <td>{{ result.started_at| date: 'dd / MM / yyyy'}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,28 @@
+.table {
+  direction: ltr;
+  text-align: left;
+  tr td:not(:first-child),
+  tr th:not(:first-child) {
+    text-align: center;
+  }
+
+  tr th {
+    background: #000;
+    color: aliceblue;
+  }
+
+  tr td,
+  tr th {
+    border: 1px gray solid;
+  }
+
+  .icon_action a {
+
+    cursor: pointer;
+
+    i {
+      color: #FB7C19;
+      font-weight: bold;
+    }
+  }
+}
