@@ -23,16 +23,6 @@ export class ListResultComponent {
       next: (response) => {
         this.results = response;
         console.log('Results fetched:', this.results);
-        // this.results.forEach((item, index) => {
-        //   if (item.quiz?.group) {
-        //     this._instructorService.getGroupById(item.quiz.group).subscribe({
-        //       next: (group) => {
-        //         console.log('Fetched group:', group);
-        //         this.results[index].quiz.group = group.name;
-        //       }
-        //     });
-        //   }
-        // });
       }
     });
   }

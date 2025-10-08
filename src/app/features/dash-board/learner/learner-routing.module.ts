@@ -12,7 +12,7 @@ const routes: Routes = [
       component: LearnerComponent,
       children: [
         { path: 'viewQuiz', component: ViewQuizComponent },
-        { path: 'quiz', component: QuizPageComponent },
+        { path: 'quiz/:id', component: QuizPageComponent },
         { path: 'listResults', component: ListResultComponent },
         { path: 'viewResults', component: ViewResultComponent },
       ],
