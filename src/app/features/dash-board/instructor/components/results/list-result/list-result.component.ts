@@ -21,20 +21,30 @@ export class ListResultComponent {
   getAllResults(): void {
     this._instructorService.getAllResults().subscribe({
       next: (response) => {
-        this.results = response;
-        this.results.forEach((item, index) => {
+        // this.results = [];
+        response.map((item: any) => {
           if (item.quiz?.group) {
             this._instructorService.getGroupById(item.quiz.group).subscribe({
               next: (group) => {
-                console.log('Fetched group:', group);
-                this.results[index].quiz.group = group.name;
+                const updatedItem = {
+                  ...item,
+                  quiz: {
+                    ...item.quiz,
+                    group: group.name
+                  }
+                };
+                this.results.push(updatedItem);
               }
             });
+          } else {
+            this.results.push(item);
           }
         });
-      }
+      },
+      error: (err) => console.error(err)
     });
   }
+
 
 
   goToView(participants: any) {

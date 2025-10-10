@@ -2,7 +2,7 @@
   direction: ltr;
   text-align: left;
   max-width: 720px;
-  padding: 1.25rem;
+  padding-inline: 1.25rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -17,6 +17,7 @@
       margin: 0;
       font-size: 1.25rem;
       font-weight: 700;
+      margin-bottom: 1.25rem  ;
     }
 
     .meta {

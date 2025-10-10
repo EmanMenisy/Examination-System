@@ -3,6 +3,7 @@ import { SharedModule } from '../../../../../../shared/shared.module';
 import { Router } from '@angular/router';
 import { InstructorService } from '../../../../instructor/services/instructor.service';
 import { IResult } from '../../../../instructor/interfaces/IResult';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-result',
@@ -11,11 +12,16 @@ import { IResult } from '../../../../instructor/interfaces/IResult';
   styleUrl: './list-result-learner.component.scss'
 })
 export class ListResultComponent {
+  constructor(private _instructorService: InstructorService, private router: Router , private TranslateService: TranslateService) { }
 
-  constructor(private _instructorService: InstructorService, private router: Router) { }
   results: IResult[] = [];
+  currentLang: string = 'en';
+
   ngOnInit(): void {
     this.getAllResults();
+        this.TranslateService.onLangChange.subscribe((event) => {
+      this.currentLang = event.lang;
+    });
   }
 
   getAllResults(): void {

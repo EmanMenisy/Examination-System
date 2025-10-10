@@ -1,18 +1,20 @@
 <section>
-  <div class="d-flex justify-content-between dialouge-title">
+  <div class="d-flex  justify-content-between dialouge-title">
     <div class="w-75 px-4 title">
       <p class="mb-0" *ngIf="data">{{"question.Update"| translate}}</p>
       <p class="mb-0" *ngIf="!data">{{"question.Add"|translate}}</p>
     </div>
-    <div class="header_button px-3">
-      <button type="button" title="close" class="border-0" (click)="save()">
-        <i class="pi pi-check text-black"></i>
-      </button>
-    </div>
-    <div class="header_button px-3">
-      <button type="button" title="close" class="border-0" (click)="close()">
-        <i class="pi pi-times text-black"></i>
-      </button>
+    <div class="d-flex justify-content-between">
+      <div class="header_button px-3">
+        <button type="button" title="close" class="border-0" (click)="save()">
+          <i class="pi pi-check text-black save"></i>
+        </button>
+      </div>
+      <div class="header_button px-3">
+        <button type="button" title="close" class="border-0" (click)="close()">
+          <i class="pi pi-times text-black close"></i>
+        </button>
+      </div>
     </div>
   </div>
   <div class="py-3 input-wrapper mt-2">
@@ -26,32 +28,33 @@
       <!-- Description -->
       <p-inputgroup class="my-4">
         <p-inputgroup-addon class="inputlabel">{{"question.Description" |translate}}</p-inputgroup-addon>
-        <input title="description question" pInputText formControlName="description" placeholder="{{'question.Placeholder_description'|translate}}" />
+        <input title="description question" pInputText formControlName="description"
+          placeholder="{{'question.Placeholder_description'|translate}}" />
       </p-inputgroup>
       <!-- answers -->
       <div class="row">
         <!-- Right answer -->
-        <div class="col-md-4">
+        <div class="col-lg-4">
           <p-inputgroup class="my-4">
             <p-inputgroup-addon class="inputlabel">{{"question.RightAnswer" |translate}}</p-inputgroup-addon>
             <p-select [options]="options" optionValue="name" formControlName="answer" optionLabel="name"
-              placeholder="Select a RightAnswer" class="w-full md:w-56" />
+              placeholder="{{'question.Placeholder_select'|translate}}" class="w-full md:w-56" />
           </p-inputgroup>
         </div>
         <!-- type -->
-        <div class="col-md-4">
+        <div class="col-lg-4">
           <p-inputgroup class="my-4">
             <p-inputgroup-addon class="inputlabel">{{"question.CategoryType" |translate}}</p-inputgroup-addon>
             <p-select [options]="type" optionValue="code" formControlName="type" optionLabel="name"
-              placeholder="Select a Type Questions" class="w-full md:w-56" />
+              placeholder="{{'question.Placeholder_selectType'|translate}}" class="w-full md:w-56" />
           </p-inputgroup>
         </div>
         <!-- Difficulty level -->
-        <div class="col-md-4">
+        <div class="col-lg-4">
           <p-inputgroup class="my-4">
             <p-inputgroup-addon class="inputlabel">{{"question.DifficultyLevel" |translate}}</p-inputgroup-addon>
             <p-select [options]="level" optionValue="code" formControlName="difficulty" optionLabel="name"
-              placeholder="Select a Type Questions" class="w-full md:w-56" />
+              placeholder="{{'question.Placeholder_selectDifficulty'|translate}}" class="w-full md:w-56" />
           </p-inputgroup>
         </div>
       </div>
@@ -86,12 +89,6 @@
           </p-inputgroup>
         </div>
       </div>
-      <!-- <div class="text-end">
-        <p-button type="submit" styleClass="custom_btn" class="save" (click)="save()">
-  {{ (data ? 'question.Update' : 'question.save') | translate }}
-</p-button>
-
-      </div> -->
     </form>
   </div>
 </section>

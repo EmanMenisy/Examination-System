@@ -109,3 +109,10 @@
   table-layout: fixed;
   width: 100%;
 }
+// for rtl table
+.table-ltr .p-paginator {
+  direction: ltr;
+}
+.table-rtl .p-paginator {
+  direction: rtl;
+}

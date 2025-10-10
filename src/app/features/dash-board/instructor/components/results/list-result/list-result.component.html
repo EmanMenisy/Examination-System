@@ -4,7 +4,8 @@
       <div class="d-flex justify-content-between m-3">
         <h2>{{'result.Completed Quizzes'|translate}}</h2>
       </div>
-      <p-table [value]="results" [paginator]="true" [style.direction]="'ltr'" [showFirstLastIcon]="false" [rows]="5" class="table p-5">
+      <p-table *ngIf="results.length >0" [value]="results" [paginator]="true" [style.direction]="'ltr'" [showFirstLastIcon]="false" [rows]="5"
+        class="table p-5">
         <ng-template #header>
           <tr>
             <th>{{'result.Title'|translate}}</th>
@@ -18,14 +19,15 @@
         <ng-template #body let-result>
           <tr [pSelectableRow]="result">
             <td>{{ result.quiz.title }}</td>
-            <td>{{ result.quiz.group }}</td>
+            <td>{{ result.quiz?.group||'_'}}</td>
             <td>{{ result.participants.length }} Person</td>
             <td>{{ result.participants.length}} participants</td>
-            <td>{{ result.quiz.schadule| date: 'dd / MM / yyyy'}}</td>
+            <td>{{ result.quiz.schadule | date: 'dd/MM/yyyy , hh:mm a' }}</td>
             <td>
               <div class="d-flex justify-content-center gap-2 icon_action">
-              <p-button styleClass="custom_btn" class="btn_view" (click)="goToView(result.participants)"><i class="pi pi-eye"></i>{{'result.View'|translate}}</p-button>
-            </div>
+                <p-button styleClass="custom_btn" class="btn_view" (click)="goToView(result.participants)"><i
+                    class="pi pi-eye"></i>{{'result.View'|translate}}</p-button>
+              </div>
             </td>
           </tr>
         </ng-template>
