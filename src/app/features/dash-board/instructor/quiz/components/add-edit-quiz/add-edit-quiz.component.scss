@@ -43,7 +43,8 @@ section {
   background-color: var(--color-beige) !important;
   color: black !important;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  width: 120px !important;
 }
 
 .input-label-en{
@@ -51,13 +52,13 @@ section {
   left: 0;
   top: 0;
   height: 100%;
-  width: 100px;
+  width: 120px;
   z-index: 99;
   border-radius: 5px 0 0 5px;
   background-color: var(--color-beige) !important;
   color: black !important;
   border-right: 1px solid #d6d6d6;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   text-wrap: nowrap;
 }
@@ -67,14 +68,14 @@ section {
   right: 0;
   top: 0;
   height: 100%;
-  width: 100px;
+  width: 120px;
   z-index: 99;
   border-radius: 5px 5px 0 0;
   background-color: var(--color-beige) !important;
   background-color: red;
   color: black !important;
   border-left: 1px solid #d6d6d6;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 600;
   text-wrap: nowrap;
 }
@@ -85,12 +86,12 @@ section {
 
 .select-en{
   height: 40px;
-  padding-left: 98px;
+  padding-left: 120px;
 }
 
 .select-ar{
   height: 40px;
-  padding-right: 98px;
+  padding-right: 120px;
 }
 
 :host ::ng-deep .p-dynamic-dialog-mask {
@@ -105,11 +106,18 @@ section {
     position: relative;
     display: inline-flex;
     width: 100% !important;
-    padding-left: 100px ;
+    padding-left: 120px ;
+    text-align: start;
+
 }
 
 ::ng-deep textarea{
-    padding-left: 100px !important;
+    padding-left: 130px !important;
+    text-align: start;
+}
+
+.select{
+  width: 33% !important;
 }
 
 }

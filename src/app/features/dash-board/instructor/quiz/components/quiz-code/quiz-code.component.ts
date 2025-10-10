@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedModule } from "../../../../../../shared/shared.module";
 import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-quiz-code',
@@ -11,7 +12,7 @@ import { DynamicDialogConfig, DynamicDialogRef } from 'primeng/dynamicdialog';
 export class QuizCodeComponent implements OnInit {
   code:any 
   constructor( private ref: DynamicDialogRef,
-  private config: DynamicDialogConfig ) {
+  private config: DynamicDialogConfig , private _ToastrService:ToastrService ) {
     
   }
   ngOnInit(): void {
@@ -20,8 +21,8 @@ export class QuizCodeComponent implements OnInit {
 
    copyText() {
     navigator.clipboard.writeText(this.code).then(() => {
-      console.log('Copied: ', this.code);
     });
+    this._ToastrService.success("code copied successfully")
   }
 
 
