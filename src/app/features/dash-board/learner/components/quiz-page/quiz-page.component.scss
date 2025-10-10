@@ -1,0 +1,39 @@
+
+:host ::ng-deep .p-stepper .p-step-header.p-highlight {
+  background-color: #4caf50; /* Active header */
+  color: white;
+}
+
+:host ::ng-deep .p-stepper .p-step-number {
+  background-color: var(--color-beige);    /* Inactive circle */
+  color: rgb(12, 12, 12);
+}
+
+:host ::ng-deep .p-stepper .p-step-number {
+  background-color: var(--color-beige);    /* Inactive circle */
+  color: rgb(12, 12, 12);
+}
+
+:host ::ng-deep .p-step-active .p-step-title {
+    color: var(--color-light-green)
+}
+
+:host ::ng-deep  .p-step:has(~ .p-step-active) .p-stepper-separator {
+     background-color: var(--color-light-green) !important ;
+}
+
+.next{
+     background-color: var(--color-beige) !important ;
+     color: black;
+     outline: none !important;
+     border: none !important;
+     font-weight: 500;
+     i{
+         font-size: 10px;
+     }
+}
+
+:host ::ng-deep .p-radiobutton-checked .p-radiobutton-box {
+    border-color: var(--color-light-green);
+    background: var(--color-light-green);
+}

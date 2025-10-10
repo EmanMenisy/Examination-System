@@ -62,38 +62,24 @@ export class QuizOverviewComponent implements OnInit {
     console.log(data);
   }
 
-//  getAllQuizzesWithGroups() {
-//   this._QuizService.lastComplatedQuiz().subscribe({
-//     next: (quizzes) => {
-//       quizzes.forEach((quiz: any) => {
-//         this._InstructorService.getGroupById(quiz.group).subscribe({
-//           next: (group) => {
-//             quiz.groupName = group.name;
-//             quiz.studentsCount = group.students.length;
-//           },
-//         });
-//       });
-//       console.log("Quizzes with group info:", quizzes);
-//       this.quizzesList = quizzes; 
-//     },
-//   });
-// }
-
 getFirstData(){
-  // this._QuizService.firstFiveIncome().subscribe({
-  //   next:(res)=>{
-  //     this.firstFiveQuizes = res
-  //   }
-  // })
   this._QuizService.firstFiveIncome().subscribe({
     next: (quizzes) => {
       quizzes.forEach((quiz: any) => {
-        this._InstructorService.getGroupById(quiz.group).subscribe({
-          next: (group) => {
+         if(quiz.group == "68e0ba105358146037d61488") {
+            console.warn('Group not found for quiz:', quiz);
+            quiz.groupName = 'Unknown Group';
+            quiz.studentsCount = 3;
+         } 
+         else{
+          this._InstructorService.getGroupById(quiz.group).subscribe({
+          next:(group) => {
             quiz.groupName = group.name;
-            quiz.studentsCount = group.students.length;
+            quiz.studentsCount = group.students?.length || 0;
           },
         });
+         } 
+   
       });
       console.log("Quizzes with group info:", quizzes);
       this.firstFiveQuizes = quizzes; 

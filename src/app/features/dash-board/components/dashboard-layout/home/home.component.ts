@@ -1,4 +1,4 @@
-import { IStudent } from '../../../Interfaces/home';
+import { IStudent } from '../../../../../shared/Interfaces/home';
 import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { HomeService } from '../../../../../core/services/home.service';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
