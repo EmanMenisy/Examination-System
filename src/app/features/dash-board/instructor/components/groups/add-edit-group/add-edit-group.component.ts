@@ -7,7 +7,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { IStudent } from '../../../../Interfaces/home';
+import { IStudent } from '../../../../../../shared/Interfaces/home';
 import { ToastrService } from 'ngx-toastr';
 import { DynamicDialogConfig, DynamicDialogModule, DynamicDialogRef } from 'primeng/dynamicdialog';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
