@@ -2,49 +2,37 @@
   <h6 class="mt-5">{{"auth.Continue your learning journey with QuizWiz" | translate}} !</h6>
   <div>
     <div class="login-buttons my-4 d-flex">
-      <a routerLink="LogIn"
-        ><img src="/images/Vector (3).png" alt="" />
-        <p>{{'auth.Sign In'|translate}}</p></a
-      >
-      <a routerLink="/Register"
-        ><img src="/images/Vector (4).png" alt="" />
-        <p>{{'auth.Sign Up'|translate}}</p></a
-      >
+      <a routerLink="LogIn"><img src="/images/Vector (3).png" alt="" />
+        <p>{{'auth.Sign In'|translate}}</p>
+      </a>
+      <a routerLink="/Register"><img src="/images/Vector (4).png" alt="" />
+        <p>{{'auth.Sign Up'|translate}}</p>
+      </a>
     </div>
 
     <form [formGroup]="LoginForm" (ngSubmit)="login(LoginForm)">
       <label for="" class="from-label">{{"auth.Registered email address"| translate}}</label>
       <p-iconfield>
         <p-inputicon styleClass="pi pi-envelope" />
-        <input
-          type="text"
-          pInputText
-          placeholder="{{'auth.Placeholder_email'|translate}}"
-          class="w-75"
-          formControlName="email"
-          autocomplete="email"
-
-        />
+        <input type="text" pInputText placeholder="{{'auth.Placeholder_email'|translate}}" class="w-75"
+          formControlName="email" autocomplete="email" />
       </p-iconfield>
-
+      <app-message error="required" [control]="LoginForm.get('email')" text="{{'auth.EmailRequired'|translate}}"
+        size="small"></app-message>
+      <app-message error="email" [control]="LoginForm.get('email')" text="{{'auth.EmailInvalid'|translate}}"
+        size="small"></app-message>
       <label for="" class="from-label">{{"auth.Enter_Password"| translate}} </label>
-     <p-iconfield class="w-100">
+      <p-iconfield class="w-100">
         <p-inputicon styleClass="pi pi-key pass-icon"></p-inputicon>
-        <p-password [toggleMask]="true" formControlName="password" placeholder="{{'auth.Placeholder_password'|translate}}"
->
+        <p-password [toggleMask]="true" formControlName="password"
+          placeholder="{{'auth.Placeholder_password'|translate}}">
         </p-password>
       </p-iconfield>
-      <div
-        class="d-flex justify-content-between flex-wrap mt-3 form-buttons w-75 align-items-center"
-      >
-        <p-button
-        [label]="'auth.Sign In' | translate"
-          icon="pi pi-verified"
-          iconPos="right"
-          styleClass="my-custom-btn"
-          type="submit"
-          [disabled]="LoginForm.invalid"
-        ></p-button>
+      <app-message error="required" [control]="LoginForm.get('password')" text="{{'auth.PasswordRequired'|translate}}"
+        size="small"></app-message>
+      <div class="d-flex justify-content-between flex-wrap mt-5 pt-2 form-buttons w-75 align-items-center">
+        <p-button [label]="'auth.Sign In' | translate" icon="pi pi-verified" iconPos="right" styleClass="my-custom-btn"
+          type="submit" [disabled]="LoginForm.invalid"></p-button>
         <p> {{"auth.Forget password"|translate}}? <a routerLink="/ForgetPassword">{{"auth.click" |translate}}</a></p>
       </div>
     </form>

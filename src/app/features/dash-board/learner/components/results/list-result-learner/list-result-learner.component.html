@@ -4,12 +4,13 @@
       <div class="d-flex justify-content-between m-3">
         <h2>{{'result.Completed Quizzes'|translate}}</h2>
       </div>
-      <p-table [value]="results" [paginator]="true" [style.direction]="'ltr'" [showFirstLastIcon]="false" [rows]="5" class="table p-5">
+      <p-table [value]="results" [style.direction]="currentLang === 'ar' ? 'rtl' : 'ltr'"
+  [styleClass]="currentLang === 'ar' ? 'table-rtl' : 'table-ltr'" styleClass="custom-table" [paginator]="true" [style.direction]="'ltr'" [showFirstLastIcon]="false" [rows]="5" class="table p-5">
         <ng-template #header>
           <tr>
             <th>{{'result.Title'|translate}}</th>
+            <th>{{'result.status'|translate}}</th>
             <th>{{'result.score'|translate}}</th>
-            <th>{{'result.statues'|translate}}</th>
             <th>{{'result.Date'|translate}}</th>
             <!-- <th></th> -->
           </tr>
@@ -19,12 +20,7 @@
             <td>{{ result.quiz.title }}</td>
             <td>{{ result.quiz.status }}</td>
             <td>{{ result.result.score }}</td>
-            <td>{{ result.quiz.schadule| date: 'dd / MM / yyyy'}}</td>
-            <!-- <td>
-              <div class="d-flex justify-content-center gap-2 icon_action">
-              <p-button styleClass="custom_btn" class="btn_view" (click)="goToView(result)"><i class="pi pi-eye"></i>{{'result.View'|translate}}</p-button>
-            </div>
-            </td> -->
+            <td>{{ result.quiz.schadule|date: 'dd/MM/yyyy , hh:mm a' }}</td>
           </tr>
         </ng-template>
       </p-table>

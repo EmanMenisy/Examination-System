@@ -96,6 +96,9 @@
       "title":"Title",
       "Placeholder_title":"Enter title question",
       "Placeholder_description":"Enter description question",
+      "Placeholder_select":"Select a Right Answer",
+      "Placeholder_selectType":"Select a Type Questions",
+      "Placeholder_selectDifficulty":"Select a Difficulty Level",
       "Description":"Description",
       "RightAnswer":"Right Answer",
       "Update":"Update",
@@ -136,6 +139,7 @@
       "GroupName":"Group name",
       "Title":"Title",
       "Date":"Date",
-      "status":"Status"
+      "status":"Status",
+      "Quiz results":"Quiz results"
     }
 }

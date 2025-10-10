@@ -1,14 +1,16 @@
 <section>
-  <div class="container px-5 mt-4">
+  <div class="container mt-4">
     <div class="card">
       <div class="d-flex justify-content-between m-3">
         <h2>{{'question.BankQuestions'|translate}}</h2>
-        <p-button styleClass="custom_btn" class="border border-1 rounded-5"  (click)="openDialog()">
-        <i class="pi pi-plus-circle"></i>
-        <span>{{"question.buttonAdd"|translate}}</span>
+        <p-button styleClass="custom_btn" class="border border-1 rounded-5" (click)="openDialog()">
+          <i class="pi pi-plus-circle"></i>
+          <span>{{"question.buttonAdd"|translate}}</span>
         </p-button>
       </div>
-      <p-table [value]="questionList" [paginator]="true" [style.direction]="'ltr'" [showFirstLastIcon]="false" [rows]="5" class="table p-5">
+      <p-table [value]="questionList"  [style.direction]="currentLang === 'ar' ? 'rtl' : 'ltr'"
+  [styleClass]="currentLang === 'ar' ? 'table-rtl' : 'table-ltr'" [paginator]="true" styleClass="custom-table" [style.direction]="'ltr'"
+        [showFirstLastIcon]="false" [rows]="5" class="table p-5">
         <ng-template #header>
           <tr>
             <th>{{'question.title'|translate}}</th>
@@ -21,16 +23,16 @@
         </ng-template>
         <ng-template #body let-question>
           <tr [pSelectableRow]="question">
-            <td>{{ question.title }}</td>
+            <td>{{ question.title | slice:0:20 }}</td>
             <td>{{ question.status }}</td>
             <td>{{ question.difficulty }}</td>
             <td>{{ question.type }}</td>
-            <td>{{ question.description }}</td>
+            <td>{{ question.description | slice:0:20}}</td>
             <td>
               <div class="d-flex justify-content-center gap-2 icon_action">
-              <a (click)="openDialog(question)"><i class="pi pi-pen-to-square"></i></a>
-              <a (click)="open(question._id)"><i class="pi pi-trash"></i></a>
-              <a (click)="view(question)"><i class="pi pi-eye"></i></a>
+                <a (click)="view(question)"><i class="pi pi-eye"></i></a>
+                <a (click)="openDialog(question)"><i class="pi pi-pen-to-square"></i></a>
+                <a (click)="open(question._id)"><i class="pi pi-trash"></i></a>
               </div>
             </td>
           </tr>

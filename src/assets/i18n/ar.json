@@ -61,6 +61,9 @@
     "title": "العنوان",
     "Placeholder_title": "ادخل عنوان السؤال",
     "Placeholder_description": "ادخل وصف السؤال",
+    "Placeholder_select":"اختر الإجابة الصحيحة",
+    "Placeholder_selectType":"اختر نوع السؤال",
+    "Placeholder_selectDifficulty":"اختر مستوى الصعوبة",
     "Description": "الوصف",
     "RightAnswer": "الإجابة الصحيحة",
     "Add": "إضافة",
@@ -136,6 +139,7 @@
       "GroupName":"اسم المجموعة",
       "Title":"العنوان",
       "Date":"التاريخ",
-      "statues":"الحالة"
+      "status":"الحالة",
+      "Quiz results":"نتائج الاختبار"
     }
 }

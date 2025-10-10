@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { ToastrService } from 'ngx-toastr';
 import { Component } from '@angular/core';
 import { InstructorService } from '../../../services/instructor.service';
@@ -17,11 +18,14 @@ import { ViewQuestionsComponent } from '../view-questions/view-questions.compone
 export class ListQuestionsComponent {
   questionList: IQuestionsRes[] = [];
   ref: DynamicDialogRef | undefined;
-
-  constructor(private _instructorService: InstructorService, private dialogService: DialogService, private _ToastrService: ToastrService) { }
+  constructor(private _instructorService: InstructorService, private dialogService: DialogService, private _ToastrService: ToastrService, private TranslateService: TranslateService) { }
+  currentLang: string = 'en';
 
   ngOnInit(): void {
     this.getAllQuestions();
+    this.TranslateService.onLangChange.subscribe((event) => {
+      this.currentLang = event.lang;
+    });
   }
 
   getAllQuestions() {
@@ -66,6 +70,7 @@ export class ListQuestionsComponent {
       width: '60%',
       data: { question: question },
       closable: false,
+      dismissableMask: true,
     });
 
     this.ref.onClose.subscribe((result) => {

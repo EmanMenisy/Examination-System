@@ -4,15 +4,17 @@
       <p class="mb-0" *ngIf="data">{{"add-edit.Update Your Group"| translate}}</p>
       <p class="mb-0" *ngIf="!data">{{"add-edit.Set up a new Group"|translate}}</p>
     </div>
-    <div class="header-buttton px-3">
-      <button (click)="AddNewGroup()">
-        <i class="pi pi-check" style="color: black"></i>
-      </button>
-    </div>
-    <div class="header-buttton px-3">
-      <button (click)="close()">
-        <i class="pi pi-times" style="color: black"></i>
-      </button>
+    <div class="d-flex justify-content-between">
+      <div class="header-buttton px-3">
+        <button (click)="AddNewGroup()">
+          <i class="pi pi-check save" style="color: black"></i>
+        </button>
+      </div>
+      <div class="header-buttton px-3">
+        <button (click)="close()">
+          <i class="pi pi-times close" style="color: black"></i>
+        </button>
+      </div>
     </div>
   </div>
   <div class="py-3 input-wrapper mt-2">

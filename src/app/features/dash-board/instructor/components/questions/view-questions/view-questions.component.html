@@ -9,7 +9,7 @@
       </span>
       <span class="chip points">{{'question.Points'|translate}}: {{ question?.points }}</span>
       <span class="chip status" [ngClass]="{'active': question?.status === 'active'}">
-        {{ question?.status}}
+        {{ question?.status === 'active' ? 'available' : 'not available' }}
       </span>
     </div>
   </div>

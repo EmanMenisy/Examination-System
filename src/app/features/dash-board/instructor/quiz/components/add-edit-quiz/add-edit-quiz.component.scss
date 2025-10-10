@@ -24,10 +24,18 @@ section {
   button {
     border: none;
     background-color: unset;
+      transition: all 0.3s ease;
     i {
       font-weight: 800;
       font-size: 20px;
     }
+    &:hover {
+      i.save{
+        color: green !important;
+      }
+      i.close{
+        color: red !important;
+      }
   }
 }
 
@@ -112,3 +120,4 @@ section {
   width: 33% !important;
 }
 
+}
