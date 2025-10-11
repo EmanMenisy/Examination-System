@@ -79,8 +79,9 @@ $app-gap: 24px;
         }
         .user-role {
           font-size: 12px;
-          color: #8fbf3b;
+          color: var(--color-light-green);
           line-height: 1;
+          font-weight: 700;
         }
       }
 
@@ -134,6 +135,17 @@ $app-gap: 24px;
   }
 }
 
+.lang-toggle-btn{
+  background-color: var(--color-light-green);
+  outline: unset;
+  border: unset;
+  &:hover{
+    background-color: var(--color-beige);
+    outline: unset;
+    border: unset;
+    color: black;
+  }
+}
 @media (max-width: 520px) {
   .app-navbar {
     height: 64px;

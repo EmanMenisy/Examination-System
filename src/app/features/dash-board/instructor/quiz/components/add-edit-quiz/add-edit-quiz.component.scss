@@ -28,12 +28,13 @@ section {
     i {
       font-weight: 800;
       font-size: 20px;
+      transition: all 1s;
     }
     &:hover {
-      i.save{
+      .pi-check{
         color: green !important;
       }
-      i.close{
+     .pi-times{
         color: red !important;
       }
   }
