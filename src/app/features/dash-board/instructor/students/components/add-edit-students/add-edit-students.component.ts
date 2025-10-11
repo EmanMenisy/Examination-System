@@ -43,7 +43,7 @@ export class AddEditStudentComponent implements OnInit {
   }
 
   loadStudents() {
-    this.studentsService.Getter().subscribe({
+    this.studentsService.GetterWithout().subscribe({
       next: (res) => {
         this.students = res;
         if (this.action === 'edit' && this.studentToEdit) {
@@ -51,7 +51,7 @@ export class AddEditStudentComponent implements OnInit {
             (s) => s._id === this.studentToEdit!._id
           );
           console.log(foundStudent);
-          
+
           this.form.patchValue({ student: foundStudent?._id,group:foundStudent?.group?._id});
         }
       },
@@ -67,7 +67,7 @@ export class AddEditStudentComponent implements OnInit {
           const foundGroup = this.groups.find(
             (g) => g._id === this.studentToEdit!.group!._id
           );
-         
+
         }
       },
       error: (err) => console.error('Error loading groups:', err),
