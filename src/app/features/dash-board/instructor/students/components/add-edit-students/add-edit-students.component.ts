@@ -43,20 +43,33 @@ export class AddEditStudentComponent implements OnInit {
   }
 
   loadStudents() {
-    this.studentsService.GetterWithout().subscribe({
-      next: (res) => {
-        this.students = res;
-        if (this.action === 'edit' && this.studentToEdit) {
-          const foundStudent = this.students.find(
-            (s) => s._id === this.studentToEdit!._id
-          );
-          console.log(foundStudent);
+    if( this.action === 'edit' && this.studentToEdit) {
+      this.studentsService.Getter().subscribe({
+        next: (res) => {
+          this.students = res;
+          if (this.action === 'edit' && this.studentToEdit) {
+            const foundStudent = this.students.find(
+              (s) => s._id === this.studentToEdit!._id
+            );
+            console.log(foundStudent);
 
-          this.form.patchValue({ student: foundStudent?._id,group:foundStudent?.group?._id});
+            this.form.patchValue({ student: foundStudent?._id,group:foundStudent?.group?._id});
+          }
+        },
+        error: (err) => console.error('Error loading students:', err),
+      });
+    }else{
+            this.studentsService.GetterWithout().subscribe({
+        next: (res) => {
+          this.students = res;
+          if (this.action === 'edit' && this.studentToEdit) {
+            const foundStudent = this.students.find(
+              (s) => s._id === this.studentToEdit!._id
+            );
+          }
         }
-      },
-      error: (err) => console.error('Error loading students:', err),
-    });
+      });
+    }
   }
 
   loadGroups() {
