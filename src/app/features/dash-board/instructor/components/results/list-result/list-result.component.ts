@@ -3,6 +3,7 @@ import { SharedModule } from '../../../../../../shared/shared.module';
 import { InstructorService } from '../../../services/instructor.service';
 import { IResult } from '../../../interfaces/IResult';
 import { Router } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-list-result',
@@ -12,16 +13,20 @@ import { Router } from '@angular/router';
 })
 export class ListResultComponent {
 
-  constructor(private _instructorService: InstructorService, private router: Router) { }
+  constructor(private _instructorService: InstructorService, private router: Router, private TranslateService: TranslateService) { }
   results: IResult[] = [];
+    currentLang: string = 'en';
+
   ngOnInit(): void {
     this.getAllResults();
+    this.TranslateService.onLangChange.subscribe((event) => {
+      this.currentLang = event.lang;
+    });
   }
 
   getAllResults(): void {
     this._instructorService.getAllResults().subscribe({
       next: (response) => {
-        // this.results = [];
         response.map((item: any) => {
           if (item.quiz?.group) {
             this._instructorService.getGroupById(item.quiz.group).subscribe({

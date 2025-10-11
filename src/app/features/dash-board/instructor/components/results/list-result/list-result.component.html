@@ -4,8 +4,9 @@
       <div class="d-flex justify-content-between m-3">
         <h2>{{'result.Completed Quizzes'|translate}}</h2>
       </div>
-      <p-table *ngIf="results.length >0" [value]="results" [paginator]="true" [style.direction]="'ltr'" [showFirstLastIcon]="false" [rows]="5"
-        class="table p-5">
+      <p-table *ngIf="results.length >0" [style.direction]="currentLang === 'ar' ? 'rtl' : 'ltr'"
+        [styleClass]="currentLang === 'ar' ? 'table-rtl' : 'table-ltr'" styleClass="custom-table" [value]="results"
+        [paginator]="true" [style.direction]="'ltr'" [showFirstLastIcon]="false" [rows]="5" class="table p-5">
         <ng-template #header>
           <tr>
             <th>{{'result.Title'|translate}}</th>

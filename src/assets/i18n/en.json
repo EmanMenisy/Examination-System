@@ -141,5 +141,22 @@
       "Date":"Date",
       "status":"Status",
       "Quiz results":"Quiz results"
+    },
+    "profile":{
+      "Profile Settings":"Profile Settings",
+      "FullName":"Full Name",
+      "Email":"Email",
+      "Role":"Role",
+      "Group":"Group Name",
+      "ProfileInfo":"Profile Info",
+      "ProfileInformation":"Profile Information",
+      "UpdateProfile":"Update Profile",
+      "ChangePassword":"Change Password",
+      "OldPassword":"Old Password",
+      "NewPassword":"New Password",
+      "PasswordUpdated":"Password updated successfully",
+      "ProfileUpdated":"Profile updated successfully",
+      "save":"Save",
+      "Update":"Update"
     }
 }

@@ -6,12 +6,12 @@
     </div>
     <div class="d-flex justify-content-between">
       <div class="header-buttton px-3">
-        <button (click)="AddNewGroup()">
+        <button title="save" (click)="AddNewGroup()">
           <i class="pi pi-check save" style="color: black"></i>
         </button>
       </div>
       <div class="header-buttton px-3">
-        <button (click)="close()">
+        <button title="close" (click)="close()">
           <i class="pi pi-times close" style="color: black"></i>
         </button>
       </div>
@@ -21,7 +21,7 @@
     <form [formGroup]="addGroupForm">
       <p-inputgroup class="my-4">
         <p-inputgroup-addon class="inputlabel">{{"add-edit.Group Name" |translate}}</p-inputgroup-addon>
-        <input pInputText id="on_label" formControlName="name" />
+        <input title="name" pInputText id="on_label" formControlName="name" />
       </p-inputgroup>
       <div class="card flex justify-center w-100">
         <p-multiselect

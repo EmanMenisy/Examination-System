@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashBoardComponent } from './components/dashboard-layout/dash-board.component';
 import { SharedModule } from '../../shared/shared.module';
@@ -7,14 +7,16 @@ import { AddEditQuestionsComponent } from './instructor/components/questions/add
 import { ListQuestionsComponent } from './instructor/components/questions/list-questions/list-questions.component';
 import { instructorGuard } from '../../core/Guards/instructor.guard';
 import { studentGuard } from '../../core/Guards/student.guard';
+import { ProfileComponent } from '../../shared/components/profile/profile.component';
 
 const routes: Routes = [
   {
     path: '', component: DashBoardComponent, children: [
       { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
-      {  path: 'instructor', canActivate: [instructorGuard] ,loadChildren: () => import('./instructor/instructor.module').then(m => m.InstructorModule)},
-      {  path: 'learner',canActivate: [studentGuard] ,  loadChildren: () => import('./learner/learner.module').then(m => m.LearnerModule)},
+      { path: 'instructor', canActivate: [instructorGuard] ,loadChildren: () => import('./instructor/instructor.module').then(m => m.InstructorModule)},
+      { path: 'learner',canActivate: [studentGuard] ,  loadChildren: () => import('./learner/learner.module').then(m => m.LearnerModule)},
+      { path:'profile', component:ProfileComponent}
     ]
   }
 ];

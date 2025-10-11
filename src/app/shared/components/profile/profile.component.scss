@@ -1,0 +1,51 @@
+section{
+  direction: ltr;
+}
+.sidebar_info{
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 41vh;
+    padding: 20px;
+}
+::ng-deep .info_btn.p-button {
+  background-color: var(--color-beige);
+  border: none;
+  color: var(--color-black);
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+::ng-deep .info_btn.p-button:hover {
+  background-color: var(--color-beige);
+  border: none;
+  color: var(--color-black);
+}
+::ng-deep .info_btn.p-button:focus-visible {
+  background-color: var(--color-beige);
+  border: unset;
+  outline-color: transparent !important;
+  color: var(--color-black);
+}
+::ng-deep .info_btn.p-button.p-button-outlined {
+  background-color: transparent;
+  border: 1px solid var(--color-beige);
+  color: var(--color-black);
+}
+::ng-deep .info_btn.p-button:not(:disabled):active {
+  background-color: transparent;
+  border: 1px solid var(--color-beige);
+  color: var(--color-black);
+}
+
+
+::ng-deep .custom-btn.p-button.p-button-outlined:hover {
+  background-color: var(--color-beige);
+  color: var(--color-black);
+}
+::ng-deep  .p-password{
+    width: 100% !important;
+    .p-inputtext{
+        width: 100% !important;
+    }
+}

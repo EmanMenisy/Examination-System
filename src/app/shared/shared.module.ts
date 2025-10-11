@@ -28,7 +28,9 @@ import { MessageModule } from 'primeng/message';
 import { DropdownModule } from 'primeng/dropdown';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { StepperModule } from 'primeng/stepper';
-
+import { CardModule } from 'primeng/card';
+import { TagModule } from 'primeng/tag';
+import { DividerModule } from 'primeng/divider';
 // 🌍 Translation
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -86,9 +88,12 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     BreadcrumbModule,
     StepperModule,
     RadioButtonModule,
-
+    CardModule,
+    TagModule,
+    DividerModule,
     // Translate
     MessageModule,
+
 
     // 🌍 Translate
     TranslateModule
@@ -133,6 +138,9 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     BreadcrumbModule,
     StepperModule,
     RadioButtonModule,
+    CardModule,
+    TagModule,
+    DividerModule,
     // Translate
     MessageModule,
 

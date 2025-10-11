@@ -141,5 +141,22 @@
       "Date":"التاريخ",
       "status":"الحالة",
       "Quiz results":"نتائج الاختبار"
+    },
+        "profile":{
+      "Profile Settings":"إعدادات الملف الشخصي",
+      "FullName":"الاسم الكامل",
+      "Email":"البريد الإلكتروني",
+      "Role":"الدور",
+      "Group":"اسم المجموعة",
+      "ProfileInfo":"معلومات الملف الشخصي",
+      "ProfileInformation":"معلومات الملف الشخصي",
+      "UpdateProfile":"تحديث الملف الشخصي",
+      "ChangePassword":"تغيير كلمة المرور",
+      "OldPassword":"كلمة المرور القديمة",
+      "NewPassword":"كلمة المرور الجديدة",
+      "PasswordUpdated":"تم تحديث كلمة المرور بنجاح",
+      "ProfileUpdated":"تم تحديث الملف الشخصي بنجاح",
+      "save":"حفظ",
+      "Update":"تحديث"
     }
 }
