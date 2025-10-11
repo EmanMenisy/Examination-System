@@ -42,6 +42,10 @@
         "Upcoming_Quizzes": "Upcoming 5 quizzes",
         "Quiz_Directory": "Quiz directory"
 },
+"student":{
+  "StudentList": "Student List",
+  "AddStudent": "Add Student"
+},
 "Student":"Student",
 "Instructor":"Instructor",
   "homeNav": {
@@ -65,7 +69,12 @@
         "question_bank": "Question Bank",
         "upcoming_quizzes": "Upcoming quizzes",
         "completed_quizzes": "Completed Quizzes",
-        "all_quizzes": "All Quizes"
+        "all_quizzes": "All Quizes",
+        "Title": "Title",
+        "GroupName": "Group name",
+        "no-Of-person":"No. of persons in group",
+        "Date":"Date",
+        "NoData":"No Data To display"
   },
   "list_quiz": {
     "duration": "Duration",

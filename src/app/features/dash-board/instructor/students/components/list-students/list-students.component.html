@@ -1,9 +1,9 @@
 <div class="students-container">
 
   <div class="header">
-    <h2>Students list</h2>
+    <h2>{{'student.StudentList'|translate}}</h2>
     <p-button
-  label="Add Student"
+  [label]="'student.AddStudent'|translate"
   icon="pi pi-plus"
   styleClass="p-button-rounded p-button-sm p-button-help"
   (onClick)="showDialog('add')">
