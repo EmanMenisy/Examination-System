@@ -3,7 +3,7 @@
     <p-stepper [value]="1">
       <p-step-list class="d-flex justify-content-between">
         <p-step *ngFor="let quiz of questions; let i = index" [value]="i + 1">
-          Question {{ i + 1 }}
+          {{ 'QUIZ.Question' | translate }} {{ i + 1 }}
         </p-step>
       </p-step-list>
 
@@ -47,7 +47,7 @@
                   class="btn btn-outline-secondary"
                   (click)="activateCallback(i)"
                 >
-                  <i class="pi pi-arrow-left me-1"></i> Back
+                  <i class="pi pi-arrow-left me-1"></i> {{ 'QUIZ.Back' | translate }}
                 </button>
 
                 <button
@@ -56,7 +56,7 @@
                   (click)="activateCallback(i + 2)"
                   [disabled]="!selectedAnswers[i]"
                 >
-                  Next <i class="pi pi-arrow-right ms-1"></i>
+                 {{ 'QUIZ.Next' | translate }} <i class="pi pi-arrow-right ms-1"></i>
                 </button>
 
                 <button
@@ -64,7 +64,7 @@
                   class="btn btn-success ms-auto"
                   (click)="submitQuiz()"
                 >
-                  <i class="pi pi-check me-1"></i> Submit
+                  <i class="pi pi-check me-1"></i> {{ 'QUIZ.Submit' | translate }}
                 </button>
               </div>
             </div>
