@@ -42,7 +42,7 @@
                 </span>
               </h5>
               <div class="d-flex justify-content-between quiz-footer mt-3">
-                <h6>No. of student’s enrolled: {{quiz.studentsCount}}</h6>
+                <h6>No. of student’s enrolled: <span class="fw-bold text-success">{{quiz.participants == 0 ? "no participants yet" : quiz.participants }}</span></h6>
                 <a class="d-flex align-items-center"
                   ><span>Open</span
                   ><span

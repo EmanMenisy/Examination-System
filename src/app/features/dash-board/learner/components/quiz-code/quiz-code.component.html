@@ -12,11 +12,11 @@
     </div>
   </div>
 <div class="p-4 text-center quiz-code my-4">
-  <span class="fw-bold text-lg">Join Quiz</span>
-  <p class="my-3">{{"Input the code received for the quiz below to join"}}</p>
+  <span class="fw-bold text-lg">{{ 'ADD_QUIZ.Join_Quiz' | translate }}</span>
+  <p class="my-3">{{ 'ADD_QUIZ.Input_Message' | translate }}</p>
   <form action="">
   <p-inputgroup>
-    <p-inputgroup-addon class="inputlabel">{{"add_quiz.code" |translate }}</p-inputgroup-addon>
+    <p-inputgroup-addon class="inputlabel">{{ 'ADD_QUIZ.Code' | translate }}</p-inputgroup-addon>
     <input pInputText  [(ngModel)]="inputValue"  name="quizCode"  />
   </p-inputgroup>
 </form>

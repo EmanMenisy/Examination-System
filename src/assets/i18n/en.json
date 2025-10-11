@@ -158,5 +158,25 @@
       "ProfileUpdated":"Profile updated successfully",
       "save":"Save",
       "Update":"Update"
-    }
+    },
+     "QUIZ": {
+    "Question": "Question",
+    "Back": "Back",
+    "Next": "Next",
+    "Submit": "Submit",
+    "Quiz": "Quiz",
+    "Select_Answer": "Select your answer",
+    "No_Question": "No questions available",
+    "Question_Title": "Question Title"
+  },
+  "ADD_QUIZ": {
+    "Join_Quiz": "Join Quiz",
+    "Input_Message": "Input the code received for the quiz below to join",
+    "Code": "Quiz Code"
+  },
+   "QUIZ_STATUS": {
+    "Joined_Successfully": "Quiz joined successfully",
+    "Join_Now": "Join Now"
+  }
+
 }
