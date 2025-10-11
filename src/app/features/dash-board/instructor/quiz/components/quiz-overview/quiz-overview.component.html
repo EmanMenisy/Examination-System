@@ -19,7 +19,7 @@
     <div class="col-md-6">
       <div class="wrapper p-3">
         <p class="fw-bold">{{"quiz-overView.upcoming_quizzes" |translate}}</p>
-        <div class="quiz-wrapper mt-2"  *ngFor="let quiz of firstFiveQuizes">
+        <div class="quiz-wrapper mt-2"  *ngFor="let quiz of firstFiveQuizes ; let i = index">
           <div class="d-flex h-100">
             <div class="image-wrapper p-3">
               <img
@@ -42,7 +42,7 @@
                 </span>
               </h5>
               <div class="d-flex justify-content-between quiz-footer mt-3">
-                <h6>No. of student’s enrolled: {{quiz.participants}}</h6>
+                <h6>No. of student’s enrolled: {{quiz.studentsCount}}</h6>
                 <a class="d-flex align-items-center"
                   ><span>Open</span
                   ><span
@@ -99,8 +99,10 @@
                   </ng-template>
                   <ng-template  pTemplate="emptymessage">
                     <tr class="h-25">
-                      <td colspan="4" class="text-center text-danger fw-bold">No Data To display</td>
-                      <!-- <img src="" alt=""> -->
+                      <td colspan="4" class="text-center text-danger fw-bold">
+                        <p>No Data To display</p>
+                      </td>
+                     
                     </tr>
                   </ng-template>
                 </p-table>

@@ -28,7 +28,7 @@
       </div>
       <!-- lists -->
       <div class="d-flex justify-content-between align-items-center">
-        <div class="card flex justify-center">
+        <div class="card flex justify-center select ">
           <p-select  formControlName="duration"
             [options]="durations"
             display="chip"
@@ -44,7 +44,7 @@
             {{ 'add_quiz.duration' | translate }}
           </p>
         </div>
-        <div class="card flex justify-center mx-2">
+        <div class="card flex justify-center select mx-2">
             <p-select  formControlName="questions_number"
             [options]="questionsNumbers"
             display="chip"
@@ -60,7 +60,7 @@
             {{ 'add_quiz.number_of_questions' | translate }}
           </p>
         </div>
-        <div class="card flex justify-center">
+        <div class="card flex justify-center select">
             <p-select  formControlName="score_per_question"
             [options]="scoresPerQuestion"
             display="chip"
@@ -99,7 +99,7 @@
       </div>
       <!-- lists -->
       <div class="d-flex justify-content-between align-items-center">
-        <div class="card flex justify-center">
+        <div class="card flex justify-center select">
           <p-select  formControlName="difficulty"
             [options]="difficulties"
             display="chip"
@@ -115,7 +115,7 @@
             {{ 'add_quiz.difficulty_level' | translate }}
           </p>
         </div>
-        <div class="card flex justify-center mx-2">
+        <div class="card flex justify-center mx-2 select">
           <p-select  formControlName="type"
             [options]="categories"
             display="chip"
@@ -131,7 +131,7 @@
             {{ 'add_quiz.category_type' | translate }}
           </p>
         </div>
-           <div class="card flex justify-center">
+        <div class="card flex justify-center select">
         <p-select
           formControlName="group"
           [options]="listGroup"
