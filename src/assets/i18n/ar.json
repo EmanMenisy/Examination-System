@@ -102,7 +102,12 @@
   "question_bank": "بنك الأسئلة",
   "upcoming_quizzes": "الاختبارات القادمة",
   "completed_quizzes": "الاختبارات المكتملة",
-  "all_quizzes": "جميع الاختبارات"
+  "all_quizzes": "جميع الاختبارات",
+  "Title": "العنوان",
+  "GroupName": "اسم المجموعة",
+  "no-Of-person":"عدد المشاركون في المجموعة",
+  "Date":"التاريخ",
+        "NoData":"لا توجد بيانات لعرضها"
 },
  "list_quiz": {
     "duration": "المدة",
