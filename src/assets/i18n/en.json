@@ -42,6 +42,9 @@
         "Upcoming_Quizzes": "Upcoming 5 quizzes",
         "Quiz_Directory": "Quiz directory"
 },
+"student":{
+  "Student List": "Student List"
+},
 "Student":"Student",
 "Instructor":"Instructor",
   "homeNav": {
