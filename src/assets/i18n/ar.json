@@ -42,6 +42,10 @@
     "Upcoming_Quizzes": "الاختبارات 5 القادمة",
     "Quiz_Directory": "دليل الاختبارات"
   },
+  "student":{
+  "StudentList": "قائمة الطلاب",
+  "AddStudent": "إضافة طالب"
+},
   "Student":"طالب",
   "Instructor":"معلم",
 

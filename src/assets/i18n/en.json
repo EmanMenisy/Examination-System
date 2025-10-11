@@ -43,7 +43,8 @@
         "Quiz_Directory": "Quiz directory"
 },
 "student":{
-  "Student List": "Student List"
+  "StudentList": "Student List",
+  "AddStudent": "Add Student"
 },
 "Student":"Student",
 "Instructor":"Instructor",
