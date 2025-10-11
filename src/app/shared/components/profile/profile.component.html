@@ -1,0 +1,92 @@
+<section>
+  <div class="container mx-auto p-5">
+    <div class="row g-5">
+      <!-- Sidebar -->
+      <div class="col-md-4 sidebar_info">
+        <div class="d-flex flex-column gap-3 p-3 h-100">
+          <p-button styleClass="info_btn" (onClick)="value = 0" [outlined]="value !== 0" [label]="'profile.ProfileInfo'|translate" />
+          <p-button styleClass="info_btn" (onClick)="value = 2" [outlined]="value !== 2" [label]="'profile.UpdateProfile'|translate" />
+          <p-button styleClass="info_btn" (onClick)="value = 1" [outlined]="value !== 1" [label]="'profile.ChangePassword'|translate" />
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="col-md-8 h-100">
+        <p-card styleClass="shadow-md h-100">
+          <p-tabs [value]="value">
+            <p-tabpanels>
+              <!-- Profile Info -->
+              <p-tabpanel [value]="0">
+                <div class="space-y-4">
+                  <h3 class="text-xl font-semibold mb-3">{{'profile.ProfileInformation'|translate}}</h3>
+                  <div class="flex flex-col gap-2">
+                    <p><strong>{{'profile.FullName'|translate}}:</strong> {{ user?.first_name }} {{ user?.last_name }}</p>
+                    <p><strong>{{'profile.Email'|translate}}:</strong> {{ user?.email }}</p>
+                    <p><strong>{{'profile.Role'|translate}}:</strong> {{ user?.role }}</p>
+                    @if(user?.group){
+                    <p><strong>{{'profile.Group'|translate}}:</strong> {{ user?.group?.name}}</p>
+                    }
+                  </div>
+                </div>
+              </p-tabpanel>
+              <!-- Change Password -->
+              <p-tabpanel [value]="1">
+                <div class="space-y-4">
+                  <h3 class="text-xl font-semibold mb-3">{{'profile.ChangePassword'|translate}}</h3>
+                  <form [formGroup]="changeForm" (ngSubmit)="ChangePassword()">
+                    <div class="d-flex flex-column gap-3 w-75">
+                      <p-iconfield>
+                        <p-password [toggleMask]="true" type="password" formControlName="password"
+                          [placeholder]="'profile.OldPassword'|translate" />
+                        <app-message error="required" [control]="changeForm.get('password')"
+                          text="{{'auth.PasswordRequired'|translate}}" size="small"></app-message>
+                      </p-iconfield>
+                      <p-iconfield>
+                        <p-password [toggleMask]="true" type="password" formControlName="password_new"
+                          [placeholder]="'profile.NewPassword'|translate" />
+                        <app-message error="required" [control]="changeForm.get('password_new')"
+                          text="{{'auth.PasswordRequired'|translate}}" size="small"></app-message>
+                      </p-iconfield>
+                      <p-button styleClass="info_btn" class="text-end" [label]="'profile.save'|translate" type="submit"
+                        [disabled]="changeForm.invalid" />
+                    </div>
+                  </form>
+                </div>
+              </p-tabpanel>
+
+              <!-- Update Profile -->
+              <p-tabpanel [value]="2">
+                <div class="space-y-4">
+                  <h3 class="text-xl font-semibold mb-3">{{'profile.UpdateProfile'|translate}}</h3>
+                  <form [formGroup]="updateForm" (ngSubmit)="SaveProfile()">
+                    <div class="d-flex flex-column w-75 gap-3">
+                      <div>
+                        <input type="text" class="w-100" pInputText formControlName="first_name" placeholder="First Name" />
+                        <app-message error="required" [control]="updateForm.get('first_name')"
+                          text="{{'auth.FirstNameRequired'|translate}}" size="small"></app-message>
+                      </div>
+                      <div>
+                        <input type="text" class="w-100" pInputText formControlName="last_name" placeholder="Last Name" />
+                        <app-message error="required" [control]="updateForm.get('last_name')"
+                          text="{{'auth.LastNameRequired'|translate}}" size="small"></app-message>
+                      </div>
+                      <div>
+                        <input class="w-100" type="email" pInputText formControlName="email" placeholder="Email" />
+                        <app-message error="required" [control]="updateForm.get('email')"
+                          text="{{'auth.EmailRequired'|translate}}" size="small"></app-message>
+                          <app-message error="email" [control]="updateForm.get('email')"
+                            text="{{'auth.EmailInvalid'|translate}}" size="small"></app-message>
+                          </div>
+                          <p-button styleClass="info_btn" class="text-end" [label]="'profile.Update'|translate" type="submit"
+                            [disabled]="updateForm.invalid" />
+                    </div>
+                  </form>
+                </div>
+              </p-tabpanel>
+            </p-tabpanels>
+          </p-tabs>
+        </p-card>
+      </div>
+    </div>
+  </div>
+</section>
