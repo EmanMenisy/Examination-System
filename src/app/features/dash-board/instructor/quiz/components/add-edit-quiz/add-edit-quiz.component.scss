@@ -28,15 +28,44 @@ section {
     i {
       font-weight: 800;
       font-size: 20px;
+      transition: all 1s;
     }
     &:hover {
-      i.save{
+      .pi-check{
         color: green !important;
       }
-      i.close{
+     .pi-times{
         color: red !important;
       }
   }
+}
+
+}
+
+:host ::ng-deep textarea{
+    padding-left: 130px !important;
+    text-align: start;
+}
+
+.select{
+  width: 33% !important;
+}
+
+:host ::ng-deep .p-dynamic-dialog-mask {
+  width: 100% !important;
+  height: 100% !important;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+:host ::ng-deep .p-datepicker{
+    position: relative;
+    display: inline-flex;
+    width: 100% !important;
+    padding-left: 120px ;
+    text-align: start;
+
 }
 
 .inputlabel{
@@ -92,32 +121,4 @@ section {
 .select-ar{
   height: 40px;
   padding-right: 120px;
-}
-
-:host ::ng-deep .p-dynamic-dialog-mask {
-  width: 100% !important;
-  height: 100% !important;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.8) !important;
-}
-
-::ng-deep .p-datepicker{
-    position: relative;
-    display: inline-flex;
-    width: 100% !important;
-    padding-left: 120px ;
-    text-align: start;
-
-}
-
-::ng-deep textarea{
-    padding-left: 130px !important;
-    text-align: start;
-}
-
-.select{
-  width: 33% !important;
-}
-
 }
