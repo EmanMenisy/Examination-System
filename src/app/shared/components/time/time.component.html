@@ -1,0 +1,9 @@
+<div>
+  <h2>{{ minutes }} : {{ seconds < 10 ? '0' + seconds : seconds }}</h2>
+  <p-progressBar
+    [value]="(remainingTime / (durationMinutes * 60)) * 100"
+    [showValue]="false"
+    styleClass="custom_progress"
+    >
+  </p-progressBar>
+</div>
