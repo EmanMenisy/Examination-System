@@ -3,7 +3,7 @@ import { RenderMode, ServerRoute } from '@angular/ssr';
 export const serverRoutes: ServerRoute[] = [
   {
     // Disable prerendering for dynamic routes
-    path: 'dashboard/learner/quiz/:id',
+    path: 'quiz/:id',
     renderMode: RenderMode.Server
   },
   {
