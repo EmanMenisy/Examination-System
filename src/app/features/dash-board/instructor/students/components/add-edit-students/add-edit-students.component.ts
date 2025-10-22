@@ -51,7 +51,6 @@ export class AddEditStudentComponent implements OnInit {
             const foundStudent = this.students.find(
               (s) => s._id === this.studentToEdit!._id
             );
-            console.log(foundStudent);
 
             this.form.patchValue({ student: foundStudent?._id,group:foundStudent?.group?._id});
           }

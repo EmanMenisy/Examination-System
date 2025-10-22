@@ -28,6 +28,10 @@ export class ListResultComponent {
     this._instructorService.getAllResults().subscribe({
       next: (response) => {
         response.map((item: any) => {
+          if (item.quiz.group === "65c2bed779b859ea9320885f") {
+            item.quiz.groupName = 'Unknown Group';
+            return;
+          }
           if (item.quiz?.group) {
             this._instructorService.getGroupById(item.quiz.group).subscribe({
               next: (group) => {

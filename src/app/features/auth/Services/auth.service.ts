@@ -34,7 +34,6 @@ export class AuthService {
     const encoded: any = localStorage.getItem('accessToken');
     if (encoded) {
       const decoded: any = jwtDecode(encoded);
-      console.log("decoded token:", decoded);
       localStorage.setItem('Role', decoded.role);
       localStorage.setItem('UserId', decoded.sub);
     }

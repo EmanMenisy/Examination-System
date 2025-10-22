@@ -46,4 +46,7 @@ export class StudentsService {
   getById(id: string): Observable<any> {
     return this.http.get(`group/${id}`);
   }
+  getStudentById(id: any): Observable<any> {
+    return this.http.get(`student/${id}`);
+  }
 }

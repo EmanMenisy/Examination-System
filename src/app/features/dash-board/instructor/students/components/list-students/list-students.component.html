@@ -1,57 +1,46 @@
-<div class="students-container">
-
-  <div class="header">
-    <h2>{{'student.StudentList'|translate}}</h2>
-    <p-button
-  [label]="'student.AddStudent'|translate"
-  icon="pi pi-plus"
-  styleClass="p-button-rounded p-button-sm p-button-help"
-  (onClick)="showDialog('add')">
-</p-button>
-</div>
-
-  <div class="groups">
-    <button pButton label="Group 1" class="group-btn active"></button>
-    <button pButton label="Group 2" class="group-btn"></button>
-    <button pButton label="Group 3" class="group-btn"></button>
-  </div>
-
-  <div class="students-grid">
-    <div class="student-card" *ngFor="let student of paginatedStudents; let i = index">
-
-      <div class="student-info">
-        <img
-          [src]="studentImages[i % studentImages.length]"
-          alt="{{ student.first_name }}"
-          class="avatar" />
-
-        <div class="details">
-          <h3>{{ student.first_name }} {{ student.last_name }}</h3>
-          <p>
-            Class rank: {{ i + 1 }} &nbsp; | &nbsp;
-            Average score: 87%
-          </p>
-        </div>
-      </div>
-
-      <p-menu #menu [popup]="true" [model]="menuItems"></p-menu>
-
-      <p-button
-        styleClass="custom_btn"
-        icon="pi pi-ellipsis-v"
-        class="menu-btn"
-        (click)="openMenu($event, menu, student)">
+<section class=" overflow-hidden">
+  <div class="container px-5 mt-4">
+  <div class="students-container">
+    <div class="header">
+      <h2>{{'student.StudentList'|translate}}</h2>
+      <p-button [label]="'student.AddStudent'|translate" icon="pi pi-plus"
+        styleClass="p-button-rounded p-button-sm p-button-help" (onClick)="showDialog('add')">
       </p-button>
-
     </div>
+
+    <div class="groups">
+      <button *ngFor="let group of groups" title="group" pButton [label]="group.name" class="group-btn"  [ngClass]="{ 'active': selectedGroupId === group._id }"
+        (click)="getStudentsGroup(group._id)"></button>
+    </div>
+
+    <div class="students-grid">
+      <div class="student-card" *ngFor="let student of paginatedStudents; let i = index">
+
+        <div class="student-info">
+          <img [src]="studentImages[i % studentImages.length]" alt="{{ student.first_name }}" class="avatar" />
+
+          <div class="details">
+            <h3>{{ student.first_name }} {{ student.last_name }}</h3>
+            <p>
+              Class rank: {{ i + 1 }} &nbsp; | &nbsp;
+              Average score: 87%
+            </p>
+          </div>
+        </div>
+
+        <p-menu #menu [popup]="true" [model]="menuItems"></p-menu>
+
+        <p-button styleClass="custom_btn" icon="pi pi-ellipsis-v" class="menu-btn"
+          (click)="openMenu($event, menu, student)">
+        </p-button>
+
+      </div>
+    </div>
+
+    <p-paginator [rows]="rows" [totalRecords]="students.length" [first]="first" (onPageChange)="onPageChange($event)"
+      styleClass="custom-paginator">
+    </p-paginator>
+
   </div>
-
-  <p-paginator
-    [rows]="rows"
-    [totalRecords]="students.length"
-    [first]="first"
-    (onPageChange)="onPageChange($event)"
-    styleClass="custom-paginator">
-  </p-paginator>
-
-</div>
+  </div>
+</section>

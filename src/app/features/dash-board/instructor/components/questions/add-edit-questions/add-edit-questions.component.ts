@@ -132,7 +132,6 @@ export class AddEditQuestionsComponent implements OnInit {
   updatedData() {
     if (this.config && this.config.data) {
       this.data = this.config.data.question;
-      console.log(this.data);
       this.createQuestionForm.patchValue({
         title: this.data.title,
         description: this.data.description,

@@ -26,7 +26,6 @@ export class ViewQuestionsComponent {
   }
     get(){
     const questionId = this.config.data.question._id;
-    console.log(questionId);
     if (questionId) {
       this.getById(questionId);
     }
@@ -35,7 +34,6 @@ export class ViewQuestionsComponent {
     this._InstructorService.getQuestionsById(id).subscribe({
       next: (res) => {
         this.question = res;
-        console.log(this.question);
       },
     });
   }

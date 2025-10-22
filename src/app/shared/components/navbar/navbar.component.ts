@@ -44,7 +44,6 @@ export class NavbarComponent {
     this.StudentQuizService.showTimer.subscribe({
       next: (show) => {
         this.showTimer = show;
-        console.log('showTimer in navbar:', this.showTimer);
       }
     });
   }

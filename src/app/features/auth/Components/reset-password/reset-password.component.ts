@@ -26,7 +26,6 @@ export class ResetPasswordComponent {
   register(data: FormGroup) {
     this._AuthService.resetPassword(data.value).subscribe({
       next: (res) => {
-        console.log(res);
         this.resetForm.reset();
         this.successMessage = res.message;
       },

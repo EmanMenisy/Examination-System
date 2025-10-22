@@ -20,12 +20,11 @@ export class JoinQuizComponent implements OnInit {
  quizName= ""
   constructor(private ref: DynamicDialogRef , private config: DynamicDialogConfig
  , private _StudentQuizService:StudentQuizService ,
-private _Router:Router) { 
+private _Router:Router) {
   }
- 
+
   ngOnInit(): void {
    this.quiz = this.config.data
-   console.log(this.quiz )
   }
 
 

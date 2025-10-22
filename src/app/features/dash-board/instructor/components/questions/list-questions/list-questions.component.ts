@@ -32,7 +32,6 @@ export class ListQuestionsComponent {
     this._instructorService.getAllQuestions().subscribe({
       next: (res) => {
         this.questionList = res;
-        console.log(res);
       },
     });
 
@@ -48,7 +47,6 @@ export class ListQuestionsComponent {
 
     this.ref.onClose.subscribe((confirmed: boolean) => {
       if (confirmed) {
-        console.log("Group deleted!");
         this.deleteQuestion(id);
       }
     });
@@ -56,9 +54,7 @@ export class ListQuestionsComponent {
 
   deleteQuestion(id: string) {
     this._instructorService.DeleteQuestions(id).subscribe({
-      next: (res) => {
-        console.log(res)
-      }, complete: () => {
+      complete: () => {
         this.getAllQuestions()
       },
     })

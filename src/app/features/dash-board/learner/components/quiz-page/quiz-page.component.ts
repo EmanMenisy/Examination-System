@@ -59,7 +59,6 @@ export class QuizPageComponent implements OnInit {
   }
 
   onAnswerSelect(_id: any, answer: any) {
-    console.log(answer);
     let questionindex = this.questionwithAnswer.findIndex(
       (x) => x.question == _id
     );
@@ -71,7 +70,6 @@ export class QuizPageComponent implements OnInit {
     } else {
       this.questionwithAnswer[questionindex].answer = answer;
     }
-    console.log(this.questionwithAnswer);
   }
   submitQuiz() {
     this.StudentQuizService.setShowTimer(false);

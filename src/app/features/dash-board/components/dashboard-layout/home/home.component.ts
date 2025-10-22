@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.currentLang = this._TranslateService.currentLang ?? this._TranslateService.getDefaultLang() ?? 'en';
     this._TranslateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      console.log('Language changed to:', event.lang);
       this.currentLang = event.lang;
     });
 
@@ -36,7 +35,6 @@ export class HomeComponent implements OnInit {
       next:(res)=>{
         this.studentList = res
       },
-      error:(err)=>{console.log(err)},
     })
   }
 

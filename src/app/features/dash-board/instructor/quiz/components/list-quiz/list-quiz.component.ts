@@ -12,7 +12,7 @@ import { AddEditQuizComponent } from '../add-edit-quiz/add-edit-quiz.component';
 })
 export class ListQuizComponent implements OnInit {
 QuizList:IExamRes[] = []
-constructor(private _QuizService:QuizService ,private dialogService: DialogService ) { 
+constructor(private _QuizService:QuizService ,private dialogService: DialogService ) {
 }
   ngOnInit(): void {
     this.getALLQuizes()
@@ -21,7 +21,6 @@ constructor(private _QuizService:QuizService ,private dialogService: DialogServi
 getALLQuizes(){
   this._QuizService.getAllQuizes().subscribe({
     next:(res)=>{
-     console.log(res)
      this.QuizList = res
     }
   })
@@ -36,9 +35,8 @@ openEditDialouge(data: any) {
       contentStyle: { overflow: 'unset' },
       baseZIndex: 10000,
       breakpoints: "{ '1199px': '75vw', '575px': '90vw'}",
-      modal: true,  
+      modal: true,
       dismissableMask: true ,
     })
-    console.log(data)
   }
 }

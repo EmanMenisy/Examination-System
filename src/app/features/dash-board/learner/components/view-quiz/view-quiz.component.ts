@@ -32,10 +32,8 @@ currentLang = 'en';
   ngOnInit(): void {
      this.currentLang = this._TranslateService.currentLang ?? this._TranslateService.getDefaultLang() ?? 'en';
     this._TranslateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      console.log('Language changed to:', event.lang);
       this.currentLang = event.lang;
     });
-    // this.getAllQuizzesWithGroups();
     this.getFirstData()
   }
 
@@ -64,17 +62,16 @@ currentLang = 'en';
       width: '400px',
       data: data,
       styleClass: 'custom-dialog',
-      modal: true,  
+      modal: true,
       dismissableMask: true ,
     });
-    console.log(data);
   }
 
 
 getFirstData(){
   this._StudentQuizService.firstFiveIncoming().subscribe({
     next: (quizzes) => {
-      this.firstFiveQuizes = quizzes; 
+      this.firstFiveQuizes = quizzes;
     },
   });
 }

@@ -18,11 +18,10 @@ export class QuizCodeComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-   
+
   }
 
   JoinQuiz(){
-    console.log(this.inputValue)
     this._StudentQuizService.joinQuiz(this.inputValue).subscribe({
       next:(res)=>{
          this.quizId = res.data.quiz

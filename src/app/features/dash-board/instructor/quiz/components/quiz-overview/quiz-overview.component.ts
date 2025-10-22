@@ -17,26 +17,25 @@ export class QuizOverviewComponent implements OnInit {
   currentLang = 'en';
   products: any[] = [];
   ref: any;
-  quizzesList:any
-  firstFiveQuizes:any
+  quizzesList: any
+  firstFiveQuizes: any
   constructor(
     private dialogService: DialogService,
     private _QuizService: QuizService,
-    private _InstructorService:InstructorService,
-    private _TranslateService:TranslateService
-  ){}
+    private _InstructorService: InstructorService,
+    private _TranslateService: TranslateService
+  ) { }
 
   ngOnInit(): void {
-     this.currentLang = this._TranslateService.currentLang ?? this._TranslateService.getDefaultLang() ?? 'en';
+    this.currentLang = this._TranslateService.currentLang ?? this._TranslateService.getDefaultLang() ?? 'en';
     this._TranslateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      console.log('Language changed to:', event.lang);
       this.currentLang = event.lang;
     });
     // this.getAllQuizzesWithGroups();
     this.getFirstData()
   }
 
-  show(){
+  show() {
     this.ref = this.dialogService.open(AddEditQuizComponent, {
       width: '45rem',
       height: 'auto',
@@ -59,31 +58,38 @@ export class QuizOverviewComponent implements OnInit {
       data: data,
       styleClass: 'custom-dialog',
     });
-    console.log(data);
   }
 
-getFirstData(){
-  this._QuizService.firstFiveIncome().subscribe({
-    next: (quizzes) => {
-      quizzes.forEach((quiz: any) => {
-         if(quiz.group == "68e0ba105358146037d61488") {
+  getFirstData() {
+    this._QuizService.firstFiveIncome().subscribe({
+      next: (quizzes) => {
+        quizzes.forEach((quiz: any) => {
+          if (quiz.group == "68e0ba105358146037d61488") {
             console.warn('Group not found for quiz:', quiz);
             quiz.groupName = 'Unknown Group';
             quiz.studentsCount = 3;
-         } 
-         else{
-          this._InstructorService.getGroupById(quiz.group).subscribe({
-          next:(group) => {
-            quiz.groupName = group.name;
-            quiz.studentsCount = group.students?.length || 0;
-          },
+          } if (quiz.group === "65c2bed779b859ea9320885f") {
+            console.warn('Invalid group ID detected:', quiz.group);
+            quiz.groupName = 'Unknown Group';
+            quiz.studentsCount = 3;
+            return;
+          }
+          else {
+            this._InstructorService.getGroupById(quiz.group).subscribe({
+              next: (group) => {
+                quiz.groupName = group.name;
+                quiz.studentsCount = group.students?.length || 0;
+              },
+            });
+          }
+
         });
-         } 
-   
-      });
-      console.log("Quizzes with group info:", quizzes);
-      this.firstFiveQuizes = quizzes; 
-    },
-  });
-}
+        this.firstFiveQuizes = quizzes;
+      },
+    });
+  }
+
+
+
+
 }
