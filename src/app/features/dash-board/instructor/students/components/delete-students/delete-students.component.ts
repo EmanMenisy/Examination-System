@@ -29,10 +29,8 @@ export class DeleteStudentsComponent {
 
     this.studentsService.DeleteStudent(this.studentId).subscribe({
       next: () => {
-        console.log(`✅ Student with ID ${this.studentId} deleted successfully`);
         this.ref.close(true);
       },
-      error: (err) => console.error('❌ Error deleting student:', err),
     });
   }
 

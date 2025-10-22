@@ -116,3 +116,8 @@
 .table-rtl .p-paginator {
   direction: rtl;
 }
+// progress bar
+.custom_progress .p-progressbar-value {
+  background-color: var(--color-light-green) !important;
+}
+

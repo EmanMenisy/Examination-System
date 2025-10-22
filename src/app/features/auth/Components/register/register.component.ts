@@ -39,7 +39,6 @@ export class RegisterComponent {
   register(data: FormGroup) {
     this._AuthService.Register(data.value).subscribe({
       next: (res) => {
-        console.log(res);
         this.registerForm.reset();
         this.successMessage = res.message;
       },

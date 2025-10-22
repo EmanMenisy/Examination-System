@@ -4,6 +4,7 @@ import { StudentQuizService } from '../../service/student-quiz.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DynamicDialogConfig } from 'primeng/dynamicdialog';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-quiz-page',
@@ -18,6 +19,8 @@ export class QuizPageComponent implements OnInit {
   activeStep = 1;
   questionwithAnswer: any[] = [];
   quizId: any;
+  private sub!: Subscription;
+  isSubmitted = false;
   constructor(
     private StudentQuizService: StudentQuizService,
     private _ToastrService: ToastrService,
@@ -25,10 +28,13 @@ export class QuizPageComponent implements OnInit {
     private route: ActivatedRoute
   ) {
 
-      this.quizId = this.route.snapshot.paramMap.get('id')!; 
+      this.quizId = this.route.snapshot.paramMap.get('id')!;
   }
   ngOnInit(): void {
     this.getQuizQuestions();
+    this.sub = this.StudentQuizService.examSubmit.subscribe(() => {
+      this.submitQuiz();
+    });
   }
 
   getQuizQuestions() {
@@ -38,6 +44,8 @@ export class QuizPageComponent implements OnInit {
       next: (res) => {
         this.quizData = res.data;
         this.questions = res.data.questions;
+        this.StudentQuizService.remainingTimeSubject.next(res.data.duration);
+        this.StudentQuizService.setShowTimer(true);
       },
     });
   }
@@ -51,7 +59,6 @@ export class QuizPageComponent implements OnInit {
   }
 
   onAnswerSelect(_id: any, answer: any) {
-    console.log(answer);
     let questionindex = this.questionwithAnswer.findIndex(
       (x) => x.question == _id
     );
@@ -63,17 +70,24 @@ export class QuizPageComponent implements OnInit {
     } else {
       this.questionwithAnswer[questionindex].answer = answer;
     }
-    console.log(this.questionwithAnswer);
   }
   submitQuiz() {
+    this.StudentQuizService.setShowTimer(false);
     let payload = {
       answers: [...this.questionwithAnswer],
     };
+    if (this.quizData) {
     this.StudentQuizService.submitQuiz(this.quizData._id, payload).subscribe({
       next: (res) => {
         this._ToastrService.success('exam submitted successfully');
         this._Router.navigate(['/dashboard/learner/viewQuiz']);
-      },
+      }
     });
   }
+  }
+
+  ngOnDestroy(): void {
+  this.StudentQuizService.setShowTimer(false);
+  if (this.sub) this.sub.unsubscribe();
+}
 }

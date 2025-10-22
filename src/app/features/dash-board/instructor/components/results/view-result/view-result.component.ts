@@ -15,7 +15,6 @@ export class ViewResultComponent {
 
   ngOnInit() {
     this.participants = JSON.parse(localStorage.getItem('participants') || '[]');
-    console.log(this.participants);
   }
 
 

@@ -1,7 +1,7 @@
 import { IGroup } from './../../interfaces/IGroup';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Istudents } from '../Interfaces/istudents';
 
 @Injectable({
@@ -45,5 +45,8 @@ export class StudentsService {
 
   getById(id: string): Observable<any> {
     return this.http.get(`group/${id}`);
+  }
+  getStudentById(id: any): Observable<any> {
+    return this.http.get(`student/${id}`);
   }
 }

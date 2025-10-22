@@ -18,6 +18,7 @@ import { SharedModule } from '../../../../../../shared/shared.module';
 export class ListStudentsComponent implements OnInit, OnDestroy {
 
   groups: any[] = [];
+  selectedGroupId!: string;
   students: Istudents[] = [];
   filteredStudents: Istudents[] = [];
   paginatedStudents: Istudents[] = [];
@@ -28,7 +29,7 @@ export class ListStudentsComponent implements OnInit, OnDestroy {
   menuItems: MenuItem[] = [];
   selectedStudent!: Istudents;
   ref?: DynamicDialogRef;
-
+  results: any[] = [];
   studentImages: string[] = [
     '/images/user img (1).png',
     '/images/user img.png'
@@ -37,50 +38,76 @@ export class ListStudentsComponent implements OnInit, OnDestroy {
   constructor(
     private studentsService: StudentsService,
     private dialogService: DialogService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getGroups();
-    this.getAllStudents();
   }
 
   ngOnDestroy(): void {
     if (this.ref) this.ref.close();
   }
 
+
   getGroups(): void {
     this.studentsService.Groups().subscribe({
-      next: (res) => (this.groups = res),
-      error: (err) => console.error('Error loading groups:', err),
-    });
-  }
-
-  getAllStudents(): void {
-    this.loading = true;
-    this.studentsService.Getter().subscribe({
       next: (res) => {
-        console.log(res);
-        this.students = res;
-        this.filterStudents();
-        this.loading = false;
-      },
-      error: (err) => {
-        console.error('Error fetching students:', err);
-        this.loading = false;
+        this.groups = res;
+        if (this.groups.length > 0) {
+          const firstGroup = this.groups[0];
+          this.studentData.group = firstGroup;
+          this.getStudentsGroup(firstGroup._id);
+        }
       },
     });
   }
 
- filterStudents(): void {
-  if (this.studentData.group?._id) {
-    this.filteredStudents = this.students.filter(
-      (s) => s.group?._id === this.studentData.group._id
-    );
-  } else {
-    this.filteredStudents = this.students;
+
+  getStudentsGroup(groupId: any) {
+this.selectedGroupId = groupId;
+    this.students = [];
+    this.filteredStudents = [];
+    this.paginatedStudents = [];
+
+    this.studentsService.getById(groupId).subscribe({
+      next: (res: any) => {
+        const studentsIds = (res.students || []).map((s: any) => s._id);
+        if (!studentsIds.length) {
+          this.loading = false;
+          return;
+        }
+        let loaded = 0;
+        const total = studentsIds.length;
+        studentsIds.forEach((id: string) => {
+          this.studentsService.getStudentById(id).subscribe({
+            next: (student) => {
+              this.students.push(student);
+              loaded++;
+              if (loaded === total) {
+                this.filteredStudents = [...this.students];
+                this.paginate();
+                this.loading = false;
+              }
+            },
+          });
+        });
+      },
+    });
   }
-  this.paginate();
-}
+
+
+
+
+  filterStudents(): void {
+    if (this.studentData.group?._id) {
+      this.filteredStudents = this.students.filter(
+        (s) => s.group?._id === this.studentData.group._id
+      );
+    } else {
+      this.filteredStudents = this.students;
+    }
+    this.paginate();
+  }
 
   onPageChange(event: any): void {
     this.first = event.first;
@@ -112,41 +139,39 @@ export class ListStudentsComponent implements OnInit, OnDestroy {
   }
 
   showDialog(action: 'add' | 'edit', student?: Istudents): void {
-  this.ref = this.dialogService.open(AddEditStudentComponent, {
-    data: { action, student },
-    //header: action === 'add' ? 'Add Student' : 'Edit Student',
-    width: '40rem',
-    height: 'auto',
-    contentStyle: { 'max-height': '500px', overflow: 'unset' },
-    baseZIndex: 10000,
-    breakpoints: "{ '1199px': '75vw', '575px': '90vw'}",
-    modal: true,
-    dismissableMask: true
-  });
+    this.ref = this.dialogService.open(AddEditStudentComponent, {
+      data: { action, student },
+      width: '40rem',
+      height: 'auto',
+      contentStyle: { 'max-height': '500px', overflow: 'unset' },
+      baseZIndex: 10000,
+      breakpoints: "{ '1199px': '75vw', '575px': '90vw'}",
+      modal: true,
+      dismissableMask: true
+    });
 
-  this.ref.onClose.subscribe((result) => {
-    if (result === true) {
-      this.getAllStudents();
-    }
-  });
-}
+    this.ref.onClose.subscribe((result) => {
+      if (result === true) {
+        this.getStudentsGroup(this.studentData.group?._id);
+      }
+    });
+  }
 
- showDeleteDialog(id: string): void {
-  this.ref = this.dialogService.open(DeleteStudentsComponent, {
-    header: 'Delete Student',
-    width: '300px',
-    closable: true,
-    modal: true,
-    dismissableMask: true,
-    styleClass: 'delete-dialog-container',
-    data: { id },
-  });
+  showDeleteDialog(id: string): void {
+    this.ref = this.dialogService.open(DeleteStudentsComponent, {
+      header: 'Delete Student',
+      width: '300px',
+      closable: true,
+      modal: true,
+      dismissableMask: true,
+      styleClass: 'delete-dialog-container',
+      data: { id },
+    });
 
-  this.ref.onClose.subscribe((confirmed: boolean) => {
-    if (confirmed) {
-      console.log("✅ Student deleted!");
-      this.getAllStudents();
-    }
-  });
-}
+    this.ref.onClose.subscribe((confirmed: boolean) => {
+      if (confirmed) {
+        this.getStudentsGroup(this.studentData.group?._id);
+      }
+    });
+  }
 }

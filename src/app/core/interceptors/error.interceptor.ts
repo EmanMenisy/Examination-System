@@ -10,7 +10,6 @@ export const errorInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
-      console.log(error)
       toastr.error(
         error.error?.message || 'Unexpected error',
         `Error ${error.status}`

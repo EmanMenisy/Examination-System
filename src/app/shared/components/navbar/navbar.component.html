@@ -3,31 +3,20 @@
     <div class="nav-left">
       <div class="brand">{{ 'homeNav.dashboard' | translate}}</div>
     </div>
-
+    <div *ngIf="timing">
+      <app-time *ngIf="showTimer"  [durationMinutes]="timing"></app-time>
+    </div>
 
 
     <div class="nav-right">
       <div class="nav-center mx-5">
-      <button
-        pButton
-        type="button"
-        class="btn-new-quiz text-dark"
-        (click)="createNewQuiz()"
-      >
-        <i class="pi pi-plus-circle icon"></i>
-        <span >{{ 'homeNav.newQuiz' | translate}}</span>
-      </button>
-    </div>
-      <button
-      title="toggleLang"
-        pButton
-        type="button"
-        class="lang-toggle-btn"
-        (click)="toggleLanguage()"
-      >
-        <i
-          [ngClass]="currentLang === 'en' ? 'pi pi-globe' : 'pi pi-language'"
-        ></i>
+        <button pButton type="button" class="btn-new-quiz text-dark" (click)="createNewQuiz()">
+          <i class="pi pi-plus-circle icon"></i>
+          <span>{{ 'homeNav.newQuiz' | translate}}</span>
+        </button>
+      </div>
+      <button title="toggleLang" pButton type="button" class="lang-toggle-btn" (click)="toggleLanguage()">
+        <i [ngClass]="currentLang === 'en' ? 'pi pi-globe' : 'pi pi-language'"></i>
       </button>
       <div class="user-area">
         <div class="user-info">
@@ -36,14 +25,7 @@
             <div class="user-role">{{ userRole }}</div>
           </div>
 
-          <button
-          title="menu"
-            pButton
-            type="button"
-            class="user-menu-btn"
-            (click)="userMenu.toggle($event)"
-
-          >
+          <button title="menu" pButton type="button" class="user-menu-btn" (click)="userMenu.toggle($event)">
             <i class="pi pi-chevron-down"></i>
           </button>
 

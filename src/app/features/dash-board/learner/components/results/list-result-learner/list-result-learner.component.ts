@@ -28,7 +28,6 @@ export class ListResultComponent {
     this._instructorService.getAllResults().subscribe({
       next: (response) => {
         this.results = response;
-        console.log('Results fetched:', this.results);
       }
     });
   }

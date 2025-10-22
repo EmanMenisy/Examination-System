@@ -23,10 +23,8 @@ value2: any;
 
 
   login(LoginForm : FormGroup){
-    console.log(LoginForm.value)
     this._AuthService.LogIn(LoginForm.value).subscribe({
       next:(res)=>{
-        console.log(res)
         localStorage.setItem('accessToken' , res.data.accessToken);
         this._AuthService.Identity(res); //decrypting token
 

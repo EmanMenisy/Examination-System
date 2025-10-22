@@ -31,6 +31,8 @@ import { StepperModule } from 'primeng/stepper';
 import { CardModule } from 'primeng/card';
 import { TagModule } from 'primeng/tag';
 import { DividerModule } from 'primeng/divider';
+import { ProgressBar } from 'primeng/progressbar';
+
 // 🌍 Translation
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -42,12 +44,14 @@ import { TextareaModule } from 'primeng/textarea';
 import { DatePickerModule } from 'primeng/datepicker';
 import { BreadcrumbModule } from 'primeng/breadcrumb';
 import { RadioButtonModule } from 'primeng/radiobutton';
+import { TimeComponent } from './components/time/time.component';
 
 
 @NgModule({
   declarations: [
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    TimeComponent
   ],
   imports: [
     CommonModule,
@@ -91,6 +95,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     CardModule,
     TagModule,
     DividerModule,
+    ProgressBar,
     // Translate
     MessageModule,
 
@@ -141,6 +146,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     CardModule,
     TagModule,
     DividerModule,
+    ProgressBar,
     // Translate
     MessageModule,
 
@@ -149,7 +155,8 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 
     // Components
     NavbarComponent,
-    SidebarComponent
+    SidebarComponent,
+    TimeComponent
   ],
   providers: [
     DialogService,

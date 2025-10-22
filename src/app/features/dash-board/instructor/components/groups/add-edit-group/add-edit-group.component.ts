@@ -35,7 +35,6 @@ export class AddEditGroupComponent implements OnInit {
   ngOnInit(): void {
     this.currentLang = this._TranslateService.currentLang ?? this._TranslateService.getDefaultLang() ?? 'en';
     this._TranslateService.onLangChange.subscribe((event: LangChangeEvent) => {
-      console.log('Language changed to:', event.lang);
       this.currentLang = event.lang;
     });
 
@@ -44,7 +43,7 @@ export class AddEditGroupComponent implements OnInit {
   }
 
    addGroupForm = new FormGroup({
-      name: new FormControl('' , [Validators.required]), 
+      name: new FormControl('' , [Validators.required]),
       students:new FormControl([], [Validators.required])
     });
 
@@ -55,30 +54,28 @@ export class AddEditGroupComponent implements OnInit {
        this._ToastrService.success('your group has been updated scuccessfully');
         },
        complete: () => {
-        this.ref.close('success'); 
+        this.ref.close('success');
        },
       })
     }
-    
+
     else{
      this._InstructorService.createGroup(this.addGroupForm.value).subscribe({
       next: (res) => {
        this._ToastrService.success('your group has been addedd scuccessfully');
       },
       complete: () => {
-        this.ref.close('success'); 
+        this.ref.close('success');
       },
     });
     }
-   
+
   }
 
   getAllStudents() {
     this._InstructorService.getAllStudents().subscribe({
       next: (res) => {
        this.StudentsList= res.filter(s=>s.group==null || this.selectedIds.includes(s._id));
-       console.log(this.StudentsList);
-       
       },
     });
   }

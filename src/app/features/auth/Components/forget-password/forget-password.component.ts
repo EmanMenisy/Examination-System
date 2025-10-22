@@ -25,18 +25,6 @@ Reminder() {
   if (this.forgotten.invalid) return;
 
   this.auth.forgetPassword(this.forgotten.value).subscribe({
-    next: (res) => {
-      console.log(res);
-    },
-
-    error: (err) => {
-
-     this.toast.error(
-        err.error?.message || 'Something went wrong, please try again!',
-        'Error'
-      );
-    },
-
     complete: () => {
       this.toast.success('Check Your Inbox For An OTP', 'Email Found!');
       this.route.navigate(['/ResetPassword']);

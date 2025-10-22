@@ -33,7 +33,6 @@ export class ListGroupComponent implements OnInit {
     this._instructorService.getAllGroup().subscribe({
       next: (res: any) => {
         this.groupList = res;
-        console.log(this.groupList);
         this.updatePaginatedGroups();
       },
     });
@@ -41,26 +40,23 @@ export class ListGroupComponent implements OnInit {
   }
 
   // open dialog delete
-  open(id:string) {
+  open(id: string) {
     this.ref = this.dialogService.open(DeleteGroupComponent, {
       header: 'Delete Group',
-      width: '300px',
+      width: '400px',
       closable: true
     });
 
     this.ref.onClose.subscribe((confirmed: boolean) => {
       if (confirmed) {
-        console.log("Group deleted!");
         this.deleteGroup(id);
       }
     });
   }
 
-  deleteGroup(id:string) {
+  deleteGroup(id: string) {
     this._instructorService.DeleteGroup(id).subscribe({
-      next:(res)=>{
-        console.log(res)
-      },complete:()=> {
+      complete: () => {
         this.getAllGroups()
       },
     })
@@ -75,9 +71,9 @@ export class ListGroupComponent implements OnInit {
       modal: true,
       dismissableMask: true
     });
-      this.ref.onClose.subscribe((result) => {
+    this.ref.onClose.subscribe((result) => {
       if (result === 'success') {
-      this.getAllGroups();
+        this.getAllGroups();
       }
     });
   }
@@ -99,7 +95,7 @@ export class ListGroupComponent implements OnInit {
   updateGroup(groupData: any) {
     this.ref = this.dialogService.open(AddEditGroupComponent, {
       data: {
-        group :groupData
+        group: groupData
       },
       width: '40rem',
       height: 'auto',
@@ -111,13 +107,13 @@ export class ListGroupComponent implements OnInit {
     });
 
     this.ref.onClose.subscribe((result) => {
-    if (result === 'success') {
-      this.getAllGroups();
-    }
-})
+      if (result === 'success') {
+        this.getAllGroups();
+      }
+    })
 
 
-}
+  }
 
 
 }

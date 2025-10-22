@@ -34,7 +34,6 @@ export class ProfileComponent implements OnInit {
 
   getData() {
     this.user = this.authService.currentUser ;
-    console.log("Current user:", this.user);
     if (this.user) {
       this.updateForm.patchValue({
         first_name: this.user.first_name,
@@ -67,7 +66,6 @@ export class ProfileComponent implements OnInit {
       this.authService.updateProfileInstructor(this.updateForm.value).subscribe({
         next: (response) => {
           this.user = response.data;
-          console.log("instructor profile updated:", response);
         },
         complete: () => {
           localStorage.setItem('user', JSON.stringify(this.user));
